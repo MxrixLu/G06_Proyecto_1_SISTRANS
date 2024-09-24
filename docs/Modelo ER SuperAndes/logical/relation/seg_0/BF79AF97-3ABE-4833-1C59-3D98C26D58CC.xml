@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="recibev1" directorySegmentName="seg_0" id="BF79AF97-3ABE-4833-1C59-3D98C26D58CC">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:40:57 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<sourcePk>A51177D3-DBB5-4758-86A5-7FDDC29589E8</sourcePk>
+<identifying>false</identifying>
+<optionalSource>true</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>531042EB-3B77-AFAC-BAB7-E607391534E7</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>09D3B584-B5DF-BE80-C533-69A2D0207E52</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

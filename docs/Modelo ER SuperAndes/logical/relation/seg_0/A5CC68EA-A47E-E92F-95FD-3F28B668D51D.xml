@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="necesita" directorySegmentName="seg_0" id="A5CC68EA-A47E-E92F-95FD-3F28B668D51D">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:26:50 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<sourcePk>30B42A6D-294E-90C2-C672-5DE4266CC607</sourcePk>
+<targetPk>F78A98B5-D124-DC3A-7120-BAAB4E985DF8</targetPk>
+<identifying>false</identifying>
+<optionalSource>false</optionalSource>
+<optionalTarget>false</optionalTarget>
+<sourceCardinality>1</sourceCardinality>
+<sourceEntity>A2575D0E-ED49-9142-F983-E7DBBA3A43CC</sourceEntity>
+<targetCardinalityString>*</targetCardinalityString>
+<targetEntity>9B8E4DB9-D010-A314-B179-0F87F7D3AD45</targetEntity>
+<transferable>true</transferable>
+<deleteRule>NO ACTION</deleteRule>
+</Relation>

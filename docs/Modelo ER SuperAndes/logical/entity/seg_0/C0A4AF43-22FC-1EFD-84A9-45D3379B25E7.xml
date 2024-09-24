@@ -1,0 +1,109 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C0A4AF43-22FC-1EFD-84A9-45D3379B25E7" name="InfoRecepcion">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:52:45 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdInfoRecepcion" id="4FC7643C-6A0A-A03D-8129-5F5604BCAD6E">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:52:57 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cantidadRecibida" id="CD0B1939-62F2-7B38-7B00-F087E0455F28">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:02:23 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="costoRecibido" id="4856D710-E7C8-05DB-8136-D4271B4466BD">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:05:05 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdProducto" id="EAEE3B28-F28F-F6B9-0A34-AF2A0C7BDE6C">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:29:24 UTC</createdTime>
+<generatorID>2F74373B-773C-BB98-148A-564E7F565FAE</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>92E7826F-1CFD-346B-8685-940D47EA77FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="Attribute_11" id="B39A6B81-DF40-02B4-5C45-C8445F44FF07">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:29:24 UTC</createdTime>
+<generatorID>2F74373B-773C-BB98-148A-564E7F565FAE</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>5FF12662-804E-59D6-4F60-F1AC57BD812B</referedAttribute>
+<use>0</use>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdRecepcion" id="4D3B275F-6A20-DA11-CB4C-264CDE7F286F">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:39:03 UTC</createdTime>
+<generatorID>7AD4A4A9-1568-7EAC-533E-C7A2FF60E931</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>C9E36D4B-DBB2-AF8B-DA03-D61766B4C18B</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="A1329D98-5485-39E4-D5A7-17945238C578" name="InfoRecepcion PK">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:53:09 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>4FC7643C-6A0A-A03D-8129-5F5604BCAD6E</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>

@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="A15AC548-FC19-ABC6-058A-02027A1E5575" name="ProductoProveedor">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:51:38 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<adequatelyNormalized>NO</adequatelyNormalized>
+<expectedVolumes>0</expectedVolumes>
+<fwdEngineeringStrategyName>Single Table</fwdEngineeringStrategyName>
+<growthPercent>0</growthPercent>
+<growthType>Year</growthType>
+<maxVolumes>9999999</maxVolumes>
+<minVolumes>0</minVolumes>
+<normalForm>Third</normalForm>
+<attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
+<Attribute name="IdProProveedor" id="063923C2-6324-97B6-6ECE-5EAF88D9F9DF">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:51:47 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="precioAcordado" id="7D88981A-AD6B-6F9F-0508-74C434C649E6">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 02:05:54 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdProducto" id="79E188A5-A008-84D5-26EA-34AF72B7FB54">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 19:57:22 UTC</createdTime>
+<generatorID>0E004EC8-AEC2-2186-AD05-F0F3961240B6</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>92E7826F-1CFD-346B-8685-940D47EA77FE</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="IdProveedor" id="733B99DD-FC7F-376C-6F54-B50073F0C8F8">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 19:58:01 UTC</createdTime>
+<generatorID>943BF3BA-0E9F-547E-DA88-BA3993E8E5B8</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>36305103-A108-CCA8-BCA6-098FEB6A5812</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+</attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="988EB7D8-8C76-E955-40AF-8C8A2D64744F" name="ProductoProveedor PK">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-01 01:52:09 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>063923C2-6324-97B6-6ECE-5EAF88D9F9DF</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
+</Entity>
