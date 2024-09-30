@@ -13,17 +13,17 @@ public class Categoria {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     @Column(nullable = false)
-    private Integer codigo;
+    private int codigo;
 
     @Column(nullable = false) 
     private String nombre; 
     private String descripcion;
     private String caracteristicasAlmacenamiento;
 
-    public Categoria(Integer id, Integer codigo, String nombre, String descripcion,
+    public Categoria(int id, int codigo, String nombre, String descripcion,
             String caracteristicasAlmacenamiento) {
         this.id = id;
         this.codigo = codigo;
@@ -35,19 +35,19 @@ public class Categoria {
     public Categoria() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getCodigo() {
+    public int getCodigo() {
         return codigo;
     }
 
-    public void setCodigo(Integer codigo) {
+    public void setCodigo(int codigo) {
         this.codigo = codigo;
     }
 

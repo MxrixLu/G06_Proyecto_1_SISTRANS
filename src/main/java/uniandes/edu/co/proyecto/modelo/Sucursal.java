@@ -14,7 +14,7 @@ public class Sucursal {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private String nombre; 
     private String telefono; 
@@ -25,7 +25,7 @@ public class Sucursal {
     @JoinColumn(name = "id_ciudad", referencedColumnName = "id")
     private Ciudad id_ciudad;
 
-    public Sucursal(Integer id, String nombre, String telefono, String direccion, Double tamano, Ciudad id_ciudad) {
+    public Sucursal(int id, String nombre, String telefono, String direccion, Double tamano, Ciudad id_ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
@@ -36,11 +36,11 @@ public class Sucursal {
 
     public Sucursal() {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

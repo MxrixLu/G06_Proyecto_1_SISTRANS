@@ -12,14 +12,14 @@ public class Proveedor {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private String NIT; 
     private String direccion;
     private String nombrePersonaC;
     private String telefonoPersonaC;
 
-    public Proveedor(Integer id, String nIT, String direccion, String nombrePersonaC, String telefonoPersonaC) {
+    public Proveedor(int id, String nIT, String direccion, String nombrePersonaC, String telefonoPersonaC) {
         this.id = id;
         NIT = nIT;
         this.direccion = direccion;
@@ -30,11 +30,11 @@ public class Proveedor {
     public Proveedor() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -13,9 +13,9 @@ public class ProductoOrden {
 
     private Double precioAcordado; 
 
-    private Integer cantidadSolicitada;
+    private int cantidadSolicitada;
 
-    public ProductoOrden(Producto id_producto, OrdenCompra id_orden, Double precioAcordado, Integer cantidadSolicitada) {
+    public ProductoOrden(Producto id_producto, OrdenCompra id_orden, Double precioAcordado, int cantidadSolicitada) {
         this.pk = new ProductoOrdenPK(id_producto, id_orden);
         this.precioAcordado = precioAcordado;
         this.cantidadSolicitada = cantidadSolicitada;
@@ -40,11 +40,11 @@ public class ProductoOrden {
         this.precioAcordado = precioAcordado;
     }
 
-    public Integer getCantidadSolicitada() {
+    public int getCantidadSolicitada() {
         return cantidadSolicitada;
     }
 
-    public void setCantidadSolicitada(Integer cantidadSolicitada) {
+    public void setCantidadSolicitada(int cantidadSolicitada) {
         this.cantidadSolicitada = cantidadSolicitada;
     }
 

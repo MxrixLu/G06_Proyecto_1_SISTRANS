@@ -11,21 +11,21 @@ import jakarta.persistence.GenerationType;
 public class ProductoPK implements Serializable {
     
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     @Column(nullable = false)
     private String codigoBarras;
 
-    public ProductoPK(Integer id, String codigoBarras) {
+    public ProductoPK(int id, String codigoBarras) {
         this.id = id;
         this.codigoBarras = codigoBarras;
     }
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

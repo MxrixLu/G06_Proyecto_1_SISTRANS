@@ -28,7 +28,7 @@ public class Producto {
     @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
 
-    public Producto(Integer id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,
+    public Producto(int id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,
             Double cantidadPresentacion, Boolean unidadMedida, Double volumenEmpaque, Double pesoEmpaque,
             Date fechaExpiracion, Categoria categoria) {
         this.pk = new ProductoPK(id, codigoBarras);

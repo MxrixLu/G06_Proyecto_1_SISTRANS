@@ -16,12 +16,12 @@ public class Venta {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private Date fecha; 
-    private Integer cantidad; 
-    private Integer precioUnitario;
-    private Integer cedula; 
+    private int cantidad; 
+    private int precioUnitario;
+    private int cedula; 
 
     @ManyToOne
     @JoinColumn(name = "id_producto", nullable = false)
@@ -31,7 +31,7 @@ public class Venta {
     @JoinColumn(name = "id_producto", nullable = false)
     private Producto producto;
 
-    public Venta(Integer id, Date fecha, Integer cantidad, Integer precioUnitario, Integer cedula, Cliente cliente,
+    public Venta(int id, Date fecha, int cantidad, int precioUnitario, int cedula, Cliente cliente,
             Producto producto) {
         this.id = id;
         this.fecha = fecha;
@@ -45,11 +45,11 @@ public class Venta {
     public Venta() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
@@ -61,27 +61,27 @@ public class Venta {
         this.fecha = fecha;
     }
 
-    public Integer getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(Integer cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 
-    public Integer getPrecioUnitario() {
+    public int getPrecioUnitario() {
         return precioUnitario;
     }
 
-    public void setPrecioUnitario(Integer precioUnitario) {
+    public void setPrecioUnitario(int precioUnitario) {
         this.precioUnitario = precioUnitario;
     }
 
-    public Integer getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(Integer cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
 

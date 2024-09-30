@@ -16,7 +16,7 @@ public class Recepcion {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private Date fechaRecepcion;
 
@@ -28,7 +28,7 @@ public class Recepcion {
     @JoinColumn(name = "id_bodega", referencedColumnName = "id")
     private Bodega id_bodega;
 
-    public Recepcion(Integer id, Date fechaRecepcion, Proveedor id_proveedor, Bodega id_bodega) {
+    public Recepcion(int id, Date fechaRecepcion, Proveedor id_proveedor, Bodega id_bodega) {
         this.id = id;
         this.fechaRecepcion = fechaRecepcion;
         this.id_proveedor = id_proveedor;
@@ -38,11 +38,11 @@ public class Recepcion {
     public Recepcion() {
     ;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

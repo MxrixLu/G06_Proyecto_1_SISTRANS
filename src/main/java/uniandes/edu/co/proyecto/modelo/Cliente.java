@@ -13,15 +13,15 @@ public class Cliente {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     @Column(nullable = false)
-    private Integer cedula;
+    private int cedula;
     
     @Column(nullable = false)
     private String nombre;
     
-    public Cliente(Integer id, Integer cedula, String nombre) {
+    public Cliente(int id, int cedula, String nombre) {
         this.id = id;
         this.cedula = cedula;
         this.nombre = nombre;
@@ -30,19 +30,19 @@ public class Cliente {
     public Cliente() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getCedula() {
+    public int getCedula() {
         return cedula;
     }
 
-    public void setCedula(Integer cedula) {
+    public void setCedula(int cedula) {
         this.cedula = cedula;
     }
 

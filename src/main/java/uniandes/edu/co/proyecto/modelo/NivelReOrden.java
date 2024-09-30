@@ -14,10 +14,10 @@ public class NivelReOrden {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
-    private Integer nivelMaximo; 
-    private Integer capacidadBodega; 
+    private int nivelMaximo; 
+    private int capacidadBodega; 
 
     @ManyToOne
     @JoinColumn(name = "id_sucursal", nullable = false)
@@ -27,7 +27,7 @@ public class NivelReOrden {
     @JoinColumn(name = "id_producto", nullable = false)
     private Producto producto;
 
-    public NivelReOrden(Integer id, Integer nivelMaximo, Integer capacidadBodega, Sucursal sucursal, Producto producto) {
+    public NivelReOrden(int id, int nivelMaximo, int capacidadBodega, Sucursal sucursal, Producto producto) {
         this.id = id;
         this.nivelMaximo = nivelMaximo;
         this.capacidadBodega = capacidadBodega;
@@ -38,27 +38,27 @@ public class NivelReOrden {
     public NivelReOrden() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    public Integer getNivelMaximo() {
+    public int getNivelMaximo() {
         return nivelMaximo;
     }
 
-    public void setNivelMaximo(Integer nivelMaximo) {
+    public void setNivelMaximo(int nivelMaximo) {
         this.nivelMaximo = nivelMaximo;
     }
 
-    public Integer getCapacidadBodega() {
+    public int getCapacidadBodega() {
         return capacidadBodega;
     }
 
-    public void setCapacidadBodega(Integer capacidadBodega) {
+    public void setCapacidadBodega(int capacidadBodega) {
         this.capacidadBodega = capacidadBodega;
     }
 

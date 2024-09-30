@@ -15,7 +15,7 @@ public class OrdenCompra {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     private Date fechaEsperadaEntrega; 
     private Double precioAcordado;
@@ -30,7 +30,7 @@ public class OrdenCompra {
     @JoinColumn(name = "id_proveedor", nullable = false)
     private Proveedor proveedor;
 
-    public OrdenCompra(Integer id, Date fechaEsperadaEntrega, Double precioAcordado, String estado, Date fechaCreacion,
+    public OrdenCompra(int id, Date fechaEsperadaEntrega, Double precioAcordado, String estado, Date fechaCreacion,
             Sucursal sucursal, Proveedor proveedor) {
         this.id = id;
         this.fechaEsperadaEntrega = fechaEsperadaEntrega;
@@ -44,11 +44,11 @@ public class OrdenCompra {
     public OrdenCompra() 
     {;}
 
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

@@ -15,7 +15,7 @@ public class Bodega {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private int id;
 
     @Column(nullable = false)
     private String nombre;
@@ -25,7 +25,7 @@ public class Bodega {
     @JoinColumn(name = "id_sucursal")
     private Sucursal sucursal;
 
-    public Bodega(Integer id, String nombre, Double tamano, Sucursal sucursal) {
+    public Bodega(int id, String nombre, Double tamano, Sucursal sucursal) {
         this.id = id;
         this.nombre = nombre;
         this.tamano = tamano;
@@ -35,11 +35,11 @@ public class Bodega {
     public Bodega() 
     {;}
     
-    public Integer getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
     }
 

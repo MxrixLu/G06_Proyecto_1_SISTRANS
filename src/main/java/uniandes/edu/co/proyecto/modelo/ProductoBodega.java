@@ -11,11 +11,11 @@ public class ProductoBodega {
     @EmbeddedId
     private ProductoBodegaPK pk;
 
-    private Integer cantidadExistente;
+    private int cantidadExistente;
     private Double costoPromedio;
 
 
-    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, Integer cantidadExistente, Double costoPromedio) {
+    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, int cantidadExistente, Double costoPromedio) {
         this.pk = new ProductoBodegaPK( id_Producto, id_Bodega);
         this.cantidadExistente = cantidadExistente;
         this.costoPromedio = costoPromedio;
@@ -28,10 +28,10 @@ public class ProductoBodega {
     public void setPk(ProductoBodegaPK pk) {
         this.pk = pk;
     }
-    public Integer getCantidadExistente() {
+    public int getCantidadExistente() {
         return cantidadExistente;
     }
-    public void setCantidadExistente(Integer cantidadExistente) {
+    public void setCantidadExistente(int cantidadExistente) {
         this.cantidadExistente = cantidadExistente;
     }
     public Double getCostoPromedio() {
