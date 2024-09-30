@@ -15,18 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IdProBodega" id="0C37995E-1C64-BB6D-43C9-A644E4053249">
-<createdBy>maria</createdBy>
-<createdTime>2024-09-01 01:52:26 UTC</createdTime>
-<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
-<engineerTo>
-<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="cantidadExistente" id="0D8B6A63-32DD-5FDC-4E6F-06954A5F6C8A">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:06:38 UTC</createdTime>
@@ -60,7 +48,6 @@
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <referedAttribute>92E7826F-1CFD-346B-8685-940D47EA77FE</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
@@ -75,11 +62,25 @@
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <referedAttribute>71E07EB0-1D10-5F2D-8317-14537A7CF202</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="codigoBarras" id="6543A8F0-B212-EF59-AE9A-8AB784D1DA9D">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 21:24:42 UTC</createdTime>
+<generatorID>498076A0-0ED4-6B5D-6D6D-46411A7A05ED</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<referedAttribute>96327728-6859-2266-C3CE-EB8C7B083645</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
@@ -93,7 +94,8 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>0C37995E-1C64-BB6D-43C9-A644E4053249</attributeRef>
+<attributeRef>57FF758D-0172-89D9-7393-96EB47CCE478</attributeRef>
+<attributeRef>AF94D8BB-AF75-4E35-A074-5AEAC5318DCB</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

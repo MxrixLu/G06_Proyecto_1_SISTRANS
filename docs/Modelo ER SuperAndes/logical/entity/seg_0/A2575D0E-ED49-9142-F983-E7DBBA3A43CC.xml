@@ -127,7 +127,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="CodigoBarras" id="96327728-6859-2266-C3CE-EB8C7B083645">
+<Attribute name="codigoBarras" id="96327728-6859-2266-C3CE-EB8C7B083645">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:56 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -178,6 +178,7 @@
 <pk>true</pk>
 <usedAttributes>
 <attributeRef>92E7826F-1CFD-346B-8685-940D47EA77FE</attributeRef>
+<attributeRef>96327728-6859-2266-C3CE-EB8C7B083645</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

@@ -27,6 +27,20 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="IdCliente" id="D34FAD17-DCDE-E603-84B3-AFF4F4E5217F">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:38:57 UTC</createdTime>
+<generatorID>7471C3D9-74C5-32A5-4F0F-28C076A6CCD0</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>6DD40363-0200-8259-FD46-AA546070060A</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="fecha" id="C60C7295-54AE-9B19-F125-BBD00BDB56E8">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 16:37:22 UTC</createdTime>
@@ -61,20 +75,6 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="IdCliente" id="D34FAD17-DCDE-E603-84B3-AFF4F4E5217F">
-<createdBy>maria</createdBy>
-<createdTime>2024-09-30 16:38:57 UTC</createdTime>
-<generatorID>7471C3D9-74C5-32A5-4F0F-28C076A6CCD0</generatorID>
-<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
-<engineerTo>
-<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
-</engineerTo>
-<referedAttribute>6DD40363-0200-8259-FD46-AA546070060A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="cedula" id="CCEE1256-4165-FBEA-1550-47E5C148FAF7">

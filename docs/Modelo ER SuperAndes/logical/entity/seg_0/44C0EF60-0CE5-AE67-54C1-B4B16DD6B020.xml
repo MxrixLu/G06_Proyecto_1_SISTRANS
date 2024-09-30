@@ -15,18 +15,6 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IdProOrden" id="9449DE2E-7B1C-F9B6-EB88-74B98F583A19">
-<createdBy>maria</createdBy>
-<createdTime>2024-09-01 01:55:30 UTC</createdTime>
-<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
-<engineerTo>
-<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="cantidadSolicitada" id="8CCE7B43-89D9-5A3B-EC96-63BECD06001F">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:09:14 UTC</createdTime>
@@ -79,6 +67,20 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="codigoBarras" id="C273D7A0-7BB6-97A3-F092-ED0FCA476DFF">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 21:24:42 UTC</createdTime>
+<generatorID>F8A945C1-3D2E-96B7-C03C-F1A0C6538131</generatorID>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<referedAttribute>96327728-6859-2266-C3CE-EB8C7B083645</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="AB7334C6-DBF5-249F-1D38-7C6E3F7711E2" name="ProductoOrden PK">
@@ -90,7 +92,8 @@
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>9449DE2E-7B1C-F9B6-EB88-74B98F583A19</attributeRef>
+<attributeRef>ED421844-2E2A-85D9-342A-DEF8E8B75878</attributeRef>
+<attributeRef>9512C06C-0C5F-BCF4-81EA-1F495EB131C9</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
