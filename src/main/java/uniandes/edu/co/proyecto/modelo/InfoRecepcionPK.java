@@ -23,6 +23,10 @@ public class InfoRecepcionPK implements Serializable {
         this.id_producto = id_producto;
     }
 
+    public InfoRecepcionPK() {
+        super();
+    }
+
     public Recepcion getId_Recepcion() {
         return id_Recepcion;
     }
