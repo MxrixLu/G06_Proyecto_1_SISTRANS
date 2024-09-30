@@ -51,18 +51,6 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="capacidadBodega" id="5A10670F-8359-0141-624B-A650FC7FB1D2">
-<createdBy>maria</createdBy>
-<createdTime>2024-09-01 02:07:41 UTC</createdTime>
-<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
-<engineerTo>
-<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT011</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 <Attribute name="IdSucursal" id="D002DDB3-D30A-F0E3-57BD-366F5F434E08">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:42:52 UTC</createdTime>

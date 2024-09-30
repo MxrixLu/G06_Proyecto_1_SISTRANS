@@ -34,10 +34,21 @@
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="precioAcordado" id="56D26363-D211-BE4B-AF0B-31911BBAE0F1">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:49:01 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="estado" id="EFA1357E-AA06-32BF-A766-CCB2EA4B594B">
@@ -47,10 +58,21 @@
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="fechaCreacion" id="80E8E077-3EFC-62E2-8EBA-70A1DF62A829">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:48:31 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="IdProveedor" id="A7F677F0-E0E8-6224-BAAC-864DDD2AA3FF">

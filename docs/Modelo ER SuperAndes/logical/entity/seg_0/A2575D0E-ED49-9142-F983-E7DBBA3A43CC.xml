@@ -102,17 +102,16 @@
 <logicalDatatype>LOGDT006</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="empacado" id="3F3F2C39-AAC8-0CE3-620D-010F783D7D66">
+<Attribute name="VolumenEmpaque" id="3F3F2C39-AAC8-0CE3-620D-010F783D7D66">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:36 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
+<logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="fechaExpiracion" id="91B08D4D-871C-C145-EFF3-5F0C9AF1E31E">
@@ -153,6 +152,18 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="PesoEmpaque" id="EF92930F-FC7B-BBD2-AAFF-1C1464B15CAB">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:35:00 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>

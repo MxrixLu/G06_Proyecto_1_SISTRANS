@@ -27,6 +27,18 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="codigo" id="91FFD8A0-340F-EAF7-AFAB-75B1383C7189">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:51:12 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="nombre" id="FF40FDE6-6925-1A99-84A8-F7F421C390A4">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:13:43 UTC</createdTime>

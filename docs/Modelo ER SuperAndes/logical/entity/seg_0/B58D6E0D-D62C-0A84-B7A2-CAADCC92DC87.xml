@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="44C0EF60-0CE5-AE67-54C1-B4B16DD6B020" name="ProductoOrden">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="B58D6E0D-D62C-0A84-B7A2-CAADCC92DC87" name="Venta">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 01:55:15 UTC</createdTime>
+<createdTime>2024-09-30 16:37:15 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="IdProOrden" id="9449DE2E-7B1C-F9B6-EB88-74B98F583A19">
+<Attribute name="IdVenta" id="29DB0DFD-C983-2B04-D495-D13E601E2C97">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 01:55:30 UTC</createdTime>
+<createdTime>2024-09-30 16:37:29 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
@@ -27,9 +27,21 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cantidadSolicitada" id="8CCE7B43-89D9-5A3B-EC96-63BECD06001F">
+<Attribute name="fecha" id="C60C7295-54AE-9B19-F125-BBD00BDB56E8">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 02:09:14 UTC</createdTime>
+<createdTime>2024-09-30 16:37:22 UTC</createdTime>
+<ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
+<engineerTo>
+<item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="cantidad" id="EEE2E26F-5711-0234-A121-78543D9BB978">
+<createdBy>maria</createdBy>
+<createdTime>2024-09-30 16:37:52 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
@@ -39,58 +51,60 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="precioAcordado" id="4894D668-F11C-00F8-D439-B2F1A911519D">
+<Attribute name="precioUnitario" id="D0A7B651-E50C-6276-48BB-3B8CB83472F2">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 02:09:24 UTC</createdTime>
+<createdTime>2024-09-30 16:38:11 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT020</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="IdProducto" id="ED421844-2E2A-85D9-342A-DEF8E8B75878">
+<Attribute name="IdCliente" id="D34FAD17-DCDE-E603-84B3-AFF4F4E5217F">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 02:30:58 UTC</createdTime>
-<generatorID>F8A945C1-3D2E-96B7-C03C-F1A0C6538131</generatorID>
+<createdTime>2024-09-30 16:38:57 UTC</createdTime>
+<generatorID>7471C3D9-74C5-32A5-4F0F-28C076A6CCD0</generatorID>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<referedAttribute>92E7826F-1CFD-346B-8685-940D47EA77FE</referedAttribute>
+<referedAttribute>6DD40363-0200-8259-FD46-AA546070060A</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="IdOrdenCompra" id="9512C06C-0C5F-BCF4-81EA-1F495EB131C9">
+<Attribute name="cedula" id="CCEE1256-4165-FBEA-1550-47E5C148FAF7">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 02:44:18 UTC</createdTime>
-<generatorID>15865D30-BEC6-D659-06FE-159770CC881D</generatorID>
+<createdTime>2024-09-30 16:38:57 UTC</createdTime>
+<generatorID>7471C3D9-74C5-32A5-4F0F-28C076A6CCD0</generatorID>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
-<referedAttribute>FB96CEF8-8570-563D-7FF9-3714FE8522E2</referedAttribute>
+<referedAttribute>754CC76A-97D6-06B6-2187-BE48977AA613</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
+<logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="AB7334C6-DBF5-249F-1D38-7C6E3F7711E2" name="ProductoOrden PK">
+<identifier id="DF5AB842-5840-5F2C-7E5D-6343EAC45826" name="Venta PK">
 <createdBy>maria</createdBy>
-<createdTime>2024-09-01 01:55:39 UTC</createdTime>
+<createdTime>2024-09-30 16:37:36 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
 <engineerTo>
 <item key="D7270F89-682D-03BF-6EBF-1176A373E3EF" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>9449DE2E-7B1C-F9B6-EB88-74B98F583A19</attributeRef>
+<attributeRef>29DB0DFD-C983-2B04-D495-D13E601E2C97</attributeRef>
+<attributeRef>D34FAD17-DCDE-E603-84B3-AFF4F4E5217F</attributeRef>
+<attributeRef>CCEE1256-4165-FBEA-1550-47E5C148FAF7</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>
