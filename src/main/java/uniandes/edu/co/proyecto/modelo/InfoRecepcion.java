@@ -9,10 +9,10 @@ import jakarta.persistence.Table;
 public class InfoRecepcion {
     
     @EmbeddedId
-    private InfoRecepcionPK fk;
+    private InfoRecepcionPK pk;
 
     public InfoRecepcion(Recepcion id_Recepcion, Producto id_Producto) {
-        this.fk = new InfoRecepcionPK(id_Recepcion, id_Producto);
+        this.pk = new InfoRecepcionPK(id_Recepcion, id_Producto);
     }
     public InfoRecepcion()
     {;}
