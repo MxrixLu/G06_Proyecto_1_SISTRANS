@@ -60,4 +60,29 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
     @Transactional
     @Query(value = "DELETE FROM productos WHERE id = :id AND codigoBarras = :codigoBarras", nativeQuery = true)
     void borrarProducto(@Param("id") int id, @Param("codigoBarras") String codigoBarras);
+
+
+    @Query(value = "SELECT * FROM productos WHERE precioVenta BETWEEN :precioMinimo AND :precioMaximo AND fechaExpiracion BETWEEN :fechaInicio AND :fechaFin AND id_categoria.id = :idCategoria", nativeQuery = true)
+    Collection<Producto> darProductosPorCaracteristicas(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo, @Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin, @Param("idCategoria") int idCategoria);
+
+    @Query(value = "SELECT " +
+               "p.nombre AS nombre_producto, " +
+               "p.id AS id_producto, " +
+               "b.nombre AS nombre_bodega, " +
+               "s.nombre AS nombre_sucursal, " +
+               "pb.cantidadExistente, " +
+               "pro.NIT AS nit_proveedor " +
+               "FROM productos p " +
+               "INNER JOIN niveles_reorden nro ON nro.id_producto = p.id " +
+               "INNER JOIN producto_bodega pb ON pb.id_producto = p.id " +
+               "INNER JOIN bodegas b ON pb.id_bodega = b.id " +
+               "INNER JOIN sucursales s ON s.id = b.id_sucursal " +
+               "LEFT JOIN info_recepcion ir ON ir.id_producto = p.id " +
+               "LEFT JOIN recepciones r ON ir.id_recepcion = r.id " +
+               "LEFT JOIN proveedores pro ON r.id_proveedor = pro.id " +
+               "WHERE pb.cantidadExistente < nro.nivelMinimo " +
+               "ORDER BY nombre_producto, nombre_bodega", nativeQuery = true)
+    Collection<Object[]> listarProductosReorden();
+
 }
+

@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -47,4 +49,17 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
     @Transactional
     @Query(value = "DELETE FROM sucursales WHERE id = :id", nativeQuery = true)
     void borrarSucursal(@Param("id") int id);
+
+    @Query(value = "SELECT " +
+               "b.id AS bodega_id, " +
+               "b.nombre AS nombre_bodega, " +
+               "SUM(pb.cantidadExistente * p.volumenEmpaque) AS volumen_ocupado, " +
+               "(SUM(pb.cantidadExistente * p.volumenEmpaque) / b.capacidadBodega) * 100 AS porcentaje_ocupacion " +
+               "FROM bodegas b " +
+               "INNER JOIN producto_bodega pb ON pb.id_bodega = b.id " +
+               "INNER JOIN productos p ON p.id = pb.id_producto " +
+               "WHERE p.id IN (:listaDeProductos) " +
+               "GROUP BY b.id, b.nombre, b.capacidadBodega", nativeQuery = true)
+    Collection<Object[]> calcularIndiceOcupacion(@Param("listaDeProductos") List<Integer> listaDeProductos);
+
 }

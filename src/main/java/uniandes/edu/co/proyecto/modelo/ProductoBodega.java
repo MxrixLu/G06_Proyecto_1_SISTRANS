@@ -14,14 +14,23 @@ public class ProductoBodega {
     private int cantidadExistente;
     private Double costoPromedio;
 
+    private int capacidadBodega;
 
-    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, int cantidadExistente, Double costoPromedio) {
+
+    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, int cantidadExistente, Double costoPromedio, int capacidadBodega) {
         this.pk = new ProductoBodegaPK( id_Producto, id_Bodega);
         this.cantidadExistente = cantidadExistente;
         this.costoPromedio = costoPromedio;
+        this.capacidadBodega = capacidadBodega;
     }
     public ProductoBodega()
     {;}
+    public int getCapacidadBodega() {
+        return capacidadBodega;
+    }
+    public void setCapacidadBodega(int capacidadBodega) {
+        this.capacidadBodega = capacidadBodega;
+    }
     public ProductoBodegaPK getPk() {
         return pk;
     }

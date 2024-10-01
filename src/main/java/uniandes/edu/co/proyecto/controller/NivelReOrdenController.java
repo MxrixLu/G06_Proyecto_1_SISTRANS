@@ -38,8 +38,7 @@ public class NivelReOrdenController {
     public ResponseEntity<String> insertarNivelReOrden(@RequestBody NivelReOrden nivelReOrden) {
         try {
             nivelReOrdenRepository.insertarNivelReOrden(
-                nivelReOrden.getNivelMaximo(),
-                nivelReOrden.getCapacidadBodega(),
+                nivelReOrden.getNivelMinimo(),
                 nivelReOrden.getSucursal(),
                 nivelReOrden.getProducto()
             );
@@ -55,8 +54,7 @@ public class NivelReOrdenController {
         try {
             nivelReOrdenRepository.actualizarNivelReOrden(
                 id,
-                nivelReOrden.getNivelMaximo(),
-                nivelReOrden.getCapacidadBodega(),
+                nivelReOrden.getNivelMinimo(),
                 nivelReOrden.getSucursal(),
                 nivelReOrden.getProducto()
             );

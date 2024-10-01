@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nivelMaximo" id="CFDEC772-960C-5148-4F5F-114ED141BB78">
+<Attribute name="nivelMinimo" id="CFDEC772-960C-5148-4F5F-114ED141BB78">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:05:41 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

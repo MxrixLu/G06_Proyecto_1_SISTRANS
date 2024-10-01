@@ -7,6 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+
 import uniandes.edu.co.proyecto.modelo.Bodega;
 import uniandes.edu.co.proyecto.modelo.Sucursal;
 
@@ -33,4 +34,34 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
     @Transactional
     @Query( value = "DELETE FROM bodegas WHERE id = :id", nativeQuery = true)
     void borrarBodega(@Param("id") int id);
+
+    @Query(value = "SELECT p.nombre AS producto, pb.cantidadExistente, pb.costoPromedio, nro.nivelMinimo " +
+    "FROM sucursales s " +
+    "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
+    "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
+    "INNER JOIN productos p ON p.id = pb.id_producto " +
+    "LEFT JOIN niveles_reorden nro ON nro.id_producto = p.id AND nro.id_sucursal = s.id " +
+    "WHERE s.id = :id_sucursal AND \n" + //
+    " b.id = :id_bodega\n" + 
+    "GROUP BY \n" + 
+    " p.nombre, pb.cantidad_actual, pb.cantidad_minima;", nativeQuery = true)
+    Collection<Object[]> darProductosConBodega(@Param("id_sucursal") int id_sucursal);
+
+    @Query(value = "SELECT s.* " +
+               "FROM sucursales s " +
+               "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
+               "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
+               "WHERE pb.id_producto = :idProducto", nativeQuery = true)
+    Collection<Object[]> darSucursalesSegunProducto(@Param("idProducto") int idProducto);
+
+    @Query(value = "SELECT s.* " +
+    "FROM sucursales s " +
+    "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
+    "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
+    "INNER JOIN productos p ON p.id = pb.id_producto " +
+    "WHERE p.nombre = :nombreProducto", nativeQuery = true)
+    Collection<Object[]> darSucursalesNombreProducto(@Param("nombreProducto") String nombreProducto);
+
+
+    
 }

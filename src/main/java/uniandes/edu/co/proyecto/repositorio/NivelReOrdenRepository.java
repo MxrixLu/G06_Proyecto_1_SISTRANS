@@ -24,19 +24,17 @@ public interface NivelReOrdenRepository extends JpaRepository<NivelReOrden, Inte
     // Insertar un nuevo nivel de reorden
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO niveles_reorden (id, nivelMaximo, capacidadBodega, id_sucursal, id_producto) VALUES (superandes_sequence.nextval, :nivelMaximo, :capacidadBodega, :id_sucursal, :id_producto)", nativeQuery = true)
-    void insertarNivelReOrden(@Param("nivelMaximo") int nivelMaximo, 
-                              @Param("capacidadBodega") int capacidadBodega, 
+    @Query(value = "INSERT INTO niveles_reorden (id, nivelMinimo, id_sucursal, id_producto) VALUES (superandes_sequence.nextval, :id_sucursal, :id_producto)", nativeQuery = true)
+    void insertarNivelReOrden(@Param("nivelMinimo") int nivelMinimo, 
                               @Param("id_sucursal") Sucursal sucursal, 
                               @Param("id_producto") Producto producto);
 
     // Actualizar un nivel de reorden existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE niveles_reorden SET nivelMaximo = :nivelMaximo, capacidadBodega = :capacidadBodega, id_sucursal = :id_sucursal, id_producto = :id_producto WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE niveles_reorden SET nivelMinimo = :nivelMinimo, id_sucursal = :id_sucursal, id_producto = :id_producto WHERE id = :id", nativeQuery = true)
     void actualizarNivelReOrden(@Param("id") int id, 
-                                @Param("nivelMaximo") int nivelMaximo, 
-                                @Param("capacidadBodega") int capacidadBodega, 
+                                @Param("nivelMinimo") int nivelMinimo, 
                                 @Param("id_sucursal") Sucursal sucursal, 
                                 @Param("id_producto") Producto producto);
 

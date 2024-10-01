@@ -46,7 +46,8 @@ public class ProductoBodegaController {
                 productoBodega.getPk().getId_producto(),
                 productoBodega.getPk().getId_bodega(),
                 productoBodega.getCantidadExistente(),
-                productoBodega.getCostoPromedio()
+                productoBodega.getCostoPromedio(), 
+                productoBodega.getCapacidadBodega()
             );
             return new ResponseEntity<>("ProductoBodega creada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
@@ -65,7 +66,8 @@ public class ProductoBodegaController {
                 id_producto,
                 id_bodega,
                 productoBodega.getCantidadExistente(),
-                productoBodega.getCostoPromedio()
+                productoBodega.getCostoPromedio(), 
+                productoBodega.getCapacidadBodega()
             );
             return new ResponseEntity<>("ProductoBodega actualizada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
