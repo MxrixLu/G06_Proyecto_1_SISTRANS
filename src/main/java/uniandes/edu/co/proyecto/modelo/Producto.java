@@ -3,7 +3,7 @@ package uniandes.edu.co.proyecto.modelo;
 import java.util.Date;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
+ 
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -25,7 +25,6 @@ public class Producto {
     private Date fechaExpiracion; 
 
     @ManyToOne
-    @JoinColumn(name = "id_categoria", nullable = false)
     private Categoria categoria;
 
     public Producto(int id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,

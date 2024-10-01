@@ -6,7 +6,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+ 
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -21,11 +21,9 @@ public class Recepcion {
     private Date fechaRecepcion;
 
     @ManyToOne
-    @JoinColumn(name = "id_proveedor", referencedColumnName = "id")
     private Proveedor id_proveedor;
 
     @ManyToOne
-    @JoinColumn(name = "id_bodega", referencedColumnName = "id")
     private Bodega id_bodega;
 
     public Recepcion(int id, Date fechaRecepcion, Proveedor id_proveedor, Bodega id_bodega) {

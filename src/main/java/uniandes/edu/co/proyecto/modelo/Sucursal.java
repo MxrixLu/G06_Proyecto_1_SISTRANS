@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+ 
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -22,7 +22,6 @@ public class Sucursal {
     private Double tamano; 
 
     @ManyToOne
-    @JoinColumn(name = "id_ciudad", referencedColumnName = "id")
     private Ciudad id_ciudad;
 
     public Sucursal(int id, String nombre, String telefono, String direccion, Double tamano, Ciudad id_ciudad) {

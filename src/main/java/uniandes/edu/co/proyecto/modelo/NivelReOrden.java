@@ -4,7 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
+ 
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -20,11 +20,9 @@ public class NivelReOrden {
     private int capacidadBodega; 
 
     @ManyToOne
-    @JoinColumn(name = "id_sucursal", nullable = false)
     private Sucursal sucursal;
 
     @ManyToOne
-    @JoinColumn(name = "id_producto", nullable = false)
     private Producto producto;
 
     public NivelReOrden(int id, int nivelMaximo, int capacidadBodega, Sucursal sucursal, Producto producto) {
