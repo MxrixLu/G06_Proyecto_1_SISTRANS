@@ -24,7 +24,7 @@ public interface NivelReOrdenRepository extends JpaRepository<NivelReOrden, Inte
     // Insertar un nuevo nivel de reorden
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO niveles_reorden (id, nivelMinimo, id_sucursal, id_producto) VALUES (superandes_sequence.nextval, :id_sucursal, :id_producto)", nativeQuery = true)
+    @Query(value = "INSERT INTO niveles_reorden (id, nivelMinimo, id_sucursal, id_producto) VALUES (superandes_sequence.nextval, :id_sucursal, :id_producto, :nivelMinimo)", nativeQuery = true)
     void insertarNivelReOrden(@Param("nivelMinimo") int nivelMinimo, 
                               @Param("id_sucursal") Sucursal sucursal, 
                               @Param("id_producto") Producto producto);
