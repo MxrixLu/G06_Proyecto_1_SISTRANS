@@ -28,23 +28,23 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
     @Transactional
     @Query(value = "INSERT INTO ordenes_compra (id, fechaEsperadaEntrega, precioAcordado, estado, fechaCreacion, id_sucursal, id_proveedor) VALUES (superandes_sequence.nextval, :fechaEsperadaEntrega, :precioAcordado, :estado, :fechaCreacion, :id_sucursal, :id_proveedor)", nativeQuery = true)
     void insertarOrdenCompra(@Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
-                             @Param("precioAcordado") Double precioAcordado,
-                             @Param("estado") String estado,
-                             @Param("fechaCreacion") Date fechaCreacion,
-                             @Param("id_sucursal") Sucursal sucursal,
-                             @Param("id_proveedor") Proveedor proveedor);
+                            @Param("precioAcordado") Double precioAcordado,
+                            @Param("estado") String estado,
+                            @Param("fechaCreacion") Date fechaCreacion,
+                            @Param("id_sucursal") Sucursal sucursal,
+                            @Param("id_proveedor") Proveedor proveedor);
 
     // Actualizar una orden de compra existente
     @Modifying
     @Transactional
     @Query(value = "UPDATE ordenes_compra SET fechaEsperadaEntrega = :fechaEsperadaEntrega, precioAcordado = :precioAcordado, estado = :estado, fechaCreacion = :fechaCreacion, id_sucursal = :id_sucursal, id_proveedor = :id_proveedor WHERE id = :id", nativeQuery = true)
     void actualizarOrdenCompra(@Param("id") int id,
-                               @Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
-                               @Param("precioAcordado") Double precioAcordado,
-                               @Param("estado") String estado,
-                               @Param("fechaCreacion") Date fechaCreacion,
-                               @Param("id_sucursal") Sucursal sucursal,
-                               @Param("id_proveedor") Proveedor proveedor);
+                            @Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
+                            @Param("precioAcordado") Double precioAcordado,
+                            @Param("estado") String estado,
+                            @Param("fechaCreacion") Date fechaCreacion,
+                            @Param("id_sucursal") Sucursal sucursal,
+                            @Param("id_proveedor") Proveedor proveedor);
 
     // Borrar una orden de compra por su ID
     @Modifying

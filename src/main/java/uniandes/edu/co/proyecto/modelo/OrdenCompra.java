@@ -90,11 +90,11 @@ public class OrdenCompra {
         this.sucursal = sucursal;
     }
 
-    public Proveedor getproveedor() {
+    public Proveedor getProveedor() {
         return proveedor;
     }
 
-    public void setproveedor(Proveedor proveedor) {
+    public void setProveedor(Proveedor proveedor) {
         this.proveedor = proveedor;
     }
 
