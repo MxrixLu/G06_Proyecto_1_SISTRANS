@@ -13,6 +13,16 @@ import uniandes.edu.co.proyecto.modelo.ProductoPK;
 
 public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> {
 
+    public interface RespuestaListarProductosReorden {
+        String getNombre_producto();
+        int getId_producto();
+        String getNombre_bodega();
+        String getNombre_sucursal();
+        int getCantidadExistente();
+        String getNit_proveedor();
+        
+    }
+
     // Obtener todos los productos
     @Query(value = "SELECT * FROM productos", nativeQuery = true)
     Collection<Producto> darProductos();
@@ -82,7 +92,7 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
                "LEFT JOIN proveedores pro ON r.id_proveedor = pro.id " +
                "WHERE pb.cantidadExistente < nro.nivelMinimo " +
                "ORDER BY nombre_producto, nombre_bodega", nativeQuery = true)
-    Collection<Object[]> listarProductosReorden();
+    Collection<RespuestaListarProductosReorden> listarProductosReorden();
 
 }
 

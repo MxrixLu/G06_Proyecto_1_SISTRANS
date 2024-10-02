@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.controller;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +12,9 @@ import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Producto;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository;
+import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaListarProductosReorden;
+import uniandes.edu.co.proyecto.repositorio.SucursalRepository.RespuestaIndiceOcupacion;
+
 
 @RestController
 public class ProductoController {
@@ -23,6 +28,24 @@ public class ProductoController {
         return productoRepository.darProductos();
     }
 
+    @GetMapping("/productos/consulta")
+    public ResponseEntity<?> listarProductosReOrdenConsulta() {
+        try {
+            Collection<RespuestaListarProductosReorden> productos = productoRepository.listarProductosReorden();
+            RespuestaListarProductosReorden info = productos.iterator().next();
+            Map<String, Object> respuesta = new HashMap<>();
+            respuesta.put("procentajeOcupacion", info.getNit_proveedor());
+            respuesta.put("nombreProducto", info.getNombre_producto());
+            respuesta.put("idProducto", info.getId_producto());
+            respuesta.put("nombreBodega", info.getNombre_bodega());
+            respuesta.put("nombreSucursal", info.getNombre_sucursal());
+            respuesta.put("cantidadExistente", info.getCantidadExistente());
+            return ResponseEntity.ok(respuesta);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+    
     // Obtener un producto por su clave primaria compuesta
     @GetMapping("/productos/{id}/{codigoBarras}")
     public ResponseEntity<Producto> darProductoPorId(@PathVariable("id") int id, @PathVariable("codigoBarras") String codigoBarras) {

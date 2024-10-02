@@ -13,6 +13,31 @@ import uniandes.edu.co.proyecto.modelo.Sucursal;
 
 
 public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
+
+    public interface RespuestaDarProductosConBodega {
+        String getProducto();
+        int getCantidadExistente();
+        double getCostoPromedio();
+        int getNivelMinimo();
+    }
+
+    public interface RespuestaDarSucursalesSegunProducto {
+        String getNombre();
+        String getDireccion();
+        String getTelefono();
+        Double getTamano();
+        int getId_ciudad();
+        
+    }
+
+    public interface RespuestaDarSucursalesNombreProducto {
+        String getNombre();
+        String getDireccion();
+        String getTelefono();
+        Double getTamano();
+        int getId_ciudad();
+        
+    }
  
     @Query(value= "SELECT * FROM bodegas", nativeQuery = true)
     Collection<Bodega> darBodegas();
@@ -45,14 +70,14 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
     " b.id = :id_bodega\n" + 
     "GROUP BY \n" + 
     " p.nombre, pb.cantidad_actual, pb.cantidad_minima;", nativeQuery = true)
-    Collection<Object[]> darProductosConBodega(@Param("id_sucursal") int id_sucursal);
+    Collection<RespuestaDarProductosConBodega> darProductosConBodega(@Param("id_sucursal") int id_sucursal);
 
     @Query(value = "SELECT s.* " +
                "FROM sucursales s " +
                "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
                "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
                "WHERE pb.id_producto = :idProducto", nativeQuery = true)
-    Collection<Object[]> darSucursalesSegunProducto(@Param("idProducto") int idProducto);
+    Collection<RespuestaDarSucursalesSegunProducto> darSucursalesSegunProducto(@Param("idProducto") int idProducto);
 
     @Query(value = "SELECT s.* " +
     "FROM sucursales s " +
@@ -60,7 +85,7 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
     "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
     "INNER JOIN productos p ON p.id = pb.id_producto " +
     "WHERE p.nombre = :nombreProducto", nativeQuery = true)
-    Collection<Object[]> darSucursalesNombreProducto(@Param("nombreProducto") String nombreProducto);
+    Collection<RespuestaDarSucursalesNombreProducto> darSucursalesNombreProducto(@Param("nombreProducto") String nombreProducto);
 
 
     
