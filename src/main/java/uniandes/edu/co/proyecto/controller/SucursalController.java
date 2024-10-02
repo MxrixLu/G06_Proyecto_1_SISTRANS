@@ -40,7 +40,6 @@ public class SucursalController {
 
     // Insertar una nueva sucursal
     @PostMapping("/sucursales/new/save")
-    @Transactional
     public ResponseEntity<String> insertarSucursal(@RequestBody Sucursal sucursal) {
         try {
             sucursalRepository.insertarSucursal(
