@@ -12,20 +12,19 @@ import uniandes.edu.co.proyecto.modelo.Recepcion;
 import uniandes.edu.co.proyecto.repositorio.RecepcionRepository;
 
 @RestController
-@RequestMapping("/recepciones")
 public class RecepcionController {
 
     @Autowired
     private RecepcionRepository recepcionRepository;
 
     // Obtener todas las recepciones
-    @GetMapping
+    @GetMapping("/recepciones")
     public Collection<Recepcion> darRecepciones() {
         return recepcionRepository.darRecepciones();
     }
 
     // Obtener una recepción por su ID
-    @GetMapping("/{id}")
+    @GetMapping("/recepciones/{id}")
     public ResponseEntity<Recepcion> darRecepcionPorId(@PathVariable("id") int id) {
         try {
             Recepcion recepcion = recepcionRepository.darRecepcion(id);
@@ -36,7 +35,7 @@ public class RecepcionController {
     }
 
     // Insertar una nueva recepción
-    @PostMapping("/new/save")
+    @PostMapping("/recepciones/new/save")
     @Transactional
     public ResponseEntity<String> insertarRecepcion(@RequestBody Recepcion recepcion) {
         try {
@@ -53,7 +52,7 @@ public class RecepcionController {
     }
 
     // Actualizar una recepción existente
-    @PutMapping("/{id}/edit/save")
+    @PutMapping("/recepciones/{id}/edit/save")
     @Transactional
     public ResponseEntity<String> actualizarRecepcion(@PathVariable("id") int id,
                                                      @RequestBody Recepcion recepcion) {
@@ -71,7 +70,7 @@ public class RecepcionController {
     }
 
     // Borrar una recepción por su ID
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/recepciones/{id}/delete")
     @Transactional
     public ResponseEntity<String> borrarRecepcion(@PathVariable("id") int id) {
         try {

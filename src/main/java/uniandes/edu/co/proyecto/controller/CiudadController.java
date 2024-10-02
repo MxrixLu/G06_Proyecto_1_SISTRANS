@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 
 @RestController
-public class CiudadeController {
+public class CiudadController {
 
     @Autowired
     private CiudadRepository ciudadRepository;
@@ -34,7 +34,7 @@ public class CiudadeController {
                 ciudad.getCodigo(),
                 ciudad.getNombre()
             );
-            return new ResponseEntity<>("Ciudad creada exitosamente", HttpStatus.OK);
+            return new ResponseEntity<>("Ciudad creada exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al crear la ciudad", HttpStatus.INTERNAL_SERVER_ERROR);
         }

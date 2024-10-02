@@ -12,20 +12,19 @@ import uniandes.edu.co.proyecto.modelo.Sucursal;
 import uniandes.edu.co.proyecto.repositorio.SucursalRepository;
 
 @RestController
-@RequestMapping("/sucursales")
 public class SucursalController {
 
     @Autowired
     private SucursalRepository sucursalRepository;
 
     // Obtener todas las sucursales
-    @GetMapping
+    @GetMapping("/sucursales")
     public Collection<Sucursal> darSucursales() {
         return sucursalRepository.darSucursales();
     }
 
     // Obtener una sucursal por su ID
-    @GetMapping("/{id}")
+    @GetMapping("/sucursales/{id}")
     public ResponseEntity<Sucursal> darSucursalPorId(@PathVariable("id") int id) {
         try {
             Sucursal sucursal = sucursalRepository.darSucursal(id);
@@ -36,7 +35,7 @@ public class SucursalController {
     }
 
     // Insertar una nueva sucursal
-    @PostMapping("/new/save")
+    @PostMapping("/sucursales/new/save")
     @Transactional
     public ResponseEntity<String> insertarSucursal(@RequestBody Sucursal sucursal) {
         try {
@@ -55,7 +54,7 @@ public class SucursalController {
     }
 
     // Actualizar una sucursal existente
-    @PutMapping("/{id}/edit/save")
+    @PutMapping("/sucursales/{id}/edit/save")
     @Transactional
     public ResponseEntity<String> actualizarSucursal(@PathVariable("id") int id,
                                                     @RequestBody Sucursal sucursal) {
@@ -75,7 +74,7 @@ public class SucursalController {
     }
 
     // Borrar una sucursal por su ID
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/sucursales/{id}/delete")
     @Transactional
     public ResponseEntity<String> borrarSucursal(@PathVariable("id") int id) {
         try {

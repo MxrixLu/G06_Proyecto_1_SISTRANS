@@ -12,20 +12,19 @@ import uniandes.edu.co.proyecto.modelo.Proveedor;
 import uniandes.edu.co.proyecto.repositorio.ProveedorRepository;
 
 @RestController
-@RequestMapping("/proveedores")
 public class ProveedorController {
 
     @Autowired
     private ProveedorRepository proveedorRepository;
 
     // Obtener todos los proveedores
-    @GetMapping
+    @GetMapping("/proveedores")
     public Collection<Proveedor> darProveedores() {
         return proveedorRepository.darProveedores();
     }
 
     // Obtener un proveedor por su ID
-    @GetMapping("/{id}")
+    @GetMapping("/proveedores/{id}")
     public ResponseEntity<Proveedor> darProveedorPorId(@PathVariable("id") int id) {
         try {
             Proveedor proveedor = proveedorRepository.darProveedor(id);
@@ -36,7 +35,7 @@ public class ProveedorController {
     }
 
     // Insertar un nuevo proveedor
-    @PostMapping("/new/save")
+    @PostMapping("/proveedores/new/save")
     @Transactional
     public ResponseEntity<String> insertarProveedor(@RequestBody Proveedor proveedor) {
         try {
@@ -54,7 +53,7 @@ public class ProveedorController {
     }
 
     // Actualizar un proveedor existente
-    @PutMapping("/{id}/edit/save")
+    @PutMapping("/proveedores/{id}/edit/save")
     @Transactional
     public ResponseEntity<String> actualizarProveedor(@PathVariable("id") int id,
                                                      @RequestBody Proveedor proveedor) {
@@ -73,7 +72,7 @@ public class ProveedorController {
     }
 
     // Borrar un proveedor por su ID
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/proveedores/{id}/delete")
     @Transactional
     public ResponseEntity<String> borrarProveedor(@PathVariable("id") int id) {
         try {

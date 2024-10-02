@@ -12,20 +12,19 @@ import uniandes.edu.co.proyecto.modelo.Venta;
 import uniandes.edu.co.proyecto.repositorio.VentaRepository;
 
 @RestController
-@RequestMapping("/ventas")
 public class VentaController {
 
     @Autowired
     private VentaRepository ventaRepository;
 
     // Obtener todas las ventas
-    @GetMapping
+    @GetMapping("/ventas")
     public Collection<Venta> darVentas() {
         return ventaRepository.darVentas();
     }
 
     // Obtener una venta por su ID
-    @GetMapping("/{id}")
+    @GetMapping("/ventas/{id}")
     public ResponseEntity<Venta> darVentaPorId(@PathVariable("id") int id) {
         try {
             Venta venta = ventaRepository.darVenta(id);
@@ -36,7 +35,7 @@ public class VentaController {
     }
 
     // Insertar una nueva venta
-    @PostMapping("/new/save")
+    @PostMapping("/ventas/new/save")
     @Transactional
     public ResponseEntity<String> insertarVenta(@RequestBody Venta venta) {
         try {
@@ -56,7 +55,7 @@ public class VentaController {
     }
 
     // Actualizar una venta existente
-    @PutMapping("/{id}/edit/save")
+    @PutMapping("/ventas/{id}/edit/save")
     @Transactional
     public ResponseEntity<String> actualizarVenta(@PathVariable("id") int id,
                                                   @RequestBody Venta venta) {
@@ -77,7 +76,7 @@ public class VentaController {
     }
 
     // Borrar una venta por su ID
-    @DeleteMapping("/{id}/delete")
+    @DeleteMapping("/ventas/{id}/delete")
     @Transactional
     public ResponseEntity<String> borrarVenta(@PathVariable("id") int id) {
         try {

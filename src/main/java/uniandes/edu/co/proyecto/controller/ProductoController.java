@@ -12,20 +12,19 @@ import uniandes.edu.co.proyecto.modelo.Producto;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository;
 
 @RestController
-@RequestMapping("/productos")
 public class ProductoController {
 
     @Autowired
     private ProductoRepository productoRepository;
 
     // Obtener todos los productos
-    @GetMapping
+    @GetMapping("/productos")
     public Collection<Producto> darProductos() {
         return productoRepository.darProductos();
     }
 
     // Obtener un producto por su clave primaria compuesta
-    @GetMapping("/{id}/{codigoBarras}")
+    @GetMapping("/productos/{id}/{codigoBarras}")
     public ResponseEntity<Producto> darProductoPorId(@PathVariable("id") int id, @PathVariable("codigoBarras") String codigoBarras) {
         try {
             Producto producto = productoRepository.darProducto(id, codigoBarras);
@@ -36,7 +35,7 @@ public class ProductoController {
     }
 
     // Insertar un nuevo producto
-    @PostMapping("/new/save")
+    @PostMapping("/productos/new/save")
     @Transactional
     public ResponseEntity<String> insertarProducto(@RequestBody Producto producto) {
         try {
@@ -61,7 +60,7 @@ public class ProductoController {
     }
 
     // Actualizar un producto existente
-    @PutMapping("/{id}/{codigoBarras}/edit/save")
+    @PutMapping("/productos/{id}/{codigoBarras}/edit/save")
     @Transactional
     public ResponseEntity<String> actualizarProducto(@PathVariable("id") int id,
                                                      @PathVariable("codigoBarras") String codigoBarras,
@@ -88,7 +87,7 @@ public class ProductoController {
     }
 
     // Borrar un producto por su clave primaria compuesta
-    @DeleteMapping("/{id}/{codigoBarras}/delete")
+    @DeleteMapping("/productos/{id}/{codigoBarras}/delete")
     @Transactional
     public ResponseEntity<String> borrarProducto(@PathVariable("id") int id, @PathVariable("codigoBarras") String codigoBarras) {
         try {
