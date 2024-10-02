@@ -12,18 +12,18 @@ import uniandes.edu.co.proyecto.modelo.Proveedor;
 public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
 
     // Obtener todos los proveedores
-    @Query(value = "SELECT * FROM proovedores", nativeQuery = true)
+    @Query(value = "SELECT * FROM proveedores", nativeQuery = true)
     Collection<Proveedor> darProveedores();
 
     // Obtener un proveedor por su ID
-    @Query(value = "SELECT * FROM proovedores WHERE id = :id", nativeQuery = true)
+    @Query(value = "SELECT * FROM proveedores WHERE id = :id", nativeQuery = true)
     Proveedor darProveedor(@Param("id") int id);
 
     // Insertar un nuevo proveedor
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO proovedores (id, NIT, direccion, nombrePersonaC, telefonoPersonaC) VALUES (:id, :NIT, :direccion, :nombrePersonaC, :telefonoPersonaC)", nativeQuery = true)
-    void insertarProveedor(@Param("id") int id, 
+    @Query(value = "INSERT INTO proveedores (id, NIT, direccion, nombrePersonaC, telefonoPersonaC) VALUES (superandes_sequence.nextval, :NIT, :direccion, :nombrePersonaC, :telefonoPersonaC)", nativeQuery = true)
+    void insertarProveedor(
                            @Param("NIT") String NIT, 
                            @Param("direccion") String direccion, 
                            @Param("nombrePersonaC") String nombrePersonaC, 
@@ -32,7 +32,7 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
     // Actualizar un proveedor existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE proovedores SET NIT = :NIT, direccion = :direccion, nombrePersonaC = :nombrePersonaC, telefonoPersonaC = :telefonoPersonaC WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE proveedores SET NIT = :NIT, direccion = :direccion, nombrePersonaC = :nombrePersonaC, telefonoPersonaC = :telefonoPersonaC WHERE id = :id", nativeQuery = true)
     void actualizarProveedor(@Param("id") int id, 
                              @Param("NIT") String NIT, 
                              @Param("direccion") String direccion, 

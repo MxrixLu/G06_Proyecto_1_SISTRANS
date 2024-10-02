@@ -36,11 +36,9 @@ public class ProveedorController {
 
     // Insertar un nuevo proveedor
     @PostMapping("/proveedores/new/save")
-    @Transactional
     public ResponseEntity<String> insertarProveedor(@RequestBody Proveedor proveedor) {
         try {
             proveedorRepository.insertarProveedor(
-                proveedor.getId(),
                 proveedor.getNIT(),
                 proveedor.getDireccion(),
                 proveedor.getNombrePersonaC(),
@@ -54,7 +52,6 @@ public class ProveedorController {
 
     // Actualizar un proveedor existente
     @PutMapping("/proveedores/{id}/edit/save")
-    @Transactional
     public ResponseEntity<String> actualizarProveedor(@PathVariable("id") int id,
                                                      @RequestBody Proveedor proveedor) {
         try {

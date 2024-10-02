@@ -7,7 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "proovedores")
+@Table(name = "proveedores")
 public class Proveedor {
     
     @Id
@@ -21,7 +21,7 @@ public class Proveedor {
 
     public Proveedor(int id, String nIT, String direccion, String nombrePersonaC, String telefonoPersonaC) {
         this.id = id;
-        NIT = nIT;
+        this.NIT = nIT;
         this.direccion = direccion;
         this.nombrePersonaC = nombrePersonaC;
         this.telefonoPersonaC = telefonoPersonaC;
@@ -43,7 +43,7 @@ public class Proveedor {
     }
 
     public void setNIT(String nIT) {
-        NIT = nIT;
+        this.NIT = nIT;
     }
 
     public String getDireccion() {

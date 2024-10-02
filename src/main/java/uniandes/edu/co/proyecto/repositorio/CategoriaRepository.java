@@ -19,12 +19,12 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value= "INSERT INTO categorias (id, codigo, nombre, descripcion, caracteristicas_almacenamiento) VALUES (superandes_sequence.nextval, :codigo, :nombre, :descripcion, :caracteristicasAlmacenamiento)", nativeQuery = true)
+    @Query(value= "INSERT INTO categorias (id, codigo, nombre, descripcion, caracteristicasAlmacenamiento) VALUES (superandes_sequence.nextval, :codigo, :nombre, :descripcion, :caracteristicasAlmacenamiento)", nativeQuery = true)
     void insertarCategoria(@Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicasAlmacenamiento") String caracteristicasAlmacenamiento);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE categorias SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, caracteristicas_almacenamiento = :caracteristicasAlmacenamiento WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE categorias SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, caracteristicasAlmacenamiento = :caracteristicasAlmacenamiento WHERE id = :id", nativeQuery = true)
     void actualizarCategoria(@Param("id") int id, @Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicasAlmacenamiento") String caracteristicasAlmacenamiento);
 
     @Modifying
