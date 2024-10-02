@@ -3,6 +3,7 @@ package uniandes.edu.co.proyecto.controller;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Producto;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository;
+import uniandes.edu.co.proyecto.repositorio.BodegaRepository.RespuestaDarProductosConBodega;
+import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaDarProductosPorCaracteristica;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaListarProductosReorden;
 import uniandes.edu.co.proyecto.repositorio.SucursalRepository.RespuestaIndiceOcupacion;
 
@@ -40,6 +43,29 @@ public class ProductoController {
             respuesta.put("nombreBodega", info.getNombre_bodega());
             respuesta.put("nombreSucursal", info.getNombre_sucursal());
             respuesta.put("cantidadExistente", info.getCantidadExistente());
+            return ResponseEntity.ok(respuesta);
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }
+
+    @GetMapping("/productos/consultaCaracteristica")
+    public ResponseEntity<?> darProductoPorCaracteristica(@RequestParam(required = false) Double precioMinimo, @RequestParam(required = false) Double precioMaximo, @RequestParam(required = false) Date fechaInicio, @RequestParam(required = false) Date fechaFin, @RequestParam(required = false) int idCategoria) {
+        try {
+            Collection<RespuestaDarProductosPorCaracteristica> productos = productoRepository.darProductosPorCaracteristicas(precioMinimo, precioMaximo, fechaInicio, fechaFin, idCategoria);
+            RespuestaDarProductosPorCaracteristica info = productos.iterator().next();
+            Map<String, Object> respuesta = new HashMap<>();
+            respuesta.put("nombre", info.getNombre());
+            respuesta.put("codigoBarras", info.getCodigoBarras());
+            respuesta.put("costoBodega", info.getCostoBodega());
+            respuesta.put("precioVenta", info.getPrecioVenta());
+            respuesta.put("presentacion", info.getPresentacion());
+            respuesta.put("cantidadPresentacion", info.getCantidadPresentacion());
+            respuesta.put("unidadMedida", info.getUnidadMedida());
+            respuesta.put("volumenEmpaque", info.getVolumenEmpaque());
+            respuesta.put("pesoEmpaque", info.getPesoEmpaque());
+            respuesta.put("fechaExpiracion", info.getFechaExpiracion());
+            respuesta.put("id_categoria", info.getId_categoria());
             return ResponseEntity.ok(respuesta);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

@@ -23,6 +23,22 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
         
     }
 
+    public interface RespuestaDarProductosPorCaracteristica {
+        String getNombre();
+        String getCodigoBarras();
+        Double getCostoBodega();
+        Double getPrecioVenta();
+        String getPresentacion();
+        Double getCantidadPresentacion();
+        Boolean getUnidadMedida();
+        Double getVolumenEmpaque();
+        Double getPesoEmpaque();
+        Date getFechaExpiracion();
+        int getId_categoria();
+    
+        
+    }
+
     // Obtener todos los productos
     @Query(value = "SELECT * FROM productos", nativeQuery = true)
     Collection<Producto> darProductos();
@@ -73,7 +89,7 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
 
 
     @Query(value = "SELECT * FROM productos WHERE precioVenta BETWEEN :precioMinimo AND :precioMaximo AND fechaExpiracion BETWEEN :fechaInicio AND :fechaFin AND id_categoria.id = :idCategoria", nativeQuery = true)
-    Collection<Producto> darProductosPorCaracteristicas(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo, @Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin, @Param("idCategoria") int idCategoria);
+    Collection<RespuestaDarProductosPorCaracteristica> darProductosPorCaracteristicas(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo, @Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin, @Param("idCategoria") int idCategoria);
 
     @Query(value = "SELECT " +
                "p.nombre AS nombre_producto, " +
