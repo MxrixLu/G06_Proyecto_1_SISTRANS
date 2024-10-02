@@ -1,0 +1,475 @@
+{
+	"info": {
+		"_postman_id": "30a65b7a-0518-4898-b52a-39eb7f85ee43",
+		"name": "SuperAndes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "37892327"
+	},
+	"item": [
+		{
+			"name": "Crear una ciudad",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"codigo\": 1,\r\n    \"nombre\": \"Bogota\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/ciudades/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"ciudades",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una sucursal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"nombre\": \"SuperAndesNorte\", \r\n    \"telefono\": \"3153289430\",\r\n    \"direccion\": \"Cl. 174a #45-37, Suba\",\r\n    \"tamano\":200.55\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/sucursales/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"sucursales",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una bodega",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"nombre\": \"SuperAndesBodega1\",\r\n    \"tamano\": 80.0\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/bodegas/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"bodegas",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Borrar una bodega",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proyecto/bodegas/1/delete",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"bodegas",
+						"1",
+						"delete"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un nuevo proveedor",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"NIT\":\"0\", \r\n    \"direccion\":\"nueva direccion\",\r\n    \"nombrePersonaC\":\"nuevo nombre\",\r\n    \"telefonoPersonaC\": \"0\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/proveedores/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"proveedores",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un proveedor existente",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"NIT\":\"1684565\", \r\n    \"direccion\":\"Cl. 174a #65-57, Suba\",\r\n    \"nombrePersonaC\":\"Diego\",\r\n    \"telefonoPersonaC\": \"3223498562\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/proveedores/1/edit/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"proveedores",
+						"1",
+						"edit",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una categoria perecedera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"codigo\":1,\r\n    \"nombre\": \"Perecedero\",\r\n    \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n    \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/categorias/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"categorias",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una categoria no perecedera",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":2,\r\n    \"codigo\":2,\r\n    \"nombre\": \"No perecedero\",\r\n    \"descripcion\": \"No tienen fecha de expiracion como electrodomestico, ropa, mueles, entre otros.\",\r\n    \"caracteristicasAlmacenamiento\": \"En cajas bien selladas y acomodadas con protectores de forma que no se dañe el producto\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/categorias/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"categorias",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leer las categorias",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/proyecto/categorias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"categorias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear un producto",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/productos/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"productos",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Leer producto por id y codigo de barras",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/productos/1/f0f0f0f0f0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"productos",
+						"1",
+						"f0f0f0f0f0"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Actualizar un producto",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/productos/1/f0f0f0f0f0/edit/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"productos",
+						"1",
+						"f0f0f0f0f0",
+						"edit",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una orden de compra para una sucursal",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precioAcordado\": 1500000.00,\r\n    \"estado\": \"vigente\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"id_ciudad\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/ordenCompra/new/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"ordenCompra",
+						"new",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear una orden de compra para una sucursal Copy",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{  \r\n    \"id\":1,\r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precioAcordado\": 1500000.00,\r\n    \"estado\": \"anulada\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"id_ciudad\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/ordenCompra/1/edit/save",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"ordenCompra",
+						"1",
+						"edit",
+						"save"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obtener todas las ordenes de compra",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/proyecto/ordenesCompra",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"proyecto",
+						"ordenesCompra"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
