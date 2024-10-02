@@ -14,6 +14,14 @@ import uniandes.edu.co.proyecto.modelo.Ciudad;
 
 public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
 
+
+    public interface RespuestaIndiceOcupacion {
+        int getBodega_id();
+        String getNombre_bodega();
+        double getVolumen_ocupado();
+        double getPorcentaje_ocupacion();
+    }
+
     // Obtener todas las sucursales
     @Query(value = "SELECT * FROM sucursales", nativeQuery = true)
     Collection<Sucursal> darSucursales();
@@ -60,6 +68,6 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
                "INNER JOIN productos p ON p.id = pb.id_producto " +
                "WHERE p.id IN (:listaDeProductos) " +
                "GROUP BY b.id, b.nombre, b.capacidadBodega", nativeQuery = true)
-    Collection<Object[]> calcularIndiceOcupacion(@Param("listaDeProductos") List<Integer> listaDeProductos);
+    Collection<RespuestaIndiceOcupacion> calcularIndiceOcupacion(@Param("listaDeProductos") List<Integer> listaDeProductos);
 
 }

@@ -11,7 +11,6 @@ import jakarta.persistence.Table;
 @Table(name = "ciudades")
 public class Ciudad {
     
-    
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;

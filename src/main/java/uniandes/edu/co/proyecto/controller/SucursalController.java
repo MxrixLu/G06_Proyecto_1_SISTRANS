@@ -1,6 +1,9 @@
 package uniandes.edu.co.proyecto.controller;
 
 import java.util.Collection;
+import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -10,6 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Sucursal;
 import uniandes.edu.co.proyecto.repositorio.SucursalRepository;
+import uniandes.edu.co.proyecto.repositorio.SucursalRepository.RespuestaIndiceOcupacion;
 
 @RestController
 public class SucursalController {
@@ -84,4 +88,18 @@ public class SucursalController {
             return new ResponseEntity<>("Error al eliminar la sucursal", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @GetMapping("/sucursales/consulta")
+    public ResponseEntity<?> indiceOcupacionConsulta(@RequestParam(required = false) List<Integer> listaDeProductos) {
+        try {
+            Collection<RespuestaIndiceOcupacion>  informacion = sucursalRepository.calcularIndiceOcupacion(listaDeProductos);
+            RespuestaIndiceOcupacion info = informacion.iterator().next();
+            Map<String, Object> respuesta = new HashMap<>();
+            respuesta.put("procentajeOcupacion", info.getPorcentaje_ocupacion());
+            return ResponseEntity.ok(respuesta);
+
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
+    }   
 }

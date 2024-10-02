@@ -7,19 +7,19 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
-@Entity
-@Table(name = "clientes")
-public class Cliente {
-    
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+    @Entity
+    @Table(name = "clientes")
+    public class Cliente {
+        
+        @Id
+        @GeneratedValue(strategy = GenerationType.AUTO)
+        private int id;
 
-    @Column(nullable = false)
-    private int cedula;
-    
-    @Column(nullable = false)
-    private String nombre;
+        @Column(nullable = false)
+        private int cedula;
+        
+        @Column(nullable = false)
+        private String nombre;
     
     public Cliente(int id, int cedula, String nombre) {
         this.id = id;
