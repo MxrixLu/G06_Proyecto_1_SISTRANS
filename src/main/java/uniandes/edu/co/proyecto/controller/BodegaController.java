@@ -91,14 +91,14 @@ public class BodegaController {
     public ResponseEntity<String> guardarBodega(@RequestBody Bodega bodega) {
         try{
             bodegaRepository.insertarBodega(bodega.getNombre(), bodega.getTamano(), bodega.getSucursal());
-            return new  ResponseEntity<> ("Bodega creada exitosamente", HttpStatus.OK);
+            return new  ResponseEntity<> ("Bodega creada exitosamente", HttpStatus.CREATED);
         }catch(Exception e){
             return new ResponseEntity<>("Error al crear la bodega", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 
     @PostMapping("/bodegas/{id}/edit/save")
-    public ResponseEntity<String> bodegaEditarGuardar(@PathVariable("id") Integer id, @RequestBody Bodega bodega) {
+    public ResponseEntity<String> bodegaEditarGuardar(@PathVariable("id") int id, @RequestBody Bodega bodega) {
         try{
             bodegaRepository.actualizarBodega(id, bodega.getNombre(), bodega.getTamano(), bodega.getSucursal());
             return new ResponseEntity<>("La bodega se actualizo exitosamente", HttpStatus.OK);
@@ -108,7 +108,7 @@ public class BodegaController {
     }
 
     @DeleteMapping("/bodegas/{id}/delete")
-    public ResponseEntity<String> borrarBodegas(@PathVariable("id") Integer id) {
+    public ResponseEntity<String> borrarBodegas(@PathVariable("id") int id) {
         try {    
             bodegaRepository.borrarBodega(id);
             return new ResponseEntity<>("La bodega se elimino exitosamente", HttpStatus.OK);

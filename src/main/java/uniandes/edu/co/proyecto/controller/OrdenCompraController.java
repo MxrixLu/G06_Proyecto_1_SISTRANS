@@ -36,19 +36,20 @@ public class OrdenCompraController {
     // Insertar una nueva orden de compra
     @PostMapping("/ordenCompra/new/save")
     public ResponseEntity<String> insertarOrdenCompra(@RequestBody OrdenCompra ordenCompra) {
-        try {
+        // try {
+        
             ordenCompraRepository.insertarOrdenCompra(
                 ordenCompra.getFechaEsperadaEntrega(),
                 ordenCompra.getPrecioAcordado(),
                 ordenCompra.getEstado(),
                 ordenCompra.getFechaCreacion(),
                 ordenCompra.getSucursal(),
-                ordenCompra.getProveedor()
+                ordenCompra.getProveedor().getId()
             );
-            return new ResponseEntity<>("Orden de compra creada exitosamente", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error al crear la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+            return new ResponseEntity<>("Orden de compra creada exitosamente", HttpStatus.CREATED);
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>("Error al crear la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
     }
 
     // Actualizar una orden de compra existente

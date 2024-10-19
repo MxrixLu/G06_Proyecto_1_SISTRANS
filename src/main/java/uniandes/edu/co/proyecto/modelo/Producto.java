@@ -19,7 +19,7 @@ public class Producto {
     private Double precioVenta; 
     private String presentacion; 
     private Double cantidadPresentacion; 
-    private Boolean unidadMedida;
+    private int unidadMedida;
     private Double volumenEmpaque; 
     private Double pesoEmpaque; 
     private Date fechaExpiracion; 
@@ -28,7 +28,7 @@ public class Producto {
     private Categoria categoria;
 
     public Producto(int id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,
-            Double cantidadPresentacion, Boolean unidadMedida, Double volumenEmpaque, Double pesoEmpaque,
+            Double cantidadPresentacion, int unidadMedida, Double volumenEmpaque, Double pesoEmpaque,
             Date fechaExpiracion, Categoria categoria) {
         this.pk = new ProductoPK(id, codigoBarras);
         this.nombre = nombre;
@@ -94,11 +94,11 @@ public class Producto {
         this.cantidadPresentacion = cantidadPresentacion;
     }
 
-    public Boolean getUnidadMedida() {
+    public int getUnidadMedida() {
         return unidadMedida;
     }
 
-    public void setUnidadMedida(Boolean unidadMedida) {
+    public void setUnidadMedida(int unidadMedida) {
         this.unidadMedida = unidadMedida;
     }
 

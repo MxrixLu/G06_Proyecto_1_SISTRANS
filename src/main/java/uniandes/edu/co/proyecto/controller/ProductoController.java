@@ -12,11 +12,10 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Producto;
+import uniandes.edu.co.proyecto.modelo.ProductoPK;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository;
-import uniandes.edu.co.proyecto.repositorio.BodegaRepository.RespuestaDarProductosConBodega;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaDarProductosPorCaracteristica;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaListarProductosReorden;
-import uniandes.edu.co.proyecto.repositorio.SucursalRepository.RespuestaIndiceOcupacion;
 
 
 @RestController
@@ -87,10 +86,12 @@ public class ProductoController {
     @PostMapping("/productos/new/save")
     @Transactional
     public ResponseEntity<String> insertarProducto(@RequestBody Producto producto) {
-        try {
+        // try {
+            System.err.println("Empieza insertar productos");
+            ProductoPK pk = producto.getPk();
+            String codigoBarras = pk.getCodigoBarras();
             productoRepository.insertarProducto(
-                producto.getPk().getId(),
-                producto.getPk().getCodigoBarras(),
+                codigoBarras,
                 producto.getNombre(),
                 producto.getCostoBodega(),
                 producto.getPrecioVenta(),
@@ -100,12 +101,12 @@ public class ProductoController {
                 producto.getVolumenEmpaque(),
                 producto.getPesoEmpaque(),
                 producto.getFechaExpiracion(),
-                producto.getCategoria().getId() 
+                producto.getCategoria()
             );
             return new ResponseEntity<>("Producto creado exitosamente", HttpStatus.CREATED);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error al crear el producto", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>("Error al crear el producto", HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
     }
 
     // Actualizar un producto existente

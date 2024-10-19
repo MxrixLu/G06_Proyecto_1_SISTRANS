@@ -43,7 +43,6 @@ public class SucursalController {
     public ResponseEntity<String> insertarSucursal(@RequestBody Sucursal sucursal) {
         try {
             sucursalRepository.insertarSucursal(
-                sucursal.getId(),
                 sucursal.getNombre(),
                 sucursal.getTelefono(),
                 sucursal.getDireccion(),

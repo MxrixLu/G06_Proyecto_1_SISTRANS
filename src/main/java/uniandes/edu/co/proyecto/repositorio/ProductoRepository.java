@@ -8,6 +8,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
+import uniandes.edu.co.proyecto.modelo.Categoria;
 import uniandes.edu.co.proyecto.modelo.Producto;
 import uniandes.edu.co.proyecto.modelo.ProductoPK;
 
@@ -50,19 +51,19 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
     // Insertar un nuevo producto
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO productos (id, codigoBarras, nombre, costoBodega, precioVenta, presentacion, cantidadPresentacion, unidadMedida, volumenEmpaque, pesoEmpaque, fechaExpiracion, id_categoria) VALUES (:id, :codigoBarras, :nombre, :costoBodega, :precioVenta, :presentacion, :cantidadPresentacion, :unidadMedida, :volumenEmpaque, :pesoEmpaque, :fechaExpiracion, :id_categoria)", nativeQuery = true)
-    void insertarProducto(@Param("id") int id,
+    @Query(value = "INSERT INTO productos (id, codigoBarras, nombre, costoBodega, precioVenta, presentacion, cantidadPresentacion, unidadMedida, volumenEmpaque, pesoEmpaque, fechaExpiracion, id_categoria) VALUES (superandes_sequence.nextval, :codigoBarras, :nombre, :costoBodega, :precioVenta, :presentacion, :cantidadPresentacion, :unidadMedida, :volumenEmpaque, :pesoEmpaque, TO_DATE(:fechaExpiracion,  'YYYY-MM-DD'), :id_categoria)", nativeQuery = true)
+    void insertarProducto(
                           @Param("codigoBarras") String codigoBarras,
                           @Param("nombre") String nombre,
                           @Param("costoBodega") Double costoBodega,
                           @Param("precioVenta") Double precioVenta,
                           @Param("presentacion") String presentacion,
                           @Param("cantidadPresentacion") Double cantidadPresentacion,
-                          @Param("unidadMedida") Boolean unidadMedida,
+                          @Param("unidadMedida") int unidadMedida,
                           @Param("volumenEmpaque") Double volumenEmpaque,
                           @Param("pesoEmpaque") Double pesoEmpaque,
                           @Param("fechaExpiracion") Date fechaExpiracion,
-                          @Param("id_categoria") int idCategoria);
+                          @Param("id_categoria") Categoria id_categoria);
 
     // Actualizar un producto existente
     @Modifying
@@ -75,7 +76,7 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
                             @Param("precioVenta") Double precioVenta,
                             @Param("presentacion") String presentacion,
                             @Param("cantidadPresentacion") Double cantidadPresentacion,
-                            @Param("unidadMedida") Boolean unidadMedida,
+                            @Param("unidadMedida") int unidadMedida,
                             @Param("volumenEmpaque") Double volumenEmpaque,
                             @Param("pesoEmpaque") Double pesoEmpaque,
                             @Param("fechaExpiracion") Date fechaExpiracion,

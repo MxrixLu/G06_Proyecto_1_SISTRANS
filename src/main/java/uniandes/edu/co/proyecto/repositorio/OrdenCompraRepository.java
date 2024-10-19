@@ -26,13 +26,13 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
     // Insertar una nueva orden de compra
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO ordenes_compra (id, fechaEsperadaEntrega, precioAcordado, estado, fechaCreacion, id_sucursal, id_proveedor) VALUES (superandes_sequence.nextval, :fechaEsperadaEntrega, :precioAcordado, :estado, :fechaCreacion, :id_sucursal, :id_proveedor)", nativeQuery = true)
+    @Query(value = "INSERT INTO ordenes_compra (id, fechaEsperadaEntrega, precioAcordado, estado, fechaCreacion, id_sucursal, id_proveedor) VALUES (superandes_sequence.nextval, TO_DATE(:fechaEsperadaEntrega, 'YYYY-MM-DD'), :precioAcordado, :estado, TO_DATE(:fechaCreacion, 'YYYY-MM-DD'), :id_sucursal, :id_proveedor)", nativeQuery = true)
     void insertarOrdenCompra(@Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
                             @Param("precioAcordado") Double precioAcordado,
                             @Param("estado") String estado,
                             @Param("fechaCreacion") Date fechaCreacion,
                             @Param("id_sucursal") Sucursal sucursal,
-                            @Param("id_proveedor") Proveedor proveedor);
+                            @Param("id_proveedor") int proveedor);
 
     // Actualizar una orden de compra existente
     @Modifying
