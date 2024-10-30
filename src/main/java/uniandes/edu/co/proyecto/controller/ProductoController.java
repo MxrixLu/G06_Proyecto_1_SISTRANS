@@ -90,6 +90,7 @@ public class ProductoController {
             System.err.println("Empieza insertar productos");
             ProductoPK pk = producto.getPk();
             String codigoBarras = pk.getCodigoBarras();
+            System.err.println(codigoBarras + "Este es el codigo de barras creado");
             productoRepository.insertarProducto(
                 codigoBarras,
                 producto.getNombre(),
@@ -101,7 +102,7 @@ public class ProductoController {
                 producto.getVolumenEmpaque(),
                 producto.getPesoEmpaque(),
                 producto.getFechaExpiracion(),
-                producto.getCategoria()
+                producto.getCategoria().getId()
             );
             return new ResponseEntity<>("Producto creado exitosamente", HttpStatus.CREATED);
         // } catch (Exception e) {

@@ -27,8 +27,13 @@ public class CategoriaController {
         return categoriaRepository.darCategorias();
     }
 
+    @GetMapping("/categorias/{id}")
+    public Categoria darCategoria(@PathVariable("id") int id) {
+        return categoriaRepository.darCategoria(id);
+    }
+
     @PostMapping("/categorias/new/save")
-    public ResponseEntity<String> guardarCategoria(@RequestBody Categoria categoria) {
+    public ResponseEntity<String> insertarCategoria(@RequestBody Categoria categoria) {
         try {
             categoriaRepository.insertarCategoria(
                 categoria.getCodigo(),

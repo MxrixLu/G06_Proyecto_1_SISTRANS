@@ -22,14 +22,14 @@ public class Producto {
     private int unidadMedida;
     private Double volumenEmpaque; 
     private Double pesoEmpaque; 
-    private Date fechaExpiracion; 
+    private String fechaExpiracion; 
 
     @ManyToOne
     private Categoria categoria;
 
     public Producto(int id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,
             Double cantidadPresentacion, int unidadMedida, Double volumenEmpaque, Double pesoEmpaque,
-            Date fechaExpiracion, Categoria categoria) {
+            String fechaExpiracion, Categoria categoria) {
         this.pk = new ProductoPK(id, codigoBarras);
         this.nombre = nombre;
         this.costoBodega = costoBodega;
@@ -118,11 +118,11 @@ public class Producto {
         this.pesoEmpaque = pesoEmpaque;
     }
 
-    public Date getFechaExpiracion() {
+    public String getFechaExpiracion() {
         return fechaExpiracion;
     }
 
-    public void setFechaExpiracion(Date fechaExpiracion) {
+    public void setFechaExpiracion(String fechaExpiracion) {
         this.fechaExpiracion = fechaExpiracion;
     }
 

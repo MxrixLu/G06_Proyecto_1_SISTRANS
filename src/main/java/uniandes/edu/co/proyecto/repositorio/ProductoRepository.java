@@ -51,7 +51,7 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
     // Insertar un nuevo producto
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO productos (id, codigoBarras, nombre, costoBodega, precioVenta, presentacion, cantidadPresentacion, unidadMedida, volumenEmpaque, pesoEmpaque, fechaExpiracion, id_categoria) VALUES (superandes_sequence.nextval, :codigoBarras, :nombre, :costoBodega, :precioVenta, :presentacion, :cantidadPresentacion, :unidadMedida, :volumenEmpaque, :pesoEmpaque, TO_DATE(:fechaExpiracion,  'YYYY-MM-DD'), :id_categoria)", nativeQuery = true)
+    @Query(value = "INSERT INTO productos VALUES (superandes_sequence.nextval, :codigoBarras, :nombre, :costoBodega, :precioVenta, :presentacion, :cantidadPresentacion, :unidadMedida, :volumenEmpaque, :pesoEmpaque, TO_DATE(:fechaExpiracion,  'YYYY-MM-DD'), :id_categoria)", nativeQuery = true)
     void insertarProducto(
                           @Param("codigoBarras") String codigoBarras,
                           @Param("nombre") String nombre,
@@ -62,8 +62,8 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
                           @Param("unidadMedida") int unidadMedida,
                           @Param("volumenEmpaque") Double volumenEmpaque,
                           @Param("pesoEmpaque") Double pesoEmpaque,
-                          @Param("fechaExpiracion") Date fechaExpiracion,
-                          @Param("id_categoria") Categoria id_categoria);
+                          @Param("fechaExpiracion") String fechaExpiracion,
+                          @Param("id_categoria") int id_categoria);
 
     // Actualizar un producto existente
     @Modifying
@@ -79,7 +79,7 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
                             @Param("unidadMedida") int unidadMedida,
                             @Param("volumenEmpaque") Double volumenEmpaque,
                             @Param("pesoEmpaque") Double pesoEmpaque,
-                            @Param("fechaExpiracion") Date fechaExpiracion,
+                            @Param("fechaExpiracion") String fechaExpiracion,
                             @Param("id_categoria") int idCategoria);
 
     // Borrar un producto por su clave primaria compuesta

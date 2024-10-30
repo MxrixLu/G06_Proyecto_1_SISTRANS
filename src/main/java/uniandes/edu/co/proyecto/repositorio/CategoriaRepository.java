@@ -11,7 +11,7 @@ import uniandes.edu.co.proyecto.modelo.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 
-    @Query(value= "SELECT * FROM categorias", nativeQuery = true)
+    @Query(value= "SELECT id, codigo, nombre, descripcion, caracteristicasAlmacenamiento FROM categorias", nativeQuery = true)
     Collection<Categoria> darCategorias();
 
     @Query(value= "SELECT * FROM categorias WHERE id = :id", nativeQuery = true)
