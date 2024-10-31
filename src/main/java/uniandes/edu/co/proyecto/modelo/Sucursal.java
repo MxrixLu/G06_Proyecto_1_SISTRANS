@@ -22,15 +22,15 @@ public class Sucursal {
     private Double tamano; 
 
     @ManyToOne
-    private Ciudad ciudad_id;
+    private Ciudad ciudad;
 
-    public Sucursal(int id, String nombre, String telefono, String direccion, Double tamano, Ciudad ciudad_id) {
+    public Sucursal(int id, String nombre, String telefono, String direccion, Double tamano, Ciudad ciudad) {
         this.id = id;
         this.nombre = nombre;
         this.telefono = telefono;
         this.direccion = direccion;
         this.tamano = tamano;
-        this.ciudad_id = ciudad_id;
+        this.ciudad = ciudad;
     }
 
     public Sucursal() {;}
@@ -75,12 +75,12 @@ public class Sucursal {
         this.tamano = tamano;
     }
 
-    public Ciudad getId_ciudad() {
-        return ciudad_id;
+    public Ciudad getCiudad() {
+        return ciudad;
     }
 
-    public void setId_ciudad(Ciudad ciudad_id) {
-        this.ciudad_id = ciudad_id;
+    public void setCiudad(Ciudad ciudad_id) {
+        this.ciudad = ciudad_id;
     }
 
     

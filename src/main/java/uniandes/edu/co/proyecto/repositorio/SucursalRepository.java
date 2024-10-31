@@ -38,7 +38,7 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
                           @Param("telefono") String telefono, 
                           @Param("direccion") String direccion, 
                           @Param("tamano") Double tamano, 
-                          @Param("ciudad_id") Ciudad ciudad_id);
+                          @Param("ciudad_id") int ciudad_id);
 
     // Actualizar una sucursal existente
     @Modifying
@@ -49,7 +49,7 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
                             @Param("telefono") String telefono, 
                             @Param("direccion") String direccion, 
                             @Param("tamano") Double tamano, 
-                            @Param("ciudad_id") Ciudad ciudad_id);
+                            @Param("ciudad_id") int ciudad_id);
 
     // Borrar una sucursal por su ID
     @Modifying

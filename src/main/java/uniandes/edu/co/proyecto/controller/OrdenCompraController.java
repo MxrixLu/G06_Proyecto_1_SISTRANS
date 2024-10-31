@@ -55,20 +55,20 @@ public class OrdenCompraController {
     // Actualizar una orden de compra existente
     @PutMapping("/ordenCompra/{id}/edit/save")
     public ResponseEntity<String> actualizarOrdenCompra(@PathVariable("id") int id, @RequestBody OrdenCompra ordenCompra) {
-        try {
+        // try {
             ordenCompraRepository.actualizarOrdenCompra(
                 id,
                 ordenCompra.getFechaEsperadaEntrega(),
                 ordenCompra.getPrecioAcordado(),
                 ordenCompra.getEstado(),
                 ordenCompra.getFechaCreacion(),
-                ordenCompra.getSucursal(),
-                ordenCompra.getProveedor()
+                ordenCompra.getSucursal().getId(),
+                ordenCompra.getProveedor().getId()
             );
             return new ResponseEntity<>("Orden de compra actualizada exitosamente", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error al actualizar la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>("Error al actualizar la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
     }
 
     // Borrar una orden de compra por su ID

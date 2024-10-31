@@ -47,7 +47,7 @@ public class SucursalController {
                 sucursal.getTelefono(),
                 sucursal.getDireccion(),
                 sucursal.getTamano(),
-                sucursal.getId_ciudad()
+                sucursal.getCiudad().getId()
             );
             return new ResponseEntity<>("Sucursal creada exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {
@@ -67,7 +67,7 @@ public class SucursalController {
                 sucursal.getTelefono(),
                 sucursal.getDireccion(),
                 sucursal.getTamano(),
-                sucursal.getId_ciudad()
+                sucursal.getCiudad().getId()
             );
             return new ResponseEntity<>("Sucursal actualizada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
