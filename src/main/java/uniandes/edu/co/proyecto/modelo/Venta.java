@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date; 
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,9 +17,9 @@ public class Venta {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Date fecha; 
+    private String fecha; 
     private int cantidad; 
-    private int precioUnitario;
+    private int precio_unitario;
     private int cedula; 
 
     @ManyToOne
@@ -29,12 +28,12 @@ public class Venta {
     @ManyToOne
     private Producto producto;
 
-    public Venta(int id, Date fecha, int cantidad, int precioUnitario, int cedula, Cliente cliente,
+    public Venta(int id, String fecha, int cantidad, int precio_unitario, int cedula, Cliente cliente,
             Producto producto) {
         this.id = id;
         this.fecha = fecha;
         this.cantidad = cantidad;
-        this.precioUnitario = precioUnitario;
+        this.precio_unitario = precio_unitario;
         this.cedula = cedula;
         this.cliente = cliente;
         this.producto = producto;
@@ -51,11 +50,11 @@ public class Venta {
         this.id = id;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
@@ -68,11 +67,11 @@ public class Venta {
     }
 
     public int getPrecioUnitario() {
-        return precioUnitario;
+        return precio_unitario;
     }
 
-    public void setPrecioUnitario(int precioUnitario) {
-        this.precioUnitario = precioUnitario;
+    public void setPrecioUnitario(int precio_unitario) {
+        this.precio_unitario = precio_unitario;
     }
 
     public int getCedula() {

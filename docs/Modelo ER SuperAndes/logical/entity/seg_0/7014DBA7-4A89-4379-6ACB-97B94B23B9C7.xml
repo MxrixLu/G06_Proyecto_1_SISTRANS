@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="cantidadExistente" id="0D8B6A63-32DD-5FDC-4E6F-06954A5F6C8A">
+<Attribute name="cantidad_existente" id="0D8B6A63-32DD-5FDC-4E6F-06954A5F6C8A">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:06:38 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="costoPromedio" id="6C5D243B-C734-5F04-5A74-5CB9CF4E3B02">
+<Attribute name="costo_promedio" id="6C5D243B-C734-5F04-5A74-5CB9CF4E3B02">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:06:53 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -68,7 +68,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigoBarras" id="6543A8F0-B212-EF59-AE9A-8AB784D1DA9D">
+<Attribute name="codigo_barras" id="6543A8F0-B212-EF59-AE9A-8AB784D1DA9D">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 21:24:42 UTC</createdTime>
 <generatorID>498076A0-0ED4-6B5D-6D6D-46411A7A05ED</generatorID>

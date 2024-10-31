@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fechaRecepcion" id="6FA6362B-F3B0-F3BF-D2DC-5707D2579CDF">
+<Attribute name="fecha_recepcion" id="6FA6362B-F3B0-F3BF-D2DC-5707D2579CDF">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:09:02 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

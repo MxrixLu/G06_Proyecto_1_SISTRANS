@@ -29,11 +29,11 @@ public class InfoRecepcionController {
         return infoRecepcionRepository.darInfoRecepcion();
     }
 
-    @GetMapping("/infoRecepcion/{idRecepcion}/{idProducto}")
-    public ResponseEntity<InfoRecepcion> obtenerInfoRecepcionPorId(@PathVariable("idRecepcion") int idRecepcion,
-                                                                   @PathVariable("idProducto") int idProducto) {
+    @GetMapping("/infoRecepcion/{recepcion_id}/{producto_id}")
+    public ResponseEntity<InfoRecepcion> obtenerInfoRecepcionPorId(@PathVariable("recepcion_id") int recepcion_id,
+                                                                   @PathVariable("producto_id") int producto_id) {
         try {
-            InfoRecepcion infoRecepcion = infoRecepcionRepository.darInfoRecepcionPorId(idRecepcion, idProducto);
+            InfoRecepcion infoRecepcion = infoRecepcionRepository.darInfoRecepcionPorId(recepcion_id, producto_id);
             return new ResponseEntity<>(infoRecepcion, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
@@ -55,14 +55,14 @@ public class InfoRecepcionController {
         }
     }
 
-    @PutMapping("/infoRecepcion/{idRecepcion}/{idProducto}/edit/save")
-    public ResponseEntity<String> actualizarInfoRecepcion(@PathVariable("idRecepcion") Recepcion idRecepcion,
-                                                          @PathVariable("idProducto") Producto idProducto,
+    @PutMapping("/infoRecepcion/{recepcion_id}/{producto_id}/edit/save")
+    public ResponseEntity<String> actualizarInfoRecepcion(@PathVariable("recepcion_id") Recepcion recepcion_id,
+                                                          @PathVariable("producto_id") Producto producto_id,
                                                           @RequestBody InfoRecepcion infoRecepcion) {
         try {
             infoRecepcionRepository.actualizarInfoRecepcion(
-                idRecepcion,
-                idProducto,
+                recepcion_id,
+                producto_id,
                 infoRecepcion.getCantidadRecibida(),
                 infoRecepcion.getCostoRecibido()
             );
@@ -72,11 +72,11 @@ public class InfoRecepcionController {
         }
     }
 
-    @DeleteMapping("/infoRecepcion/{idRecepcion}/{idProducto}/delete")
-    public ResponseEntity<String> borrarInfoRecepcion(@PathVariable("idRecepcion") Recepcion idRecepcion,
-                                                      @PathVariable("idProducto") Producto idProducto) {
+    @DeleteMapping("/infoRecepcion/{recepcion_id}/{producto_id}/delete")
+    public ResponseEntity<String> borrarInfoRecepcion(@PathVariable("recepcion_id") Recepcion recepcion_id,
+                                                      @PathVariable("producto_id") Producto producto_id) {
         try {
-            infoRecepcionRepository.borrarInfoRecepcion(idRecepcion, idProducto);
+            infoRecepcionRepository.borrarInfoRecepcion(recepcion_id, producto_id);
             return new ResponseEntity<>("Info de Recepción eliminada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al eliminar la info de recepción", HttpStatus.INTERNAL_SERVER_ERROR);

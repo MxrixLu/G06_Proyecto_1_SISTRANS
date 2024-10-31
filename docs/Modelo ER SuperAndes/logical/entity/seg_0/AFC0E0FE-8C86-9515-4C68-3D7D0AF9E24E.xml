@@ -64,7 +64,7 @@
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="caracteristicasAlmacenamiento" id="DE5907D8-424E-9599-DC4C-16A1AC5F0CDA">
+<Attribute name="caracteristicas_almacenamiento" id="DE5907D8-424E-9599-DC4C-16A1AC5F0CDA">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:01:23 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

@@ -43,7 +43,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cantidadRecibida" id="CD0B1939-62F2-7B38-7B00-F087E0455F28">
+<Attribute name="cantidad_recibida" id="CD0B1939-62F2-7B38-7B00-F087E0455F28">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:02:23 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -55,7 +55,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="costoRecibido" id="4856D710-E7C8-05DB-8136-D4271B4466BD">
+<Attribute name="costo_recibido" id="4856D710-E7C8-05DB-8136-D4271B4466BD">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:05:05 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -67,7 +67,7 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigoBarras" id="85B71BCE-29B3-03C8-9FA9-C1BB0DF44A99">
+<Attribute name="codigo_barras" id="85B71BCE-29B3-03C8-9FA9-C1BB0DF44A99">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 21:24:42 UTC</createdTime>
 <generatorID>2F74373B-773C-BB98-148A-564E7F565FAE</generatorID>

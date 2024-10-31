@@ -47,43 +47,43 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value= "INSERT INTO bodegas (id, nombre, tamano, id_sucursal) VALUES (superandes_sequence.nextval , :nombre, :tamano, :id_sucursal)", nativeQuery = true)
-    void insertarBodega(@Param("nombre")  String nombre, @Param("tamano")  Double tamano, @Param("id_sucursal")  Sucursal sucursal);
+    @Query(value= "INSERT INTO bodegas (id, nombre, tamano, sucursal_id) VALUES (superandes_sequence.nextval , :nombre, :tamano, :sucursal_id)", nativeQuery = true)
+    void insertarBodega(@Param("nombre")  String nombre, @Param("tamano")  Double tamano, @Param("sucursal_id")  Sucursal sucursal);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE bodegas SET nombre = :nombre, tamano = :tamano, id_sucursal = :id_sucursal WHERE id = :id ", nativeQuery = true)
-    void actualizarBodega(@Param("id") int id, @Param("nombre") String nombre, @Param("tamano")  Double tamano, @Param("id_sucursal")  Sucursal sucursal );
+    @Query(value = "UPDATE bodegas SET nombre = :nombre, tamano = :tamano, sucursal_id = :sucursal_id WHERE id = :id ", nativeQuery = true)
+    void actualizarBodega(@Param("id") int id, @Param("nombre") String nombre, @Param("tamano")  Double tamano, @Param("sucursal_id")  Sucursal sucursal );
 
     @Modifying
     @Transactional
     @Query( value = "DELETE FROM bodegas WHERE id = :id", nativeQuery = true)
     void borrarBodega(@Param("id") int id);
 
-    @Query(value = "SELECT p.nombre AS producto, pb.cantidadExistente, pb.costoPromedio, nro.nivelMinimo " +
+    @Query(value = "SELECT p.nombre AS producto, pb.cantidad_existente, pb.costo_promedio, nro.nivel_minimo " +
     "FROM sucursales s " +
-    "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
-    "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
-    "INNER JOIN productos p ON p.id = pb.id_producto " +
-    "LEFT JOIN niveles_reorden nro ON nro.id_producto = p.id AND nro.id_sucursal = s.id " +
-    "WHERE s.id = :id_sucursal AND \n" + //
-    " b.id = :id_bodega\n" + 
+    "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
+    "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
+    "INNER JOIN productos p ON p.id = pb.producto_id " +
+    "LEFT JOIN niveles_reorden nro ON nro.producto_id = p.id AND nro.sucursal_id = s.id " +
+    "WHERE s.id = :sucursal_id AND \n" + //
+    " b.id = :bodega_id\n" + 
     "GROUP BY \n" + 
     " p.nombre, pb.cantidad_actual, pb.cantidad_minima;", nativeQuery = true)
-    Collection<RespuestaDarProductosConBodega> darProductosConBodega(@Param("id_sucursal") int id_sucursal);
+    Collection<RespuestaDarProductosConBodega> darProductosConBodega(@Param("sucursal_id") int sucursal_id);
 
     @Query(value = "SELECT s.* " +
                "FROM sucursales s " +
-               "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
-               "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
-               "WHERE pb.id_producto = :idProducto", nativeQuery = true)
-    Collection<RespuestaDarSucursalesSegunProducto> darSucursalesSegunProducto(@Param("idProducto") int idProducto);
+               "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
+               "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
+               "WHERE pb.producto_id = :producto_id", nativeQuery = true)
+    Collection<RespuestaDarSucursalesSegunProducto> darSucursalesSegunProducto(@Param("producto_id") int producto_id);
 
     @Query(value = "SELECT s.* " +
     "FROM sucursales s " +
-    "INNER JOIN bodegas b ON b.id_sucursal = s.id " +
-    "INNER JOIN productos_bodega pb ON pb.id_bodega = b.id " +
-    "INNER JOIN productos p ON p.id = pb.id_producto " +
+    "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
+    "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
+    "INNER JOIN productos p ON p.id = pb.producto_id " +
     "WHERE p.nombre = :nombreProducto", nativeQuery = true)
     Collection<RespuestaDarSucursalesNombreProducto> darSucursalesNombreProducto(@Param("nombreProducto") String nombreProducto);
 

@@ -17,35 +17,35 @@ public interface ProductoBodegaRepository extends JpaRepository<ProductoBodega, 
     @Query(value = "SELECT * FROM producto_bodega", nativeQuery = true)
     Collection<ProductoBodega> darProductoBodega();
 
-    @Query(value = "SELECT * FROM producto_bodega WHERE id_producto = :id_producto AND id_bodega = :id_bodega", nativeQuery = true)
-    ProductoBodega darProductoBodega(@Param("id_producto") Producto id_producto, @Param("id_bodega") Bodega id_bodega);
+    @Query(value = "SELECT * FROM producto_bodega WHERE producto_id = :producto_id AND bodega_id = :bodega_id", nativeQuery = true)
+    ProductoBodega darProductoBodega(@Param("producto_id") Producto producto_id, @Param("bodega_id") Bodega bodega_id);
 
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO producto_bodega (id_producto, id_bodega, cantidadExistente, costoPromedio, capacidadBodega) VALUES (:id_producto, :id_bodega, :cantidadExistente, :costoPromedio, :capacidadBodega)", nativeQuery = true)
-    void insertarProductoBodega(@Param("id_producto") Producto id_producto,
-                                 @Param("id_bodega") Bodega id_bodega,
-                                 @Param("cantidadExistente") int cantidadExistente,
-                                 @Param("costoPromedio") Double costoPromedio, 
-                                 @Param("capacidadBodega") int capacidadBodega);
+    @Query(value = "INSERT INTO producto_bodega (producto_id, bodega_id, cantidad_existente, costo_promedio, capacidad_bodega) VALUES (:producto_id, :bodega_id, :cantidad_existente, :costo_promedio, :capacidad_bodega)", nativeQuery = true)
+    void insertarProductoBodega(@Param("producto_id") Producto producto_id,
+                                 @Param("bodega_id") Bodega bodega_id,
+                                 @Param("cantidad_existente") int cantidad_existente,
+                                 @Param("costo_promedio") Double costo_promedio, 
+                                 @Param("capacidad_bodega") int capacidad_bodega);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE producto_bodega SET cantidadExistente = :cantidadExistente, costoPromedio = :costoPromedio , capacidadBodega= :capacidadBodega WHERE id_producto = :id_producto AND id_bodega = :id_bodega", nativeQuery = true)
-    void actualizarProductoBodega(@Param("id_producto") Producto id_producto,
-                                   @Param("id_bodega") Bodega id_bodega,
-                                   @Param("cantidadExistente") int cantidadExistente,
-                                   @Param("costoPromedio") Double costoPromedio, 
-                                   @Param("capacidadBodega") int capacidadBodega);
+    @Query(value = "UPDATE producto_bodega SET cantidad_existente = :cantidad_existente, costo_promedio = :costo_promedio , capacidad_bodega= :capacidad_bodega WHERE producto_id = :producto_id AND bodega_id = :bodega_id", nativeQuery = true)
+    void actualizarProductoBodega(@Param("producto_id") Producto producto_id,
+                                   @Param("bodega_id") Bodega bodega_id,
+                                   @Param("cantidad_existente") int cantidad_existente,
+                                   @Param("costo_promedio") Double costo_promedio, 
+                                   @Param("capacidad_bodega") int capacidad_bodega);
 
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM producto_bodega WHERE id_producto = :id_producto AND id_bodega = :id_bodega", nativeQuery = true)
-    void borrarProductoBodega(@Param("id_producto") Producto id_producto, @Param("id_bodega") Bodega id_bodega);
+    @Query(value = "DELETE FROM producto_bodega WHERE producto_id = :producto_id AND bodega_id = :bodega_id", nativeQuery = true)
+    void borrarProductoBodega(@Param("producto_id") Producto producto_id, @Param("bodega_id") Bodega bodega_id);
     
-    @Query(value = "SELECT * FROM producto_bodega WHERE id_bodega = :id_bodega", nativeQuery = true)
-    Collection<ProductoBodega> darProductosPorBodega(@Param("id_bodega") Bodega id_bodega);
+    @Query(value = "SELECT * FROM producto_bodega WHERE bodega_id = :bodega_id", nativeQuery = true)
+    Collection<ProductoBodega> darProductosPorBodega(@Param("bodega_id") Bodega bodega_id);
 
-    @Query(value = "SELECT * FROM producto_bodega WHERE id_producto = :id_producto", nativeQuery = true)
-    Collection<ProductoBodega> darBodegasPorProducto(@Param("id_producto") Producto id_producto);
+    @Query(value = "SELECT * FROM producto_bodega WHERE producto_id = :producto_id", nativeQuery = true)
+    Collection<ProductoBodega> darBodegasPorProducto(@Param("producto_id") Producto producto_id);
 }

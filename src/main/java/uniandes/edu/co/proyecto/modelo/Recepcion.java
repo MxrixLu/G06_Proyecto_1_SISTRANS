@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -18,19 +17,19 @@ public class Recepcion {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Date fechaRecepcion;
+    private String fecha_recepcion;
 
     @ManyToOne
-    private Proveedor id_proveedor;
+    private Proveedor proveedor_id;
 
     @ManyToOne
-    private Bodega id_bodega;
+    private Bodega bodega_id;
 
-    public Recepcion(int id, Date fechaRecepcion, Proveedor id_proveedor, Bodega id_bodega) {
+    public Recepcion(int id, String fecha_recepcion, Proveedor proveedor_id, Bodega bodega_id) {
         this.id = id;
-        this.fechaRecepcion = fechaRecepcion;
-        this.id_proveedor = id_proveedor;
-        this.id_bodega = id_bodega;
+        this.fecha_recepcion = fecha_recepcion;
+        this.proveedor_id = proveedor_id;
+        this.bodega_id = bodega_id;
     }
 
     public Recepcion() {
@@ -44,28 +43,28 @@ public class Recepcion {
         this.id = id;
     }
 
-    public Date getFechaRecepcion() {
-        return fechaRecepcion;
+    public String getFechaRecepcion() {
+        return fecha_recepcion;
     }
 
-    public void setFechaRecepcion(Date fechaRecepcion) {
-        this.fechaRecepcion = fechaRecepcion;
+    public void setFechaRecepcion(String fecha_recepcion) {
+        this.fecha_recepcion = fecha_recepcion;
     }
 
     public Proveedor getId_proveedor() {
-        return id_proveedor;
+        return proveedor_id;
     }
 
-    public void setId_proveedor(Proveedor id_proveedor) {
-        this.id_proveedor = id_proveedor;
+    public void setId_proveedor(Proveedor proveedor_id) {
+        this.proveedor_id = proveedor_id;
     }
 
     public Bodega getId_bodega() {
-        return id_bodega;
+        return bodega_id;
     }
 
-    public void setId_bodega(Bodega id_bodega) {
-        this.id_bodega = id_bodega;
+    public void setId_bodega(Bodega bodega_id) {
+        this.bodega_id = bodega_id;
     }
 
     

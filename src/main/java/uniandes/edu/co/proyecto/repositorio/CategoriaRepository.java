@@ -11,7 +11,7 @@ import uniandes.edu.co.proyecto.modelo.Categoria;
 
 public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 
-    @Query(value= "SELECT id, codigo, nombre, descripcion, caracteristicasAlmacenamiento FROM categorias", nativeQuery = true)
+    @Query(value= "SELECT id, codigo, nombre, descripcion, caracteristicas_almacenamiento FROM categorias", nativeQuery = true)
     Collection<Categoria> darCategorias();
 
     @Query(value= "SELECT * FROM categorias WHERE id = :id", nativeQuery = true)
@@ -19,13 +19,13 @@ public interface CategoriaRepository extends JpaRepository<Categoria, Integer> {
 
     @Modifying
     @Transactional
-    @Query(value= "INSERT INTO categorias (id, codigo, nombre, descripcion, caracteristicasAlmacenamiento) VALUES (superandes_sequence.nextval, :codigo, :nombre, :descripcion, :caracteristicasAlmacenamiento)", nativeQuery = true)
-    void insertarCategoria(@Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicasAlmacenamiento") String caracteristicasAlmacenamiento);
+    @Query(value= "INSERT INTO categorias (id, codigo, nombre, descripcion, caracteristicas_almacenamiento) VALUES (superandes_sequence.nextval, :codigo, :nombre, :descripcion, :caracteristicas_almacenamiento)", nativeQuery = true)
+    void insertarCategoria(@Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicas_almacenamiento") String caracteristicas_almacenamiento);
 
     @Modifying
     @Transactional
-    @Query(value = "UPDATE categorias SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, caracteristicasAlmacenamiento = :caracteristicasAlmacenamiento WHERE id = :id", nativeQuery = true)
-    void actualizarCategoria(@Param("id") int id, @Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicasAlmacenamiento") String caracteristicasAlmacenamiento);
+    @Query(value = "UPDATE categorias SET codigo = :codigo, nombre = :nombre, descripcion = :descripcion, caracteristicas_almacenamiento = :caracteristicas_almacenamiento WHERE id = :id", nativeQuery = true)
+    void actualizarCategoria(@Param("id") int id, @Param("codigo") int codigo, @Param("nombre") String nombre, @Param("descripcion") String descripcion, @Param("caracteristicas_almacenamiento") String caracteristicas_almacenamiento);
 
     @Modifying
     @Transactional

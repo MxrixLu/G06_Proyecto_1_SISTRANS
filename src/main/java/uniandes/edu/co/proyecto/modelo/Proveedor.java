@@ -16,15 +16,15 @@ public class Proveedor {
 
     private String NIT; 
     private String direccion;
-    private String nombrePersonaC;
-    private String telefonoPersonaC;
+    private String nombre_personac;
+    private String telefono_personac;
 
-    public Proveedor(int id, String nIT, String direccion, String nombrePersonaC, String telefonoPersonaC) {
+    public Proveedor(int id, String nIT, String direccion, String nombre_personac, String telefono_personac) {
         this.id = id;
         this.NIT = nIT;
         this.direccion = direccion;
-        this.nombrePersonaC = nombrePersonaC;
-        this.telefonoPersonaC = telefonoPersonaC;
+        this.nombre_personac = nombre_personac;
+        this.telefono_personac = telefono_personac;
     } 
     
     public Proveedor() 
@@ -55,19 +55,19 @@ public class Proveedor {
     }
 
     public String getNombrePersonaC() {
-        return nombrePersonaC;
+        return nombre_personac;
     }
 
-    public void setNombrePersonaC(String nombrePersonaC) {
-        this.nombrePersonaC = nombrePersonaC;
+    public void setNombrePersonaC(String nombre_personac) {
+        this.nombre_personac = nombre_personac;
     }
 
     public String getTelefonoPersonaC() {
-        return telefonoPersonaC;
+        return telefono_personac;
     }
 
-    public void setTelefonoPersonaC(String telefonoPersonaC) {
-        this.telefonoPersonaC = telefonoPersonaC;
+    public void setTelefonoPersonaC(String telefono_personac) {
+        this.telefono_personac = telefono_personac;
     }
 
     

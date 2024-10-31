@@ -41,7 +41,8 @@ public class CategoriaController {
                 categoria.getDescripcion(),
                 categoria.getCaracteristicasAlmacenamiento()
             );
-            return new ResponseEntity<>("Categoría creada exitosamente", HttpStatus.OK);
+            return new ResponseEntity<>("Categoría creada exitosamente", HttpStatus.CREATED);
+            
         } catch (Exception e) {
             return new ResponseEntity<>("Error al crear la categoría", HttpStatus.INTERNAL_SERVER_ERROR);
         }

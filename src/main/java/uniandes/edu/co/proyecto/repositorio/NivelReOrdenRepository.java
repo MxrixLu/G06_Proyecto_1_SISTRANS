@@ -24,19 +24,19 @@ public interface NivelReOrdenRepository extends JpaRepository<NivelReOrden, Inte
     // Insertar un nuevo nivel de reorden
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO niveles_reorden (id, nivelMinimo, id_sucursal, id_producto) VALUES (superandes_sequence.nextval, :id_sucursal, :id_producto, :nivelMinimo)", nativeQuery = true)
-    void insertarNivelReOrden(@Param("nivelMinimo") int nivelMinimo, 
-                              @Param("id_sucursal") Sucursal sucursal, 
-                              @Param("id_producto") Producto producto);
+    @Query(value = "INSERT INTO niveles_reorden (id, nivel_minimo, sucursal_id, producto_id) VALUES (superandes_sequence.nextval, :sucursal_id, :producto_id, :nivel_minimo)", nativeQuery = true)
+    void insertarNivelReOrden(@Param("nivel_minimo") int nivel_minimo, 
+                              @Param("sucursal_id") Sucursal sucursal, 
+                              @Param("producto_id") Producto producto);
 
     // Actualizar un nivel de reorden existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE niveles_reorden SET nivelMinimo = :nivelMinimo, id_sucursal = :id_sucursal, id_producto = :id_producto WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE niveles_reorden SET nivel_minimo = :nivel_minimo, sucursal_id = :sucursal_id, producto_id = :producto_id WHERE id = :id", nativeQuery = true)
     void actualizarNivelReOrden(@Param("id") int id, 
-                                @Param("nivelMinimo") int nivelMinimo, 
-                                @Param("id_sucursal") Sucursal sucursal, 
-                                @Param("id_producto") Producto producto);
+                                @Param("nivel_minimo") int nivel_minimo, 
+                                @Param("sucursal_id") Sucursal sucursal, 
+                                @Param("producto_id") Producto producto);
 
     // Borrar un nivel de reorden por su ID
     @Modifying

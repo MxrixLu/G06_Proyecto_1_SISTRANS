@@ -140,7 +140,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"NIT\":\"0\", \r\n    \"direccion\":\"nueva direccion\",\r\n    \"nombrePersonaC\":\"nuevo nombre\",\r\n    \"telefonoPersonaC\": \"0\"\r\n}",
+					"raw": "{   \r\n    \"NIT\":\"0\", \r\n    \"direccion\":\"nueva direccion\",\r\n    \"nombre_personac\":\"nuevo nombre\",\r\n    \"telefono_personac\": \"0\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -171,7 +171,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"NIT\":\"1684565\", \r\n    \"direccion\":\"Cl. 174a #65-57, Suba\",\r\n    \"nombrePersonaC\":\"Diego\",\r\n    \"telefonoPersonaC\": \"3223498562\"\r\n}",
+					"raw": "{   \r\n    \"NIT\":\"1684565\", \r\n    \"direccion\":\"Cl. 174a #65-57, Suba\",\r\n    \"nombre_personac\":\"Diego\",\r\n    \"telefono_personac\": \"3223498562\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -203,7 +203,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"codigo\":1,\r\n    \"nombre\": \"Perecedero\",\r\n    \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n    \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n}",
+					"raw": "{   \r\n    \"codigo\":1,\r\n    \"nombre\": \"Perecedero\",\r\n    \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n    \"caracteristicas_almacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -234,7 +234,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"id\":2,\r\n    \"codigo\":2,\r\n    \"nombre\": \"No perecedero\",\r\n    \"descripcion\": \"No tienen fecha de expiracion como electrodomestico, ropa, mueles, entre otros.\",\r\n    \"caracteristicasAlmacenamiento\": \"En cajas bien selladas y acomodadas con protectores de forma que no se dañe el producto\"\r\n}",
+					"raw": "{   \r\n    \"id\":2,\r\n    \"codigo\":2,\r\n    \"nombre\": \"No perecedero\",\r\n    \"descripcion\": \"No tienen fecha de expiracion como electrodomestico, ropa, mueles, entre otros.\",\r\n    \"caracteristicas_almacenamiento\": \"En cajas bien selladas y acomodadas con protectores de forma que no se dañe el producto\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -285,7 +285,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigo_barras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costo_bodega\" : 4200.00,\r\n    \"precio_venta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidad_medida (gr o ml)\": true,\r\n    \"volumen_empaque\": 150,\r\n    \"peso_empaque\": 15, \r\n    \"fecha_expiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicas_almacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -319,7 +319,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigo_barras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costo_bodega\" : 4200.00,\r\n    \"precio_venta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidad_medida (gr o ml)\": true,\r\n    \"volumen_empaque\": 150,\r\n    \"peso_empaque\": 15, \r\n    \"fecha_expiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicas_almacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -350,7 +350,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigo_barras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costo_bodega\" : 4200.00,\r\n    \"precio_venta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidad_medida (gr o ml)\": true,\r\n    \"volumen_empaque\": 150,\r\n    \"peso_empaque\": 15, \r\n    \"fecha_expiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicas_almacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -383,7 +383,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precioAcordado\": 1500000.00,\r\n    \"estado\": \"vigente\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"id_ciudad\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
+					"raw": "{  \r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precio_acordado\": 1500000.00,\r\n    \"estado\": \"vigente\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"ciudad_id\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -414,7 +414,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{  \r\n    \"id\":1,\r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precioAcordado\": 1500000.00,\r\n    \"estado\": \"anulada\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"id_ciudad\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
+					"raw": "{  \r\n    \"id\":1,\r\n    \"fechaEsperadaEntrega\": \"2024-10-15\", \r\n    \"precio_acordado\": 1500000.00,\r\n    \"estado\": \"anulada\", \r\n    \"fechaCreacion\": \"2024-09-15\",\r\n    \"sucursal\":{\"id\":1,\r\n                \"nombre\": \"SuperAndesNorte\", \r\n                \"telefono\": 3153289430,\r\n                \"direccion\": \"Cl. 174a #45-37, Suba, Bogotá\",\r\n                \"tamano\":200.55,\r\n                \"ciudad_id\":{\"id\":1,\r\n                           \"codigo\": 1,\r\n                            \"nombre\": \"Bogota\"\r\n                }\r\n    },\r\n    \"proveedor\":{}\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -449,7 +449,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{   \r\n    \"id\":1,\r\n    \"codigoBarras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costoBodega\" : 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidadMedida (gr o ml)\": true,\r\n    \"volumenEmpaque\": 150,\r\n    \"pesoEmpaque\": 15, \r\n    \"fechaExpiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+					"raw": "{   \r\n    \"id\":1,\r\n    \"codigo_barras\": \"f0f0f0f0f0\",\r\n    \"nombre\": \"Papas fritas Les frites\",\r\n    \"costo_bodega\" : 4200.00,\r\n    \"precio_venta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr. cada uno\",\r\n    \"cantidadPresentación\": 1000,\r\n    \"unidad_medida (gr o ml)\": true,\r\n    \"volumen_empaque\": 150,\r\n    \"peso_empaque\": 15, \r\n    \"fecha_expiracion\": \"2027-12-12\",\r\n    \"categoria\": {   \r\n        \"id\":1,\r\n        \"codigo\":1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicas_almacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"

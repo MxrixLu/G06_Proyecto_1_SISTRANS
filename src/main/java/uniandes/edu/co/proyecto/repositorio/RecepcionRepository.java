@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
-import java.util.Date;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,20 +24,20 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     // Insertar una nueva recepcion
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO recepciones (id, fechaRecepcion, id_proveedor, id_bodega) VALUES (:id, :fechaRecepcion, :id_proveedor, :id_bodega)", nativeQuery = true)
+    @Query(value = "INSERT INTO recepciones (id, fecha_recepcion, proveedor_id, bodega_id) VALUES (:id, :fecha_recepcion, :proveedor_id, :bodega_id)", nativeQuery = true)
     void insertarRecepcion(@Param("id") int id, 
-                           @Param("fechaRecepcion") Date fechaRecepcion, 
-                           @Param("id_proveedor") Proveedor id_proveedor, 
-                           @Param("id_bodega") Bodega id_bodega);
+                           @Param("fecha_recepcion") String fecha_recepcion, 
+                           @Param("proveedor_id") Proveedor proveedor_id, 
+                           @Param("bodega_id") Bodega bodega_id);
 
     // Actualizar una recepcion existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE recepciones SET fechaRecepcion = :fechaRecepcion, id_proveedor = :id_proveedor, id_bodega = :id_bodega WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE recepciones SET fecha_recepcion = :fecha_recepcion, proveedor_id = :proveedor_id, bodega_id = :bodega_id WHERE id = :id", nativeQuery = true)
     void actualizarRecepcion(@Param("id") int id, 
-                             @Param("fechaRecepcion") Date fechaRecepcion, 
-                             @Param("id_proveedor") Proveedor id_proveedor, 
-                             @Param("id_bodega") Bodega id_bodega);
+                             @Param("fecha_recepcion") String fecha_recepcion, 
+                             @Param("proveedor_id") Proveedor proveedor_id, 
+                             @Param("bodega_id") Bodega bodega_id);
 
     // Borrar una recepcion por su ID
     @Modifying

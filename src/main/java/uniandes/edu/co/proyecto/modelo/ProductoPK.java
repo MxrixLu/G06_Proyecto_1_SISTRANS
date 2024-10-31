@@ -14,12 +14,15 @@ public class ProductoPK implements Serializable {
     private int id;
 
     @Column(nullable = false)
-    private String codigoBarras;
+    private String codigo_barras;
 
-    public ProductoPK(int id, String codigoBarras) {
+    public ProductoPK(int id, String codigo_barras) {
         this.id = id;
-        this.codigoBarras = codigoBarras;
+        this.codigo_barras = codigo_barras;
     }
+
+    public ProductoPK() 
+    {;}
 
     public int getId() {
         return id;
@@ -30,11 +33,11 @@ public class ProductoPK implements Serializable {
     }
 
     public String getCodigoBarras() {
-        return codigoBarras;
+        return codigo_barras;
     }
 
-    public void setCodigoBarras(String codigoBarras) {
-        this.codigoBarras = codigoBarras;
+    public void setCodigoBarras(String codigo_barras) {
+        this.codigo_barras = codigo_barras;
     }
 
     

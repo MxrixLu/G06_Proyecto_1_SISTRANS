@@ -37,15 +37,15 @@ public class BodegaController {
     }
 
     @GetMapping("/bodegas/consultaBodega")
-    public ResponseEntity<?> darProductosConBodega(@RequestParam(required = false) int id_sucursal) {
+    public ResponseEntity<?> darProductosConBodega(@RequestParam(required = false) int sucursal_id) {
         try {
-            Collection<RespuestaDarProductosConBodega> bodegas = bodegaRepository.darProductosConBodega(id_sucursal);
+            Collection<RespuestaDarProductosConBodega> bodegas = bodegaRepository.darProductosConBodega(sucursal_id);
             RespuestaDarProductosConBodega info = bodegas.iterator().next();
             Map<String, Object> respuesta = new HashMap<>();
             respuesta.put("producto", info.getProducto());
-            respuesta.put("cantidadExistente", info.getCantidadExistente());
-            respuesta.put("costoPromedio", info.getCostoPromedio());
-            respuesta.put("nivelMinimo", info.getNivelMinimo());
+            respuesta.put("cantidad_existente", info.getCantidadExistente());
+            respuesta.put("costo_promedio", info.getCostoPromedio());
+            respuesta.put("nivel_minimo", info.getNivelMinimo());
             return ResponseEntity.ok(respuesta);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -62,7 +62,7 @@ public class BodegaController {
             respuesta.put("direccion", info.getDireccion());
             respuesta.put("telefono", info.getTelefono());
             respuesta.put("tamano", info.getTamano());
-            respuesta.put("id_ciudad", info.getId_ciudad());
+            respuesta.put("ciudad_id", info.getId_ciudad());
             return ResponseEntity.ok(respuesta);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -71,16 +71,16 @@ public class BodegaController {
 
     
     @GetMapping("/bodegas/consultarSucursalProducto")
-    public ResponseEntity<?> darSucursalesSegunProducto(@RequestParam(required = false) int idProducto) {
+    public ResponseEntity<?> darSucursalesSegunProducto(@RequestParam(required = false) int producto_id) {
         try {
-            Collection<RespuestaDarSucursalesSegunProducto> bodegas = bodegaRepository.darSucursalesSegunProducto(idProducto);
+            Collection<RespuestaDarSucursalesSegunProducto> bodegas = bodegaRepository.darSucursalesSegunProducto(producto_id);
             RespuestaDarSucursalesSegunProducto info = bodegas.iterator().next();
             Map<String, Object> respuesta = new HashMap<>();
             respuesta.put("nombre", info.getNombre());
             respuesta.put("direccion", info.getDireccion());
             respuesta.put("telefono", info.getTelefono());
             respuesta.put("tamano", info.getTamano());
-            respuesta.put("id_ciudad", info.getId_ciudad());
+            respuesta.put("ciudad_id", info.getId_ciudad());
             return ResponseEntity.ok(respuesta);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();

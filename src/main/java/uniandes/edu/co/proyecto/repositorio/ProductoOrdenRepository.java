@@ -19,38 +19,38 @@ public interface ProductoOrdenRepository extends JpaRepository<ProductoOrden, Pr
     Collection<ProductoOrden> darProductoOrden();
 
     // Obtener un registro específico de ProductoOrden por su clave primaria compuesta
-    @Query(value = "SELECT * FROM producto_orden WHERE id_producto = :id_producto AND id_ordenCompra = :id_ordenCompra", nativeQuery = true)
-    ProductoOrden darProductoOrden(@Param("id_producto") Producto id_producto, @Param("id_ordenCompra") OrdenCompra id_ordenCompra);
+    @Query(value = "SELECT * FROM producto_orden WHERE producto_id = :producto_id AND orden_compra_id = :orden_compra_id", nativeQuery = true)
+    ProductoOrden darProductoOrden(@Param("producto_id") Producto producto_id, @Param("orden_compra_id") OrdenCompra orden_compra_id);
 
     // Insertar un nuevo registro de ProductoOrden, utilizando las entidades asociadas
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO producto_orden (id_producto, id_ordenCompra, precioAcordado, cantidadSolicitada) VALUES (:id_producto, :id_ordenCompra, :precioAcordado, :cantidadSolicitada)", nativeQuery = true)
-    void insertarProductoOrden(@Param("id_producto") Producto id_producto,
-                               @Param("id_ordenCompra") OrdenCompra id_ordenCompra,
-                               @Param("precioAcordado") Double precioAcordado,
-                               @Param("cantidadSolicitada") int cantidadSolicitada);
+    @Query(value = "INSERT INTO producto_orden (producto_id, orden_compra_id, precio_acordado, cantidad_solicitada) VALUES (:producto_id, :orden_compra_id, :precio_acordado, :cantidad_solicitada)", nativeQuery = true)
+    void insertarProductoOrden(@Param("producto_id") Producto producto_id,
+                               @Param("orden_compra_id") OrdenCompra orden_compra_id,
+                               @Param("precio_acordado") Double precio_acordado,
+                               @Param("cantidad_solicitada") int cantidad_solicitada);
 
     // Actualizar un registro existente de ProductoOrden
     @Modifying
     @Transactional
-    @Query(value = "UPDATE producto_orden SET precioAcordado = :precioAcordado, cantidadSolicitada = :cantidadSolicitada WHERE id_producto = :id_producto AND id_ordenCompra = :id_ordenCompra", nativeQuery = true)
-    void actualizarProductoOrden(@Param("id_producto") Producto id_producto,
-                                 @Param("id_ordenCompra") OrdenCompra id_ordenCompra,
-                                 @Param("precioAcordado") Double precioAcordado,
-                                 @Param("cantidadSolicitada") int cantidadSolicitada);
+    @Query(value = "UPDATE producto_orden SET precio_acordado = :precio_acordado, cantidad_solicitada = :cantidad_solicitada WHERE producto_id = :producto_id AND orden_compra_id = :orden_compra_id", nativeQuery = true)
+    void actualizarProductoOrden(@Param("producto_id") Producto producto_id,
+                                 @Param("orden_compra_id") OrdenCompra orden_compra_id,
+                                 @Param("precio_acordado") Double precio_acordado,
+                                 @Param("cantidad_solicitada") int cantidad_solicitada);
 
     // Borrar un registro de ProductoOrden por su clave primaria compuesta
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM producto_orden WHERE id_producto = :id_producto AND id_ordenCompra = :id_ordenCompra", nativeQuery = true)
-    void borrarProductoOrden(@Param("id_producto") Producto id_producto, @Param("id_ordenCompra") OrdenCompra id_ordenCompra);
+    @Query(value = "DELETE FROM producto_orden WHERE producto_id = :producto_id AND orden_compra_id = :orden_compra_id", nativeQuery = true)
+    void borrarProductoOrden(@Param("producto_id") Producto producto_id, @Param("orden_compra_id") OrdenCompra orden_compra_id);
     
     // Obtener productos en una orden específica
-    @Query(value = "SELECT * FROM producto_orden WHERE id_ordenCompra = :id_ordenCompra", nativeQuery = true)
-    Collection<ProductoOrden> darProductosPorOrden(@Param("id_ordenCompra") OrdenCompra id_ordenCompra);
+    @Query(value = "SELECT * FROM producto_orden WHERE orden_compra_id = :orden_compra_id", nativeQuery = true)
+    Collection<ProductoOrden> darProductosPorOrden(@Param("orden_compra_id") OrdenCompra orden_compra_id);
 
     // Obtener órdenes que contienen un producto específico
-    @Query(value = "SELECT * FROM producto_orden WHERE id_producto = :id_producto", nativeQuery = true)
-    Collection<ProductoOrden> darOrdenesPorProducto(@Param("id_producto") Producto id_producto);
+    @Query(value = "SELECT * FROM producto_orden WHERE producto_id = :producto_id", nativeQuery = true)
+    Collection<ProductoOrden> darOrdenesPorProducto(@Param("producto_id") Producto producto_id);
 }

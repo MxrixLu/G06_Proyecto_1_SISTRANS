@@ -65,7 +65,7 @@
 <logicalDatatype>LOGDT011</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="precioUnitario" id="D0A7B651-E50C-6276-48BB-3B8CB83472F2">
+<Attribute name="precio_unitario" id="D0A7B651-E50C-6276-48BB-3B8CB83472F2">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 16:38:11 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

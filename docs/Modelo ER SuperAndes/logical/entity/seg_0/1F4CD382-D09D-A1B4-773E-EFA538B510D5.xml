@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="precioAcordado" id="56D26363-D211-BE4B-AF0B-31911BBAE0F1">
+<Attribute name="precio_acordado" id="56D26363-D211-BE4B-AF0B-31911BBAE0F1">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 16:49:01 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

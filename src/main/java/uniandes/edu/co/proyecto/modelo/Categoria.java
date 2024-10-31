@@ -21,15 +21,15 @@ public class Categoria {
     @Column(nullable = false) 
     private String nombre; 
     private String descripcion;
-    private String caracteristicasAlmacenamiento;
+    private String caracteristicas_almacenamiento;
 
     public Categoria(int id, int codigo, String nombre, String descripcion,
-            String caracteristicasAlmacenamiento) {
+            String caracteristicas_almacenamiento) {
         this.id = id;
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.caracteristicasAlmacenamiento = caracteristicasAlmacenamiento;
+        this.caracteristicas_almacenamiento = caracteristicas_almacenamiento;
     }
 
     public Categoria() 
@@ -68,11 +68,11 @@ public class Categoria {
     }
 
     public String getCaracteristicasAlmacenamiento() {
-        return caracteristicasAlmacenamiento;
+        return caracteristicas_almacenamiento;
     }
 
-    public void setCaracteristicasAlmacenamiento(String caracteristicasAlmacenamiento) {
-        this.caracteristicasAlmacenamiento = caracteristicasAlmacenamiento;
+    public void setCaracteristicasAlmacenamiento(String caracteristicas_almacenamiento) {
+        this.caracteristicas_almacenamiento = caracteristicas_almacenamiento;
     }
 
     

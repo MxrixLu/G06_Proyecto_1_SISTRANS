@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
-import java.util.Date;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -25,26 +24,26 @@ public interface VentaRepository extends JpaRepository<Venta, Integer> {
     // Insertar una nueva venta
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO ventas (id, fecha, cantidad, precioUnitario, cedula, id_cliente, id_producto) VALUES (:id, :fecha, :cantidad, :precioUnitario, :cedula, :id_cliente, :id_producto)", nativeQuery = true)
+    @Query(value = "INSERT INTO ventas (id, fecha, cantidad, precio_unitario, cedula, cliente_id, producto_id) VALUES (:id, TO_DATE(:fecha, 'YYYY-MM-DD'), :cantidad, :precio_unitario, :cedula, :cliente_id, :producto_id)", nativeQuery = true)
     void insertarVenta(@Param("id") int id, 
-                       @Param("fecha") Date fecha, 
+                       @Param("fecha") String fecha, 
                        @Param("cantidad") int cantidad, 
-                       @Param("precioUnitario") int precioUnitario, 
+                       @Param("precio_unitario") int precio_unitario, 
                        @Param("cedula") int cedula, 
-                       @Param("id_cliente") Cliente cliente, 
-                       @Param("id_producto") Producto producto);
+                       @Param("cliente_id") Cliente cliente, 
+                       @Param("producto_id") Producto producto);
 
     // Actualizar una venta existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE ventas SET fecha = :fecha, cantidad = :cantidad, precioUnitario = :precioUnitario, cedula = :cedula, id_cliente = :id_cliente, id_producto = :id_producto WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE ventas SET fecha = :fecha, cantidad = :cantidad, precio_unitario = :precio_unitario, cedula = :cedula, cliente_id = :cliente_id, producto_id = :producto_id WHERE id = :id", nativeQuery = true)
     void actualizarVenta(@Param("id") int id, 
-                         @Param("fecha") Date fecha, 
+                         @Param("fecha") String fecha, 
                          @Param("cantidad") int cantidad, 
-                         @Param("precioUnitario") int precioUnitario, 
+                         @Param("precio_unitario") int precio_unitario, 
                          @Param("cedula") int cedula, 
-                         @Param("id_cliente") Cliente cliente, 
-                         @Param("id_producto") Producto producto);
+                         @Param("cliente_id") Cliente cliente, 
+                         @Param("producto_id") Producto producto);
 
     // Borrar una venta por su ID
     @Modifying

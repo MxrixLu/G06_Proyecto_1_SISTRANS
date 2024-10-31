@@ -43,7 +43,7 @@ public class OrdenCompraController {
                 ordenCompra.getPrecioAcordado(),
                 ordenCompra.getEstado(),
                 ordenCompra.getFechaCreacion(),
-                ordenCompra.getSucursal(),
+                ordenCompra.getSucursal().getId(),
                 ordenCompra.getProveedor().getId()
             );
             return new ResponseEntity<>("Orden de compra creada exitosamente", HttpStatus.CREATED);

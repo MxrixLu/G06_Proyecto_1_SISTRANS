@@ -11,25 +11,25 @@ public class ProductoBodega {
     @EmbeddedId
     private ProductoBodegaPK pk;
 
-    private int cantidadExistente;
-    private Double costoPromedio;
+    private int cantidad_existente;
+    private Double costo_promedio;
 
-    private int capacidadBodega;
+    private int capacidad_bodega;
 
 
-    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, int cantidadExistente, Double costoPromedio, int capacidadBodega) {
+    public ProductoBodega( Producto id_Producto, Bodega id_Bodega, int cantidad_existente, Double costo_promedio, int capacidad_bodega) {
         this.pk = new ProductoBodegaPK( id_Producto, id_Bodega);
-        this.cantidadExistente = cantidadExistente;
-        this.costoPromedio = costoPromedio;
-        this.capacidadBodega = capacidadBodega;
+        this.cantidad_existente = cantidad_existente;
+        this.costo_promedio = costo_promedio;
+        this.capacidad_bodega = capacidad_bodega;
     }
     public ProductoBodega()
     {;}
     public int getCapacidadBodega() {
-        return capacidadBodega;
+        return capacidad_bodega;
     }
-    public void setCapacidadBodega(int capacidadBodega) {
-        this.capacidadBodega = capacidadBodega;
+    public void setCapacidadBodega(int capacidad_bodega) {
+        this.capacidad_bodega = capacidad_bodega;
     }
     public ProductoBodegaPK getPk() {
         return pk;
@@ -38,16 +38,16 @@ public class ProductoBodega {
         this.pk = pk;
     }
     public int getCantidadExistente() {
-        return cantidadExistente;
+        return cantidad_existente;
     }
-    public void setCantidadExistente(int cantidadExistente) {
-        this.cantidadExistente = cantidadExistente;
+    public void setCantidadExistente(int cantidad_existente) {
+        this.cantidad_existente = cantidad_existente;
     }
     public Double getCostoPromedio() {
-        return costoPromedio;
+        return costo_promedio;
     }
-    public void setCostoPromedio(Double costoPromedio) {
-        this.costoPromedio = costoPromedio;
+    public void setCostoPromedio(Double costo_promedio) {
+        this.costo_promedio = costo_promedio;
     }
 
     

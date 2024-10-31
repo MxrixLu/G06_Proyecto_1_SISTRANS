@@ -1,7 +1,6 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
@@ -26,25 +25,25 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
     // Insertar una nueva orden de compra
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO ordenes_compra (id, fechaEsperadaEntrega, precioAcordado, estado, fechaCreacion, id_sucursal, id_proveedor) VALUES (superandes_sequence.nextval, TO_DATE(:fechaEsperadaEntrega, 'YYYY-MM-DD'), :precioAcordado, :estado, TO_DATE(:fechaCreacion, 'YYYY-MM-DD'), :id_sucursal, :id_proveedor)", nativeQuery = true)
-    void insertarOrdenCompra(@Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
-                            @Param("precioAcordado") Double precioAcordado,
+    @Query(value = "INSERT INTO ordenes_compra (id, fecha_esperada_entrega, precio_acordado, estado, fecha_creacion, sucursal_id, proveedor_id) VALUES (superandes_sequence.nextval, TO_DATE(:fechaEsperadaEntrega, 'YYYY-MM-DD'), :precio_acordado, :estado, TO_DATE(:fechaCreacion, 'YYYY-MM-DD'), :sucursal_id, :proveedor_id)", nativeQuery = true)
+    void insertarOrdenCompra(@Param("fechaEsperadaEntrega") String fechaEsperadaEntrega,
+                            @Param("precio_acordado") Double precio_acordado,
                             @Param("estado") String estado,
-                            @Param("fechaCreacion") Date fechaCreacion,
-                            @Param("id_sucursal") Sucursal sucursal,
-                            @Param("id_proveedor") int proveedor);
+                            @Param("fechaCreacion") String fechaCreacion,
+                            @Param("sucursal_id") int sucursal,
+                            @Param("proveedor_id") int proveedor);
 
     // Actualizar una orden de compra existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE ordenes_compra SET fechaEsperadaEntrega = :fechaEsperadaEntrega, precioAcordado = :precioAcordado, estado = :estado, fechaCreacion = :fechaCreacion, id_sucursal = :id_sucursal, id_proveedor = :id_proveedor WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE ordenes_compra SET fecha_esperada_entrega = :fechaEsperadaEntrega, precio_acordado = :precio_acordado, estado = :estado, fecha_creacion = :fechaCreacion, sucursal_id = :sucursal_id, proveedor_id = :proveedor_id WHERE id = :id", nativeQuery = true)
     void actualizarOrdenCompra(@Param("id") int id,
-                            @Param("fechaEsperadaEntrega") Date fechaEsperadaEntrega,
-                            @Param("precioAcordado") Double precioAcordado,
+                            @Param("fechaEsperadaEntrega") String fechaEsperadaEntrega,
+                            @Param("precio_acordado") Double precio_acordado,
                             @Param("estado") String estado,
-                            @Param("fechaCreacion") Date fechaCreacion,
-                            @Param("id_sucursal") Sucursal sucursal,
-                            @Param("id_proveedor") Proveedor proveedor);
+                            @Param("fechaCreacion") String fechaCreacion,
+                            @Param("sucursal_id") Sucursal sucursal,
+                            @Param("proveedor_id") Proveedor proveedor);
 
     // Borrar una orden de compra por su ID
     @Modifying

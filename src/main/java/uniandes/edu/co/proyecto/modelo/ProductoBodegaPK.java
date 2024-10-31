@@ -9,33 +9,33 @@
     public class ProductoBodegaPK implements Serializable {
         
         @ManyToOne
-        private Producto id_producto;
+        private Producto producto_id;
 
         @ManyToOne
-        private Bodega id_bodega;
+        private Bodega bodega_id;
 
-        public ProductoBodegaPK(Producto id_producto, Bodega id_bodega) {
-            this.id_producto = id_producto;
-            this.id_bodega = id_bodega;
+        public ProductoBodegaPK(Producto producto_id, Bodega bodega_id) {
+            this.producto_id = producto_id;
+            this.bodega_id = bodega_id;
         }
 
         public ProductoBodegaPK() {
         }
 
         public Producto getId_producto() {
-            return id_producto;
+            return producto_id;
         }
 
-        public void setId_producto(Producto id_producto) {
-            this.id_producto = id_producto;
+        public void setId_producto(Producto producto_id) {
+            this.producto_id = producto_id;
         }
 
         public Bodega getId_bodega() {
-            return id_bodega;
+            return bodega_id;
         }
 
-        public void setId_bodega(Bodega id_bodega) {
-            this.id_bodega = id_bodega;
+        public void setId_bodega(Bodega bodega_id) {
+            this.bodega_id = bodega_id;
         }
 
         

@@ -11,16 +11,16 @@ public class InfoRecepcion {
     @EmbeddedId
     private InfoRecepcionPK pk;
 
-    private int cantidadRecibida;
+    private int cantidad_recibida;
 
-    private Double costoRecibido;
+    private Double costo_recibido;
 
 
-    public InfoRecepcion(Recepcion id_Recepcion, Producto id_Producto, int cantidadRecibida, Double costoRecibido) {
+    public InfoRecepcion(Recepcion id_Recepcion, Producto id_Producto, int cantidad_recibida, Double costo_recibido) {
         super();
         this.pk = new InfoRecepcionPK(id_Recepcion, id_Producto);
-        this.cantidadRecibida  = cantidadRecibida;
-        this.costoRecibido = costoRecibido;
+        this.cantidad_recibida  = cantidad_recibida;
+        this.costo_recibido = costo_recibido;
     }
 
     public InfoRecepcion()
@@ -33,15 +33,15 @@ public class InfoRecepcion {
         this.pk = pk;
     }
     public int getCantidadRecibida() {
-        return cantidadRecibida;
+        return cantidad_recibida;
     }
-    public void setCantidadRecibida(int cantidadRecibida) {
-        this.cantidadRecibida = cantidadRecibida;
+    public void setCantidadRecibida(int cantidad_recibida) {
+        this.cantidad_recibida = cantidad_recibida;
     }
     public Double getCostoRecibido() {
-        return costoRecibido;
+        return costo_recibido;
     }
-    public void setCostoRecibido(Double costoRecibido) {
-        this.costoRecibido = costoRecibido;
+    public void setCostoRecibido(Double costo_recibido) {
+        this.costo_recibido = costo_recibido;
     }
 }

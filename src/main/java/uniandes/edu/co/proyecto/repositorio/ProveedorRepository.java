@@ -22,22 +22,22 @@ public interface ProveedorRepository extends JpaRepository<Proveedor, Integer> {
     // Insertar un nuevo proveedor
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO proveedores (id, NIT, direccion, nombrePersonaC, telefonoPersonaC) VALUES (superandes_sequence.nextval, :NIT, :direccion, :nombrePersonaC, :telefonoPersonaC)", nativeQuery = true)
+    @Query(value = "INSERT INTO proveedores (id, NIT, direccion, nombre_personac, telefono_personac) VALUES (superandes_sequence.nextval, :NIT, :direccion, :nombre_personac, :telefono_personac)", nativeQuery = true)
     void insertarProveedor(
                            @Param("NIT") String NIT, 
                            @Param("direccion") String direccion, 
-                           @Param("nombrePersonaC") String nombrePersonaC, 
-                           @Param("telefonoPersonaC") String telefonoPersonaC);
+                           @Param("nombre_personac") String nombre_personac, 
+                           @Param("telefono_personac") String telefono_personac);
 
     // Actualizar un proveedor existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE proveedores SET NIT = :NIT, direccion = :direccion, nombrePersonaC = :nombrePersonaC, telefonoPersonaC = :telefonoPersonaC WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE proveedores SET NIT = :NIT, direccion = :direccion, nombre_personac = :nombre_personac, telefono_personac = :telefono_personac WHERE id = :id", nativeQuery = true)
     void actualizarProveedor(@Param("id") int id, 
                              @Param("NIT") String NIT, 
                              @Param("direccion") String direccion, 
-                             @Param("nombrePersonaC") String nombrePersonaC, 
-                             @Param("telefonoPersonaC") String telefonoPersonaC);
+                             @Param("nombre_personac") String nombre_personac, 
+                             @Param("telefono_personac") String telefono_personac);
 
     // Borrar un proveedor por su ID
     @Modifying

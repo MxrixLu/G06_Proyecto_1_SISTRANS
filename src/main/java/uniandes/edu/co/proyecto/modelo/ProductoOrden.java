@@ -11,14 +11,14 @@ public class ProductoOrden {
     @EmbeddedId
     private ProductoOrdenPK pk;
 
-    private Double precioAcordado; 
+    private Double precio_acordado; 
 
-    private int cantidadSolicitada;
+    private int cantidad_solicitada;
 
-    public ProductoOrden(Producto id_producto, OrdenCompra id_orden, Double precioAcordado, int cantidadSolicitada) {
-        this.pk = new ProductoOrdenPK(id_producto, id_orden);
-        this.precioAcordado = precioAcordado;
-        this.cantidadSolicitada = cantidadSolicitada;
+    public ProductoOrden(Producto producto_id, OrdenCompra id_orden, Double precio_acordado, int cantidad_solicitada) {
+        this.pk = new ProductoOrdenPK(producto_id, id_orden);
+        this.precio_acordado = precio_acordado;
+        this.cantidad_solicitada = cantidad_solicitada;
     }
     
     public ProductoOrden()
@@ -33,19 +33,19 @@ public class ProductoOrden {
     }
 
     public Double getPrecioAcordado() {
-        return precioAcordado;
+        return precio_acordado;
     }
 
-    public void setPrecioAcordado(Double precioAcordado) {
-        this.precioAcordado = precioAcordado;
+    public void setPrecioAcordado(Double precio_acordado) {
+        this.precio_acordado = precio_acordado;
     }
 
     public int getCantidadSolicitada() {
-        return cantidadSolicitada;
+        return cantidad_solicitada;
     }
 
-    public void setCantidadSolicitada(int cantidadSolicitada) {
-        this.cantidadSolicitada = cantidadSolicitada;
+    public void setCantidadSolicitada(int cantidad_solicitada) {
+        this.cantidad_solicitada = cantidad_solicitada;
     }
 
     

@@ -13,12 +13,12 @@ public class InfoRecepcionPK implements Serializable {
     private Recepcion id_Recepcion; 
 
     @ManyToOne
-    private Producto id_producto;
+    private Producto producto_id;
 
-    public InfoRecepcionPK(Recepcion id_Recepcion, Producto id_producto) {
+    public InfoRecepcionPK(Recepcion id_Recepcion, Producto producto_id) {
         super();
         this.id_Recepcion = id_Recepcion;
-        this.id_producto = id_producto;
+        this.producto_id = producto_id;
     }
 
     public InfoRecepcionPK() {
@@ -34,11 +34,11 @@ public class InfoRecepcionPK implements Serializable {
     }
 
     public Producto getIdProducto() {
-        return id_producto;
+        return producto_id;
     }
 
-    public void setIdProducto(Producto id_producto) {
-        this.id_producto = id_producto;
+    public void setIdProducto(Producto producto_id) {
+        this.producto_id = producto_id;
     } 
 
     

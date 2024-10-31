@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -17,10 +16,10 @@ public class OrdenCompra {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private Date fechaEsperadaEntrega; 
-    private Double precioAcordado;
+    private String fechaEsperadaEntrega; 
+    private Double precio_acordado;
     private String estado; 
-    private Date fechaCreacion; 
+    private String fechaCreacion; 
 
     @ManyToOne
     private Sucursal sucursal;
@@ -28,11 +27,11 @@ public class OrdenCompra {
     @ManyToOne
     private Proveedor proveedor;
 
-    public OrdenCompra(int id, Date fechaEsperadaEntrega, Double precioAcordado, String estado, Date fechaCreacion,
+    public OrdenCompra(int id, String fechaEsperadaEntrega, Double precio_acordado, String estado, String fechaCreacion,
             Sucursal sucursal, Proveedor proveedor) {
         this.id = id;
         this.fechaEsperadaEntrega = fechaEsperadaEntrega;
-        this.precioAcordado = precioAcordado;
+        this.precio_acordado = precio_acordado;
         this.estado = estado;
         this.fechaCreacion = fechaCreacion;
         this.sucursal = sucursal;
@@ -50,20 +49,20 @@ public class OrdenCompra {
         this.id = id;
     }
 
-    public Date getFechaEsperadaEntrega() {
+    public String getFechaEsperadaEntrega() {
         return fechaEsperadaEntrega;
     }
 
-    public void setFechaEsperadaEntrega(Date fechaEsperadaEntrega) {
+    public void setFechaEsperadaEntrega(String fechaEsperadaEntrega) {
         this.fechaEsperadaEntrega = fechaEsperadaEntrega;
     }
 
     public Double getPrecioAcordado() {
-        return precioAcordado;
+        return precio_acordado;
     }
 
-    public void setPrecioAcordado(Double precioAcordado) {
-        this.precioAcordado = precioAcordado;
+    public void setPrecioAcordado(Double precio_acordado) {
+        this.precio_acordado = precio_acordado;
     }
 
     public String getEstado() {
@@ -74,11 +73,11 @@ public class OrdenCompra {
         this.estado = estado;
     }
 
-    public Date getFechaCreacion() {
+    public String getFechaCreacion() {
         return fechaCreacion;
     }
 
-    public void setFechaCreacion(Date fechaCreacion) {
+    public void setFechaCreacion(String fechaCreacion) {
         this.fechaCreacion = fechaCreacion;
     }
 

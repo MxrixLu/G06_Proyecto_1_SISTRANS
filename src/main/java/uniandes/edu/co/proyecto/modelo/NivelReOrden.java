@@ -16,7 +16,7 @@ public class NivelReOrden {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    private int nivelMinimo; 
+    private int nivel_minimo; 
 
     @ManyToOne
     private Sucursal sucursal;
@@ -24,9 +24,9 @@ public class NivelReOrden {
     @ManyToOne
     private Producto producto;
 
-    public NivelReOrden(int id, int nivelMinimo, Sucursal sucursal, Producto producto) {
+    public NivelReOrden(int id, int nivel_minimo, Sucursal sucursal, Producto producto) {
         this.id = id;
-        this.nivelMinimo = nivelMinimo;
+        this.nivel_minimo = nivel_minimo;
         this.sucursal = sucursal;
         this.producto = producto;
     }
@@ -43,11 +43,11 @@ public class NivelReOrden {
     }
 
     public int getNivelMinimo() {
-        return nivelMinimo;
+        return nivel_minimo;
     }
 
-    public void setNivelMinimo(int nivelMinimo) {
-        this.nivelMinimo = nivelMinimo;
+    public void setNivelMinimo(int nivel_minimo) {
+        this.nivel_minimo = nivel_minimo;
     }
 
     public Sucursal getSucursal() {

@@ -1,6 +1,5 @@
 package uniandes.edu.co.proyecto.modelo;
 
-import java.util.Date;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
  
@@ -15,31 +14,31 @@ public class Producto {
     private ProductoPK pk;
 
     private String nombre; 
-    private Double costoBodega; 
-    private Double precioVenta; 
+    private Double costo_bodega; 
+    private Double precio_venta; 
     private String presentacion; 
-    private Double cantidadPresentacion; 
-    private int unidadMedida;
-    private Double volumenEmpaque; 
-    private Double pesoEmpaque; 
-    private String fechaExpiracion; 
+    private Double cantidad_presentacion; 
+    private int unidad_medida;
+    private Double volumen_empaque; 
+    private Double peso_empaque; 
+    private String fecha_expiracion; 
 
     @ManyToOne
     private Categoria categoria;
 
-    public Producto(int id, String codigoBarras, String nombre, Double costoBodega, Double precioVenta, String presentacion,
-            Double cantidadPresentacion, int unidadMedida, Double volumenEmpaque, Double pesoEmpaque,
-            String fechaExpiracion, Categoria categoria) {
-        this.pk = new ProductoPK(id, codigoBarras);
+    public Producto(int id, String codigo_barras, String nombre, Double costo_bodega, Double precio_venta, String presentacion,
+            Double cantidad_presentacion, int unidad_medida, Double volumen_empaque, Double peso_empaque,
+            String fecha_expiracion, Categoria categoria) {
+        this.pk = new ProductoPK(id, codigo_barras);
         this.nombre = nombre;
-        this.costoBodega = costoBodega;
-        this.precioVenta = precioVenta;
+        this.costo_bodega = costo_bodega;
+        this.precio_venta = precio_venta;
         this.presentacion = presentacion;
-        this.cantidadPresentacion = cantidadPresentacion;
-        this.unidadMedida = unidadMedida;
-        this.volumenEmpaque = volumenEmpaque;
-        this.pesoEmpaque = pesoEmpaque;
-        this.fechaExpiracion = fechaExpiracion;
+        this.cantidad_presentacion = cantidad_presentacion;
+        this.unidad_medida = unidad_medida;
+        this.volumen_empaque = volumen_empaque;
+        this.peso_empaque = peso_empaque;
+        this.fecha_expiracion = fecha_expiracion;
         this.categoria = categoria;
     }
 
@@ -63,19 +62,19 @@ public class Producto {
     }
 
     public Double getCostoBodega() {
-        return costoBodega;
+        return costo_bodega;
     }
 
-    public void setCostoBodega(Double costoBodega) {
-        this.costoBodega = costoBodega;
+    public void setCostoBodega(Double costo_bodega) {
+        this.costo_bodega = costo_bodega;
     }
 
     public Double getPrecioVenta() {
-        return precioVenta;
+        return precio_venta;
     }
 
-    public void setPrecioVenta(Double precioVenta) {
-        this.precioVenta = precioVenta;
+    public void setPrecioVenta(Double precio_venta) {
+        this.precio_venta = precio_venta;
     }
 
     public String getPresentacion() {
@@ -87,43 +86,43 @@ public class Producto {
     }
 
     public Double getCantidadPresentacion() {
-        return cantidadPresentacion;
+        return cantidad_presentacion;
     }
 
-    public void setCantidadPresentacion(Double cantidadPresentacion) {
-        this.cantidadPresentacion = cantidadPresentacion;
+    public void setCantidadPresentacion(Double cantidad_presentacion) {
+        this.cantidad_presentacion = cantidad_presentacion;
     }
 
     public int getUnidadMedida() {
-        return unidadMedida;
+        return unidad_medida;
     }
 
-    public void setUnidadMedida(int unidadMedida) {
-        this.unidadMedida = unidadMedida;
+    public void setUnidadMedida(int unidad_medida) {
+        this.unidad_medida = unidad_medida;
     }
 
     public Double getVolumenEmpaque() {
-        return volumenEmpaque;
+        return volumen_empaque;
     }
 
-    public void setVolumenEmpaque(Double volumenEmpaque) {
-        this.volumenEmpaque = volumenEmpaque;
+    public void setVolumenEmpaque(Double volumen_empaque) {
+        this.volumen_empaque = volumen_empaque;
     }
 
     public Double getPesoEmpaque() {
-        return pesoEmpaque;
+        return peso_empaque;
     }
 
-    public void setPesoEmpaque(Double pesoEmpaque) {
-        this.pesoEmpaque = pesoEmpaque;
+    public void setPesoEmpaque(Double peso_empaque) {
+        this.peso_empaque = peso_empaque;
     }
 
     public String getFechaExpiracion() {
-        return fechaExpiracion;
+        return fecha_expiracion;
     }
 
-    public void setFechaExpiracion(String fechaExpiracion) {
-        this.fechaExpiracion = fechaExpiracion;
+    public void setFechaExpiracion(String fecha_expiracion) {
+        this.fecha_expiracion = fecha_expiracion;
     }
 
     public Categoria getCategoria() {

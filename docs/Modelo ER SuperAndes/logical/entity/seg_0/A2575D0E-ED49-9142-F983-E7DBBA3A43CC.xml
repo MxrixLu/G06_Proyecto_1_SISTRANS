@@ -39,7 +39,7 @@
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="costoBodega" id="DB81EBEF-B771-8155-ABD1-B824305F8A17">
+<Attribute name="costo_bodega" id="DB81EBEF-B771-8155-ABD1-B824305F8A17">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:57:37 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -51,7 +51,7 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="precioVenta" id="8E8FEF88-94D6-0BC4-ADAB-A1452DDEDE93">
+<Attribute name="precio_venta" id="8E8FEF88-94D6-0BC4-ADAB-A1452DDEDE93">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:57:46 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -76,7 +76,7 @@
 <logicalDatatype>A3A3C77D-0366-9768-FF89-1C25E56881C8</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="cantidadPresentacion" id="A5C0075A-5126-1D56-E8C9-6EDE428F0EE2">
+<Attribute name="cantidad_presentacion" id="A5C0075A-5126-1D56-E8C9-6EDE428F0EE2">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:05 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -89,7 +89,7 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="unidadMedida" id="CF27373C-36A2-A3C9-B77B-70442B4B090A">
+<Attribute name="unidad_medida" id="CF27373C-36A2-A3C9-B77B-70442B4B090A">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:21 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -114,7 +114,7 @@
 <logicalDatatype>LOGDT020</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="fechaExpiracion" id="91B08D4D-871C-C145-EFF3-5F0C9AF1E31E">
+<Attribute name="fecha_expiracion" id="91B08D4D-871C-C145-EFF3-5F0C9AF1E31E">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:44 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -127,7 +127,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigoBarras" id="96327728-6859-2266-C3CE-EB8C7B083645">
+<Attribute name="codigo_barras" id="96327728-6859-2266-C3CE-EB8C7B083645">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 01:58:56 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>

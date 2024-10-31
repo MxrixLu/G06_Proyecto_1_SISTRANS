@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="nivelMinimo" id="CFDEC772-960C-5148-4F5F-114ED141BB78">
+<Attribute name="nivel_minimo" id="CFDEC772-960C-5148-4F5F-114ED141BB78">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-01 02:05:41 UTC</createdTime>
 <ownerDesignName>Modelo ER SuperAndes </ownerDesignName>
@@ -79,7 +79,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="codigoBarras" id="7964AE93-CF23-8497-E7F8-D8D9270AB394">
+<Attribute name="codigo_barras" id="7964AE93-CF23-8497-E7F8-D8D9270AB394">
 <createdBy>maria</createdBy>
 <createdTime>2024-09-30 21:24:42 UTC</createdTime>
 <generatorID>A5CC68EA-A47E-E92F-95FD-3F28B668D51D</generatorID>

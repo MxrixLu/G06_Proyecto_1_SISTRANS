@@ -33,23 +33,23 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
     // Insertar una nueva sucursal
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO sucursales (id, nombre, telefono, direccion, tamano, id_ciudad) VALUES (superandes_sequence.nextval, :nombre, :telefono, :direccion, :tamano, :id_ciudad)", nativeQuery = true)
+    @Query(value = "INSERT INTO sucursales (id, nombre, telefono, direccion, tamano, ciudad_id) VALUES (superandes_sequence.nextval, :nombre, :telefono, :direccion, :tamano, :ciudad_id)", nativeQuery = true)
     void insertarSucursal(@Param("nombre") String nombre, 
                           @Param("telefono") String telefono, 
                           @Param("direccion") String direccion, 
                           @Param("tamano") Double tamano, 
-                          @Param("id_ciudad") Ciudad id_ciudad);
+                          @Param("ciudad_id") Ciudad ciudad_id);
 
     // Actualizar una sucursal existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE sucursales SET nombre = :nombre, telefono = :telefono, direccion = :direccion, tamano = :tamano, id_ciudad = :id_ciudad WHERE id = :id", nativeQuery = true)
+    @Query(value = "UPDATE sucursales SET nombre = :nombre, telefono = :telefono, direccion = :direccion, tamano = :tamano, ciudad_id = :ciudad_id WHERE id = :id", nativeQuery = true)
     void actualizarSucursal(@Param("id") int id, 
                             @Param("nombre") String nombre, 
                             @Param("telefono") String telefono, 
                             @Param("direccion") String direccion, 
                             @Param("tamano") Double tamano, 
-                            @Param("id_ciudad") Ciudad id_ciudad);
+                            @Param("ciudad_id") Ciudad ciudad_id);
 
     // Borrar una sucursal por su ID
     @Modifying
@@ -60,13 +60,13 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
     @Query(value = "SELECT " +
                "b.id AS bodega_id, " +
                "b.nombre AS nombre_bodega, " +
-               "SUM(pb.cantidadExistente * p.volumenEmpaque) AS volumen_ocupado, " +
-               "(SUM(pb.cantidadExistente * p.volumenEmpaque) / b.capacidadBodega) * 100 AS porcentaje_ocupacion " +
+               "SUM(pb.cantidad_existente * p.volumen_empaque) AS volumen_ocupado, " +
+               "(SUM(pb.cantidad_existente * p.volumen_empaque) / b.capacidad_bodega) * 100 AS porcentaje_ocupacion " +
                "FROM bodegas b " +
-               "INNER JOIN producto_bodega pb ON pb.id_bodega = b.id " +
-               "INNER JOIN productos p ON p.id = pb.id_producto " +
+               "INNER JOIN producto_bodega pb ON pb.bodega_id = b.id " +
+               "INNER JOIN productos p ON p.id = pb.producto_id " +
                "WHERE p.id IN (:listaDeProductos) " +
-               "GROUP BY b.id, b.nombre, b.capacidadBodega", nativeQuery = true)
+               "GROUP BY b.id, b.nombre, b.capacidad_bodega", nativeQuery = true)
     Collection<RespuestaIndiceOcupacion> calcularIndiceOcupacion(@Param("listaDeProductos") List<Integer> listaDeProductos);
 
 }

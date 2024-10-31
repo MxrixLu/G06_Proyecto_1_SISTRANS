@@ -19,30 +19,30 @@ public interface InfoRecepcionRepository extends JpaRepository<InfoRecepcion, In
     Collection<InfoRecepcion> darInfoRecepcion();
 
     // Obtener una entrada de recepción por su clave primaria compuesta
-    @Query(value = "SELECT * FROM info_recepcion WHERE id_Recepcion = :idRecepcion AND id_producto = :idProducto", nativeQuery = true)
-    InfoRecepcion darInfoRecepcionPorId(@Param("idRecepcion") int idRecepcion, @Param("idProducto") int idProducto);
+    @Query(value = "SELECT * FROM info_recepcion WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    InfoRecepcion darInfoRecepcionPorId(@Param("recepcion_id") int recepcion_id, @Param("producto_id") int producto_id);
 
     // Insertar una nueva entrada de recepción
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO info_recepcion (id_Recepcion, id_producto, cantidadRecibida, costoRecibido) VALUES (:idRecepcion, :idProducto, :cantidadRecibida, :costoRecibido)", nativeQuery = true)
-    void insertarInfoRecepcion(@Param("idRecepcion") Recepcion idRecepcion, 
-                               @Param("idProducto") Producto idProducto, 
-                               @Param("cantidadRecibida") int cantidadRecibida, 
-                               @Param("costoRecibido") Double costoRecibido);
+    @Query(value = "INSERT INTO info_recepcion (id_Recepcion, producto_id, cantidad_recibida, costo_recibido) VALUES (:recepcion_id, :producto_id, :cantidad_recibida, :costo_recibido)", nativeQuery = true)
+    void insertarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, 
+                               @Param("producto_id") Producto producto_id, 
+                               @Param("cantidad_recibida") int cantidad_recibida, 
+                               @Param("costo_recibido") Double costo_recibido);
 
     // Actualizar una entrada de recepción existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE info_recepcion SET cantidadRecibida = :cantidadRecibida, costoRecibido = :costoRecibido WHERE id_Recepcion = :idRecepcion AND id_producto = :idProducto", nativeQuery = true)
-    void actualizarInfoRecepcion(@Param("idRecepcion") Recepcion idRecepcion, 
-                                  @Param("idProducto") Producto idProducto, 
-                                  @Param("cantidadRecibida") int cantidadRecibida, 
-                                  @Param("costoRecibido") Double costoRecibido);
+    @Query(value = "UPDATE info_recepcion SET cantidad_recibida = :cantidad_recibida, costo_recibido = :costo_recibido WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    void actualizarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, 
+                                  @Param("producto_id") Producto producto_id, 
+                                  @Param("cantidad_recibida") int cantidad_recibida, 
+                                  @Param("costo_recibido") Double costo_recibido);
 
     // Borrar una entrada de recepción por su clave primaria compuesta
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM info_recepcion WHERE id_Recepcion = :idRecepcion AND id_producto = :idProducto", nativeQuery = true)
-    void borrarInfoRecepcion(@Param("idRecepcion") Recepcion idRecepcion, @Param("idProducto") Producto idProducto);
+    @Query(value = "DELETE FROM info_recepcion WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    void borrarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, @Param("producto_id") Producto producto_id);
 }

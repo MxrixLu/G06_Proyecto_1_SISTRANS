@@ -26,11 +26,11 @@ public class ProductoBodegaController {
     }
 
     // Obtener un registro específico de ProductoBodega por su clave primaria compuesta
-    @GetMapping("/productoBodega/{id_producto}/{id_bodega}")
-    public ResponseEntity<ProductoBodega> darProductoBodegaPorId(@PathVariable("id_producto") Producto id_producto,
-                                                                 @PathVariable("id_bodega") Bodega id_bodega) {
+    @GetMapping("/productoBodega/{producto_id}/{bodega_id}")
+    public ResponseEntity<ProductoBodega> darProductoBodegaPorId(@PathVariable("producto_id") Producto producto_id,
+                                                                 @PathVariable("bodega_id") Bodega bodega_id) {
         try {
-            ProductoBodega productoBodega = productoBodegaRepository.darProductoBodega(id_producto, id_bodega);
+            ProductoBodega productoBodega = productoBodegaRepository.darProductoBodega(producto_id, bodega_id);
             return new ResponseEntity<>(productoBodega, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -56,15 +56,15 @@ public class ProductoBodegaController {
     }
 
     // Actualizar un registro existente de ProductoBodega
-    @PutMapping("/productoBodega/{id_producto}/{id_bodega}/edit/save")
+    @PutMapping("/productoBodega/{producto_id}/{bodega_id}/edit/save")
     @Transactional
-    public ResponseEntity<String> actualizarProductoBodega(@PathVariable("id_producto") Producto id_producto,
-                                                           @PathVariable("id_bodega") Bodega id_bodega,
+    public ResponseEntity<String> actualizarProductoBodega(@PathVariable("producto_id") Producto producto_id,
+                                                           @PathVariable("bodega_id") Bodega bodega_id,
                                                            @RequestBody ProductoBodega productoBodega) {
         try {
             productoBodegaRepository.actualizarProductoBodega(
-                id_producto,
-                id_bodega,
+                producto_id,
+                bodega_id,
                 productoBodega.getCantidadExistente(),
                 productoBodega.getCostoPromedio(), 
                 productoBodega.getCapacidadBodega()
@@ -76,12 +76,12 @@ public class ProductoBodegaController {
     }
 
     // Borrar un registro de ProductoBodega por su clave primaria compuesta
-    @DeleteMapping("/productoBodega/{id_producto}/{id_bodega}/delete")
+    @DeleteMapping("/productoBodega/{producto_id}/{bodega_id}/delete")
     @Transactional
-    public ResponseEntity<String> borrarProductoBodega(@PathVariable("id_producto") Producto id_producto,
-                                                       @PathVariable("id_bodega") Bodega id_bodega) {
+    public ResponseEntity<String> borrarProductoBodega(@PathVariable("producto_id") Producto producto_id,
+                                                       @PathVariable("bodega_id") Bodega bodega_id) {
         try {
-            productoBodegaRepository.borrarProductoBodega(id_producto, id_bodega);
+            productoBodegaRepository.borrarProductoBodega(producto_id, bodega_id);
             return new ResponseEntity<>("ProductoBodega eliminada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al eliminar el ProductoBodega", HttpStatus.INTERNAL_SERVER_ERROR);
@@ -89,10 +89,10 @@ public class ProductoBodegaController {
     }
 
     // Obtener productos en una bodega específica
-    @GetMapping("/productoBodega/bodega/{id_bodega}")
-    public ResponseEntity<Collection<ProductoBodega>> darProductosPorBodega(@PathVariable("id_bodega") Bodega id_bodega) {
+    @GetMapping("/productoBodega/bodega/{bodega_id}")
+    public ResponseEntity<Collection<ProductoBodega>> darProductosPorBodega(@PathVariable("bodega_id") Bodega bodega_id) {
         try {
-            Collection<ProductoBodega> productosBodega = productoBodegaRepository.darProductosPorBodega(id_bodega);
+            Collection<ProductoBodega> productosBodega = productoBodegaRepository.darProductosPorBodega(bodega_id);
             return new ResponseEntity<>(productosBodega, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
@@ -100,10 +100,10 @@ public class ProductoBodegaController {
     }
 
     // Obtener bodegas que contienen un producto específico
-    @GetMapping("/productoBodega/producto/{id_producto}")
-    public ResponseEntity<Collection<ProductoBodega>> darBodegasPorProducto(@PathVariable("id_producto") Producto id_producto) {
+    @GetMapping("/productoBodega/producto/{producto_id}")
+    public ResponseEntity<Collection<ProductoBodega>> darBodegasPorProducto(@PathVariable("producto_id") Producto producto_id) {
         try {
-            Collection<ProductoBodega> bodegasProducto = productoBodegaRepository.darBodegasPorProducto(id_producto);
+            Collection<ProductoBodega> bodegasProducto = productoBodegaRepository.darBodegasPorProducto(producto_id);
             return new ResponseEntity<>(bodegasProducto, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
