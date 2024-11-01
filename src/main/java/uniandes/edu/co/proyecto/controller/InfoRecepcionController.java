@@ -41,7 +41,7 @@ public class InfoRecepcionController {
     }
 
     @PostMapping("/infoRecepcion/new/save")
-    public ResponseEntity<String> guardarInfoRecepcion(@RequestBody InfoRecepcion infoRecepcion) {
+    public ResponseEntity<String> insertarInfoRecepcion(@RequestBody InfoRecepcion infoRecepcion) {
         try {
             infoRecepcionRepository.insertarInfoRecepcion(
                 infoRecepcion.getPk().getIdRecepcion(),

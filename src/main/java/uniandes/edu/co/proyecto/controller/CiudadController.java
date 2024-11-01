@@ -28,7 +28,7 @@ public class CiudadController {
     }
 
     @PostMapping("/ciudades/new/save")
-    public ResponseEntity<String> guardarCiudad(@RequestBody Ciudad ciudad) {
+    public ResponseEntity<String> insertarCiudad(@RequestBody Ciudad ciudad) {
         try {
             ciudadRepository.insertarCiudad(
                 ciudad.getCodigo(),
@@ -41,7 +41,7 @@ public class CiudadController {
     }
 
     @PutMapping("/ciudades/{id}/edit/save")
-    public ResponseEntity<String> ciudadEditarGuardar(@PathVariable("id") Integer id, @RequestBody Ciudad ciudad) {
+    public ResponseEntity<String> actualizarCiudad(@PathVariable("id") Integer id, @RequestBody Ciudad ciudad) {
         try {
             ciudadRepository.actualizarCiudad(
                 id,

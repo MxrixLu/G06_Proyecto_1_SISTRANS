@@ -10,7 +10,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.Sucursal;
-import uniandes.edu.co.proyecto.modelo.Ciudad;
 
 public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
 

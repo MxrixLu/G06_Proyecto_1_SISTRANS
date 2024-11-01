@@ -28,7 +28,7 @@ public class ClienteController {
     }
 
     @PostMapping("/clientes/new/save")
-    public ResponseEntity<String> guardarCliente(@RequestBody Cliente cliente) {
+    public ResponseEntity<String> insertarCliente(@RequestBody Cliente cliente) {
         try {
             clienteRepository.insertarCliente(
                 cliente.getCedula(),

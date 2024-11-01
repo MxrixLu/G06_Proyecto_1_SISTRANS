@@ -49,7 +49,7 @@ public class CategoriaController {
     }
 
     @PutMapping("/categorias/{id}/edit/save")
-    public ResponseEntity<String> categoriaEditarGuardar(@PathVariable("id") Integer id, @RequestBody Categoria categoria) {
+    public ResponseEntity<String> actualizarCategoria(@PathVariable("id") Integer id, @RequestBody Categoria categoria) {
         try {
             categoriaRepository.actualizarCategoria(
                 id,

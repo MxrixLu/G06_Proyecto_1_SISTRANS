@@ -26,7 +26,7 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
         String getDireccion();
         String getTelefono();
         Double getTamano();
-        int getId_ciudad();
+        int getCiudad();
         
     }
 
@@ -35,7 +35,7 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
         String getDireccion();
         String getTelefono();
         Double getTamano();
-        int getId_ciudad();
+        int getCiudad();
         
     }
  
@@ -66,20 +66,20 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
     "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
     "INNER JOIN productos p ON p.id = pb.producto_id " +
     "LEFT JOIN niveles_reorden nro ON nro.producto_id = p.id AND nro.sucursal_id = s.id " +
-    "WHERE s.id = :sucursal_id AND \n" + //
+    "WHERE s.id = :sucursal_id AND \n" + 
     " b.id = :bodega_id\n" + 
     "GROUP BY \n" + 
     " p.nombre, pb.cantidad_actual, pb.cantidad_minima;", nativeQuery = true)
     Collection<RespuestaDarProductosConBodega> darProductosConBodega(@Param("sucursal_id") int sucursal_id);
 
-    @Query(value = "SELECT s.* " +
-               "FROM sucursales s " +
-               "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
-               "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
-               "WHERE pb.producto_id = :producto_id", nativeQuery = true)
+    @Query(value = "SELECT * " +
+               "FROM sucursales  " +
+               "INNER JOIN bodegas ON bodegas.sucursal_id = sucursales.id " +
+               "INNER JOIN producto_bodega  ON producto_bodega.BODEGA_ID= bodegas.id  " +
+               "WHERE producto_bodega.producto_id = :producto_id", nativeQuery = true)
     Collection<RespuestaDarSucursalesSegunProducto> darSucursalesSegunProducto(@Param("producto_id") int producto_id);
 
-    @Query(value = "SELECT s.* " +
+    @Query(value = "SELECT * " +
     "FROM sucursales s " +
     "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
     "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
