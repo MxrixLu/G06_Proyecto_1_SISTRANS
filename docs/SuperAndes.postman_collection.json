@@ -105,6 +105,39 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Indice de ocupación",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[1, 2, 3]\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/proyecto/sucursales/consulta",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"sucursales",
+								"consulta"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -174,6 +207,88 @@
 								"bodegas",
 								"31",
 								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de sucursal producto",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/proyecto/bodegas/consultarSucursalProducto?producto_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"bodegas",
+								"consultarSucursalProducto"
+							],
+							"query": [
+								{
+									"key": "producto_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta productos de bodega",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/bodegas/consultaBodega?bodega_id=2&sucursal_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"bodegas",
+								"consultaBodega"
+							],
+							"query": [
+								{
+									"key": "bodega_id",
+									"value": "2"
+								},
+								{
+									"key": "sucursal_id",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -404,6 +519,80 @@
 								"fASADf0f0f",
 								"edit",
 								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta de listar productos reOrden",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/bodegas/consultaBodega?bodega_id=2&sucursal_id=2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"bodegas",
+								"consultaBodega"
+							],
+							"query": [
+								{
+									"key": "bodega_id",
+									"value": "2"
+								},
+								{
+									"key": "sucursal_id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consultar producto por caracteristica",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/productos/consultaCaracteristica?precioMinimo=10&precioMaximo=30000&fechaInicio=2001-01-01&fechaFin=2040-01-01&idCategoria=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"productos",
+								"consultaCaracteristica"
+							],
+							"query": [
+								{
+									"key": "precioMinimo",
+									"value": "10"
+								},
+								{
+									"key": "precioMaximo",
+									"value": "30000"
+								},
+								{
+									"key": "fechaInicio",
+									"value": "2001-01-01"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2040-01-01"
+								},
+								{
+									"key": "idCategoria",
+									"value": "1"
+								}
 							]
 						}
 					},

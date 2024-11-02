@@ -16,9 +16,9 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
 
     public interface RespuestaDarProductosConBodega {
         String getProducto();
-        int getCantidadExistente();
-        double getCostoPromedio();
-        int getNivelMinimo();
+        int getCantidad_existente();
+        double getCosto_promedio();
+        int getNivel_minimo();
     }
 
     public interface RespuestaDarSucursalesSegunProducto {
@@ -60,18 +60,20 @@ public interface BodegaRepository extends JpaRepository<Bodega, Integer> {
     @Query( value = "DELETE FROM bodegas WHERE id = :id", nativeQuery = true)
     void borrarBodega(@Param("id") int id);
 
-    @Query(value = "SELECT p.nombre AS producto, pb.cantidad_existente, pb.costo_promedio, nro.nivel_minimo " +
-    "FROM sucursales s " +
-    "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
-    "INNER JOIN productos_bodega pb ON pb.bodega_id = b.id " +
-    "INNER JOIN productos p ON p.id = pb.producto_id " +
-    "LEFT JOIN niveles_reorden nro ON nro.producto_id = p.id AND nro.sucursal_id = s.id " +
-    "WHERE s.id = :sucursal_id AND \n" + 
-    " b.id = :bodega_id\n" + 
-    "GROUP BY \n" + 
-    " p.nombre, pb.cantidad_actual, pb.cantidad_minima;", nativeQuery = true)
-    Collection<RespuestaDarProductosConBodega> darProductosConBodega(@Param("sucursal_id") int sucursal_id);
-
+    @Query(
+        value = "SELECT p.nombre AS producto, pb.cantidad_existente, pb.costo_promedio, nro.nivel_minimo " +
+                "FROM sucursales s " +
+                "INNER JOIN bodegas b ON b.sucursal_id = s.id " +
+                "INNER JOIN producto_bodega pb ON pb.bodega_id = b.id " +
+                "INNER JOIN productos p ON p.id = pb.producto_id " +
+                "LEFT JOIN niveles_reorden nro ON nro.producto_id = p.id AND nro.sucursal_id = s.id " +
+                "WHERE s.id = :sucursal_id AND b.id = :bodega_id",
+        nativeQuery = true
+    )
+    Collection<RespuestaDarProductosConBodega> darProductosConBodega(
+        @Param("sucursal_id") int sucursal_id,
+        @Param("bodega_id") int bodega_id
+    );
     @Query(value = "SELECT * " +
                "FROM sucursales  " +
                "INNER JOIN bodegas ON bodegas.sucursal_id = sucursales.id " +

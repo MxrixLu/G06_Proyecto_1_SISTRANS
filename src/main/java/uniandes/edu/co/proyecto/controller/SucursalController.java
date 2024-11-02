@@ -88,16 +88,16 @@ public class SucursalController {
     }
 
     @GetMapping("/sucursales/consulta")
-    public ResponseEntity<?> indiceOcupacionConsulta(@RequestParam(required = false) List<Integer> listaDeProductos) {
-        try {
+    public ResponseEntity<?> indiceOcupacionConsulta(@RequestBody List<Integer> listaDeProductos) {
+        // try {
             Collection<RespuestaIndiceOcupacion>  informacion = sucursalRepository.calcularIndiceOcupacion(listaDeProductos);
             RespuestaIndiceOcupacion info = informacion.iterator().next();
             Map<String, Object> respuesta = new HashMap<>();
             respuesta.put("procentajeOcupacion", info.getPorcentaje_ocupacion());
             return ResponseEntity.ok(respuesta);
 
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        }
+        // } catch (Exception e) {
+        //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        // }
     }   
 }

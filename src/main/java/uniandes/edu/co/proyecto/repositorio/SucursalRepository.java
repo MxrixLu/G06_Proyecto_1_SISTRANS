@@ -60,12 +60,12 @@ public interface SucursalRepository extends JpaRepository<Sucursal, Integer> {
                "b.id AS bodega_id, " +
                "b.nombre AS nombre_bodega, " +
                "SUM(pb.cantidad_existente * p.volumen_empaque) AS volumen_ocupado, " +
-               "(SUM(pb.cantidad_existente * p.volumen_empaque) / b.capacidad_bodega) * 100 AS porcentaje_ocupacion " +
+               "(SUM(pb.cantidad_existente * p.volumen_empaque) / pb.capacidad_bodega) * 100 AS porcentaje_ocupacion " +
                "FROM bodegas b " +
                "INNER JOIN producto_bodega pb ON pb.bodega_id = b.id " +
                "INNER JOIN productos p ON p.id = pb.producto_id " +
                "WHERE p.id IN (:listaDeProductos) " +
-               "GROUP BY b.id, b.nombre, b.capacidad_bodega", nativeQuery = true)
+               "GROUP BY b.id, b.nombre, pb.capacidad_bodega", nativeQuery = true)
     Collection<RespuestaIndiceOcupacion> calcularIndiceOcupacion(@Param("listaDeProductos") List<Integer> listaDeProductos);
 
 }

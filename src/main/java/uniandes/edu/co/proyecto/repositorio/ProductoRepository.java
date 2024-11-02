@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -16,26 +17,26 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
 
     public interface RespuestaListarProductosReorden {
         String getNombre_producto();
-        int getId_producto();
+        int getProducto_id();
         String getNombre_bodega();
         String getNombre_sucursal();
-        int getCantidadExistente();
+        int getCantidad_existente();
         String getNit_proveedor();
         
     }
 
     public interface RespuestaDarProductosPorCaracteristica {
         String getNombre();
-        String getCodigoBarras();
-        Double getCostoBodega();
-        Double getPrecioVenta();
+        String getCodigo_barras();
+        Double getCosto_bodega();
+        Double getPrecio_venta();
         String getPresentacion();
-        Double getCantidadPresentacion();
-        Boolean getUnidadMedida();
-        Double getVolumenEmpaque();
-        Double getPesoEmpaque();
-        String getFechaExpiracion();
-        int getId_categoria();
+        Double getCantidad_presentacion();
+        int getUnidad_medida();
+        Double getVolumen_empaque();
+        Double getPeso_empaque();
+        String getFecha_expiracion();
+        int getCategoria_id();
     
         
     }
@@ -89,8 +90,8 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
     void borrarProducto(@Param("id") int id, @Param("codigo_barras") String codigo_barras);
 
 
-    @Query(value = "SELECT * FROM productos WHERE precio_venta BETWEEN :precioMinimo AND :precioMaximo AND fecha_expiracion BETWEEN :fechaInicio AND :fechaFin AND categoria_id.id = :idCategoria", nativeQuery = true)
-    Collection<RespuestaDarProductosPorCaracteristica> darProductosPorCaracteristicas(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo, @Param("fechaInicio") String fechaInicio, @Param("fechaFin") String fechaFin, @Param("idCategoria") int idCategoria);
+    @Query(value = "SELECT * FROM productos WHERE precio_venta BETWEEN :precioMinimo AND :precioMaximo AND fecha_expiracion BETWEEN :fechaInicio AND :fechaFin AND categoria_id = :idCategoria", nativeQuery = true)
+    Collection<RespuestaDarProductosPorCaracteristica> darProductosPorCaracteristicas(@Param("precioMinimo") Double precioMinimo, @Param("precioMaximo") Double precioMaximo, @Param("fechaInicio") Date fechaInicio, @Param("fechaFin") Date fechaFin, @Param("idCategoria") int idCategoria);
 
     @Query(value = "SELECT " +
                "p.nombre AS nombre_producto, " +

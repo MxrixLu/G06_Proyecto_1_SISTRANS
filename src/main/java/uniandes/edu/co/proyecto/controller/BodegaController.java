@@ -36,16 +36,19 @@ public class BodegaController {
         return bodegaRepository.darBodegas();
     }
 
+    //---------------CONSULTAS----------------//
+
     @GetMapping("/bodegas/consultaBodega")
-    public ResponseEntity<?> darProductosConBodega(@RequestParam(required = false) int sucursal_id) {
+    public ResponseEntity<?> darProductosConBodega(@RequestParam(required = false) int sucursal_id, 
+                                                   @RequestParam(required = false) int bodega_id) {
         try {
-            Collection<RespuestaDarProductosConBodega> bodegas = bodegaRepository.darProductosConBodega(sucursal_id);
+            Collection<RespuestaDarProductosConBodega> bodegas = bodegaRepository.darProductosConBodega(sucursal_id, bodega_id);
             RespuestaDarProductosConBodega info = bodegas.iterator().next();
             Map<String, Object> respuesta = new HashMap<>();
             respuesta.put("producto", info.getProducto());
-            respuesta.put("cantidad_existente", info.getCantidadExistente());
-            respuesta.put("costo_promedio", info.getCostoPromedio());
-            respuesta.put("nivel_minimo", info.getNivelMinimo());
+            respuesta.put("cantidad_existente", info.getCantidad_existente());
+            respuesta.put("costo_promedio", info.getCosto_promedio());
+            respuesta.put("nivel_minimo", info.getNivel_minimo());
             return new ResponseEntity<>(respuesta, HttpStatus.OK);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
@@ -68,12 +71,10 @@ public class BodegaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
-
     
     @GetMapping("/bodegas/consultarSucursalProducto")
     public ResponseEntity<?> darSucursalesSegunProducto(@RequestParam(required = false) int producto_id) {
-        // try {
-            System.out.println("El producto es" + producto_id);
+        try {
             Collection<RespuestaDarSucursalesSegunProducto> bodegas = bodegaRepository.darSucursalesSegunProducto(producto_id);
             RespuestaDarSucursalesSegunProducto info = bodegas.iterator().next();
             Map<String, Object> respuesta = new HashMap<>();
@@ -82,11 +83,13 @@ public class BodegaController {
             respuesta.put("telefono", info.getTelefono());
             respuesta.put("tamano", info.getTamano());
             return new ResponseEntity<>(respuesta, HttpStatus.OK);
-        // } catch (Exception e) {
-        //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        // }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
 
+
+    //---------------CRUD----------------//
     @PostMapping("/bodegas/new/save")
     public ResponseEntity<String> insertarBodega(@RequestBody Bodega bodega) {
         try{
