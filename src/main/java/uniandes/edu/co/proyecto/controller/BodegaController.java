@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import uniandes.edu.co.proyecto.repositorio.BodegaRepository.RespuestaDarProductosConBodega;
 import uniandes.edu.co.proyecto.repositorio.BodegaRepository.RespuestaDarSucursalesNombreProducto;
 import uniandes.edu.co.proyecto.repositorio.BodegaRepository.RespuestaDarSucursalesSegunProducto;
+import uniandes.edu.co.proyecto.servicios.BodegaService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -29,6 +30,8 @@ public class BodegaController {
     
     @Autowired
     private BodegaRepository bodegaRepository;
+
+    private BodegaService bodegaService;
 
 
     @GetMapping("/bodegas")
@@ -87,6 +90,19 @@ public class BodegaController {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
         }
     }
+
+    //---------------Transacciones----------------//
+
+    @GetMapping("/bodegas/registroProductoBodega")
+    public ResponseEntity<String> registroProductoBodega(@RequestParam int ordenCompraId, @RequestParam int bodegaId) {
+        try {
+            bodegaService.registroProductoBodega(ordenCompraId, bodegaId);
+            return new ResponseEntity<>("Producto registrado en bodega exitosamente", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al registrar el producto en la bodega", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+    
 
 
     //---------------CRUD----------------//

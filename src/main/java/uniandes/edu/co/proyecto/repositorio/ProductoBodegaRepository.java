@@ -22,6 +22,17 @@ public interface ProductoBodegaRepository extends JpaRepository<ProductoBodega, 
 
     @Modifying
     @Transactional
+    @Query(value = "UPDATE producto_bodega " +
+                "SET cantidad_existente = cantidad_existente + :cantidadNueva, " +
+                "costo_promedio = ((costo_promedio * cantidad_existente) + :costoNuevo) / (cantidad_existente + :cantidadNueva) " +
+                "WHERE producto_id = :productoId AND bodega_id = :bodegaId", nativeQuery = true)
+    void agregarNuevoProducto(@Param("productoId") int productoId,
+                            @Param("bodegaId") int bodegaId,
+                            @Param("cantidadNueva") int cantidadNueva,
+                            @Param("costoNuevo") Double costoNuevo);
+
+    @Modifying
+    @Transactional
     @Query(value = "INSERT INTO producto_bodega (producto_id, bodega_id, cantidad_existente, costo_promedio, capacidad_bodega) VALUES (:producto_id, :bodega_id, :cantidad_existente, :costo_promedio, :capacidad_bodega)", nativeQuery = true)
     void insertarProductoBodega(@Param("producto_id") Producto producto_id,
                                  @Param("bodega_id") Bodega bodega_id,

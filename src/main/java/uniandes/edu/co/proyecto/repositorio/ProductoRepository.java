@@ -47,6 +47,9 @@ public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> 
 
     @Query(value = "SELECT * FROM productos WHERE codigo_barras = :codigo_barras", nativeQuery = true)
     List<Producto> darPorCodigoBarras(@Param("codigo_barras") String codigo_barras);
+
+    @Query(value = "SELECT * FROM productos WHERE id = :id", nativeQuery = true)
+    Producto darProducto(@Param("producto_id") int id);
     
     
     // Insertar un nuevo producto

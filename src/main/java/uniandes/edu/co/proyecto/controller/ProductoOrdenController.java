@@ -27,8 +27,8 @@ public class ProductoOrdenController {
 
     // Obtener un registro específico de ProductoOrden por su clave primaria compuesta
     @GetMapping("/productoOrden/{producto_id}/{orden_compra_id}")
-    public ResponseEntity<ProductoOrden> darProductoOrdenPorId(@PathVariable("producto_id") Producto producto_id,
-                                                               @PathVariable("orden_compra_id") OrdenCompra orden_compra_id) {
+    public ResponseEntity<ProductoOrden> darProductoOrdenPorId(@PathVariable("producto_id") int producto_id,
+                                                               @PathVariable("orden_compra_id") int orden_compra_id) {
         try {
             ProductoOrden productoOrden = productoOrdenRepository.darProductoOrden(producto_id, orden_compra_id);
             return new ResponseEntity<>(productoOrden, HttpStatus.OK);
@@ -88,9 +88,9 @@ public class ProductoOrdenController {
 
     // Obtener productos en una orden específica
     @GetMapping("/productoOrden/orden/{orden_compra_id}")
-    public ResponseEntity<Collection<ProductoOrden>> darProductosPorOrden(@PathVariable("orden_compra_id") OrdenCompra orden_compra_id) {
+    public ResponseEntity<Collection<Integer>> darProductosPorOrden(@PathVariable("orden_compra_id") int orden_compra_id) {
         try {
-            Collection<ProductoOrden> productosOrden = productoOrdenRepository.darProductosPorOrden(orden_compra_id);
+            Collection<Integer> productosOrden = productoOrdenRepository.darProductosPorOrden(orden_compra_id);
             return new ResponseEntity<>(productosOrden, HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);

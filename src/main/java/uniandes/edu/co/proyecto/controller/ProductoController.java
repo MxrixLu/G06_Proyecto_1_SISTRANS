@@ -61,7 +61,7 @@ public class ProductoController {
                                                           @RequestParam(required = false) String fechaInicio, 
                                                           @RequestParam(required = false) String fechaFin, 
                                                           @RequestParam(required = false) int idCategoria) throws ParseException{
-        // try {
+        try {
             SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
             Date fechaInicioDate = formatter.parse(fechaInicio);
 
@@ -82,9 +82,9 @@ public class ProductoController {
             respuesta.put("fecha_expiracion", info.getFecha_expiracion());
             respuesta.put("categoria_id", info.getCategoria_id());
             return ResponseEntity.ok(respuesta);
-        // } catch (Exception e) {
-        //     return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
-        // }
+        } catch (Exception e) {
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
     
     

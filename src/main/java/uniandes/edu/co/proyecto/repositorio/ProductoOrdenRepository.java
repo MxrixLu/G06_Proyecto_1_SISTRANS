@@ -20,7 +20,7 @@ public interface ProductoOrdenRepository extends JpaRepository<ProductoOrden, Pr
 
     // Obtener un registro específico de ProductoOrden por su clave primaria compuesta
     @Query(value = "SELECT * FROM producto_orden WHERE producto_id = :producto_id AND orden_compra_id = :orden_compra_id", nativeQuery = true)
-    ProductoOrden darProductoOrden(@Param("producto_id") Producto producto_id, @Param("orden_compra_id") OrdenCompra orden_compra_id);
+    ProductoOrden darProductoOrden(@Param("producto_id") int producto_id, @Param("orden_compra_id") int orden_compra_id);
 
     // Insertar un nuevo registro de ProductoOrden, utilizando las entidades asociadas
     @Modifying
@@ -47,8 +47,8 @@ public interface ProductoOrdenRepository extends JpaRepository<ProductoOrden, Pr
     void borrarProductoOrden(@Param("producto_id") Producto producto_id, @Param("orden_compra_id") OrdenCompra orden_compra_id);
     
     // Obtener productos en una orden específica
-    @Query(value = "SELECT * FROM producto_orden WHERE orden_compra_id = :orden_compra_id", nativeQuery = true)
-    Collection<ProductoOrden> darProductosPorOrden(@Param("orden_compra_id") OrdenCompra orden_compra_id);
+    @Query(value = "SELECT producto_id FROM producto_orden WHERE orden_compra_id = :orden_compra_id", nativeQuery = true)
+    Collection<Integer> darProductosPorOrden(@Param("orden_compra_id") int orden_compra_id);
 
     // Obtener órdenes que contienen un producto específico
     @Query(value = "SELECT * FROM producto_orden WHERE producto_id = :producto_id", nativeQuery = true)

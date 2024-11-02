@@ -36,7 +36,7 @@ public class OrdenCompraController {
     // Insertar una nueva orden de compra
     @PostMapping("/ordenCompra/new/save")
     public ResponseEntity<String> insertarOrdenCompra(@RequestBody OrdenCompra ordenCompra) {
-        // try {
+        try {
         
             ordenCompraRepository.insertarOrdenCompra(
                 ordenCompra.getFechaEsperadaEntrega(),
@@ -47,15 +47,15 @@ public class OrdenCompraController {
                 ordenCompra.getProveedor().getId()
             );
             return new ResponseEntity<>("Orden de compra creada exitosamente", HttpStatus.CREATED);
-        // } catch (Exception e) {
-        //     return new ResponseEntity<>("Error al crear la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
-        // }
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al crear la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     // Actualizar una orden de compra existente
     @PutMapping("/ordenCompra/{id}/edit/save")
     public ResponseEntity<String> actualizarOrdenCompra(@PathVariable("id") int id, @RequestBody OrdenCompra ordenCompra) {
-        // try {
+        try {
             ordenCompraRepository.actualizarOrdenCompra(
                 id,
                 ordenCompra.getFechaEsperadaEntrega(),
@@ -66,9 +66,9 @@ public class OrdenCompraController {
                 ordenCompra.getProveedor().getId()
             );
             return new ResponseEntity<>("Orden de compra actualizada exitosamente", HttpStatus.OK);
-        // } catch (Exception e) {
-        //     return new ResponseEntity<>("Error al actualizar la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
-        // }
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al actualizar la orden de compra", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
     }
 
     // Borrar una orden de compra por su ID

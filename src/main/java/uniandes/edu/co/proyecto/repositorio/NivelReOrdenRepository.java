@@ -21,6 +21,9 @@ public interface NivelReOrdenRepository extends JpaRepository<NivelReOrden, Inte
     @Query(value = "SELECT * FROM niveles_reorden WHERE id = :id", nativeQuery = true)
     NivelReOrden darNivelReOrden(@Param("id") int id);
 
+    @Query(value = "SELECT * FROM niveles_reorden WHERE producto_id = :producto_id AND sucursal_id = :sucursal_id", nativeQuery = true)
+    NivelReOrden darNivelReOrdenProductoSucursal(@Param("producto_id") int producto_id, @Param("sucursal_id") int sucursal_id);
+
     // Insertar un nuevo nivel de reorden
     @Modifying
     @Transactional

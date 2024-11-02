@@ -9,8 +9,6 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.transaction.annotation.Transactional;
 
 import uniandes.edu.co.proyecto.modelo.OrdenCompra;
-import uniandes.edu.co.proyecto.modelo.Proveedor;
-import uniandes.edu.co.proyecto.modelo.Sucursal;
 
 public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Integer> {
 
