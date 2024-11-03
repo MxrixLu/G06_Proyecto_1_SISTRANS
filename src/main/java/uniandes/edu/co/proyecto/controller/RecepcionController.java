@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import uniandes.edu.co.proyecto.modelo.Recepcion;
 import uniandes.edu.co.proyecto.repositorio.RecepcionRepository;
 
+
 @RestController
 public class RecepcionController {
 
@@ -34,7 +35,7 @@ public class RecepcionController {
         }
     }
 
-    // Insertar una nueva recepción
+    // // Insertar una nueva recepción
     @PostMapping("/recepciones/new/save")
     @Transactional
     public ResponseEntity<String> insertarRecepcion(@RequestBody Recepcion recepcion) {
@@ -42,8 +43,8 @@ public class RecepcionController {
             recepcionRepository.insertarRecepcion(
                 recepcion.getId(),
                 recepcion.getFechaRecepcion(),
-                recepcion.getId_proveedor(),
-                recepcion.getId_bodega()
+                recepcion.getId_proveedor().getId(),
+                recepcion.getId_bodega().getId()
             );
             return new ResponseEntity<>("Recepción creada exitosamente", HttpStatus.CREATED);
         } catch (Exception e) {
@@ -51,6 +52,16 @@ public class RecepcionController {
         }
     }
 
+    @GetMapping("/recepciones/hoy")
+    public ResponseEntity<Recepcion> darRecepcionHoy() {
+        // try {
+            Recepcion recepcion = recepcionRepository.darRecepcionHoy();
+            return new ResponseEntity<>(recepcion, HttpStatus.OK);
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        // }
+    }
+    
     // Actualizar una recepción existente
     @PutMapping("/recepciones/{id}/edit/save")
     @Transactional
@@ -60,8 +71,8 @@ public class RecepcionController {
             recepcionRepository.actualizarRecepcion(
                 id,
                 recepcion.getFechaRecepcion(),
-                recepcion.getId_proveedor(),
-                recepcion.getId_bodega()
+                recepcion.getId_proveedor().getId(),
+                recepcion.getId_bodega().getId()
             );
             return new ResponseEntity<>("Recepción actualizada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
@@ -80,4 +91,6 @@ public class RecepcionController {
             return new ResponseEntity<>("Error al eliminar la recepción", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    
 }

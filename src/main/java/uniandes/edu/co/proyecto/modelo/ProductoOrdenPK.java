@@ -9,33 +9,33 @@ import jakarta.persistence.ManyToOne;
 public class ProductoOrdenPK implements Serializable {
     
     @ManyToOne
-    private Producto producto_id;
+    private Producto producto;
 
     @ManyToOne
-    private OrdenCompra orden_compra_id;
+    private OrdenCompra orden_compra;
 
-    public ProductoOrdenPK(Producto producto_id, OrdenCompra orden_compra_id) {
-        this.producto_id = producto_id;
-        this.orden_compra_id = orden_compra_id;
+    public ProductoOrdenPK(Producto producto, OrdenCompra orden_compra) {
+        this.producto = producto;
+        this.orden_compra = orden_compra;
     }
 
     public ProductoOrdenPK() {
     }
 
     public Producto getId_producto() {
-        return producto_id;
+        return producto;
     }
 
-    public void setId_producto(Producto producto_id) {
-        this.producto_id = producto_id;
+    public void setId_producto(Producto producto) {
+        this.producto = producto;
     }
 
     public OrdenCompra getId_ordenCompra() {
-        return orden_compra_id;
+        return orden_compra;
     }
 
-    public void setId_ordenCompra(OrdenCompra orden_compra_id) {
-        this.orden_compra_id = orden_compra_id;
+    public void setId_ordenCompra(OrdenCompra orden_compra) {
+        this.orden_compra = orden_compra;
     }
 
     

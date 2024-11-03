@@ -20,16 +20,16 @@ public class Recepcion {
     private String fecha_recepcion;
 
     @ManyToOne
-    private Proveedor proveedor_id;
+    private Proveedor proveedor;
 
     @ManyToOne
-    private Bodega bodega_id;
+    private Bodega bodega;
 
-    public Recepcion(int id, String fecha_recepcion, Proveedor proveedor_id, Bodega bodega_id) {
+    public Recepcion(int id, String fecha_recepcion, Proveedor proveedor, Bodega bodega) {
         this.id = id;
         this.fecha_recepcion = fecha_recepcion;
-        this.proveedor_id = proveedor_id;
-        this.bodega_id = bodega_id;
+        this.proveedor = proveedor;
+        this.bodega = bodega;
     }
 
     public Recepcion() {
@@ -52,19 +52,19 @@ public class Recepcion {
     }
 
     public Proveedor getId_proveedor() {
-        return proveedor_id;
+        return proveedor;
     }
 
-    public void setId_proveedor(Proveedor proveedor_id) {
-        this.proveedor_id = proveedor_id;
+    public void setId_proveedor(Proveedor proveedor) {
+        this.proveedor = proveedor;
     }
 
     public Bodega getId_bodega() {
-        return bodega_id;
+        return bodega;
     }
 
-    public void setId_bodega(Bodega bodega_id) {
-        this.bodega_id = bodega_id;
+    public void setId_bodega(Bodega bodega) {
+        this.bodega = bodega;
     }
 
     

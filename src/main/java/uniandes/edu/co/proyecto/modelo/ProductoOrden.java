@@ -15,8 +15,8 @@ public class ProductoOrden {
 
     private int cantidad_solicitada;
 
-    public ProductoOrden(Producto producto_id, OrdenCompra id_orden, Double precio_acordado, int cantidad_solicitada) {
-        this.pk = new ProductoOrdenPK(producto_id, id_orden);
+    public ProductoOrden(Producto producto, OrdenCompra id_orden, Double precio_acordado, int cantidad_solicitada) {
+        this.pk = new ProductoOrdenPK(producto, id_orden);
         this.precio_acordado = precio_acordado;
         this.cantidad_solicitada = cantidad_solicitada;
     }

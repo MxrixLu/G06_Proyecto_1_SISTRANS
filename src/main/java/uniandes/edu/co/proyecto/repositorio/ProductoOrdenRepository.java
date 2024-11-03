@@ -1,6 +1,8 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
+import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -47,7 +49,7 @@ public interface ProductoOrdenRepository extends JpaRepository<ProductoOrden, Pr
     void borrarProductoOrden(@Param("producto_id") Producto producto_id, @Param("orden_compra_id") OrdenCompra orden_compra_id);
     
     // Obtener productos en una orden específica
-    @Query(value = "SELECT producto_id FROM producto_orden WHERE orden_compra_id = :orden_compra_id", nativeQuery = true)
+    @Query(value = "SELECT * FROM producto_orden WHERE orden_compra_id = :orden_compra_id ", nativeQuery = true)
     Collection<Integer> darProductosPorOrden(@Param("orden_compra_id") int orden_compra_id);
 
     // Obtener órdenes que contienen un producto específico

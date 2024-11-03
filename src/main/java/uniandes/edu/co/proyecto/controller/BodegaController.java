@@ -31,6 +31,7 @@ public class BodegaController {
     @Autowired
     private BodegaRepository bodegaRepository;
 
+    @Autowired
     private BodegaService bodegaService;
 
 
@@ -94,13 +95,13 @@ public class BodegaController {
     //---------------Transacciones----------------//
 
     @GetMapping("/bodegas/registroProductoBodega")
-    public ResponseEntity<String> registroProductoBodega(@RequestParam int ordenCompraId, @RequestParam int bodegaId) {
-        try {
-            bodegaService.registroProductoBodega(ordenCompraId, bodegaId);
+    public ResponseEntity<String> registroProductoBodega(@RequestParam int orden_compra_id, @RequestParam int bodega_id) {
+        // try {
+            bodegaService.registroProductoBodega(orden_compra_id, bodega_id);
             return new ResponseEntity<>("Producto registrado en bodega exitosamente", HttpStatus.OK);
-        } catch (Exception e) {
-            return new ResponseEntity<>("Error al registrar el producto en la bodega", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>("Error al registrar el producto en la bodega", HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
     }
     
 
