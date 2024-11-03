@@ -13,6 +13,15 @@ import uniandes.edu.co.proyecto.modelo.Bodega;
 
 public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
 
+    public interface respuestaConsultaIngresoProductoBodega_SERIALIZABLE {
+        String getSucursal();
+        String getBodega();
+        int getNumero_recepcion();
+        String getFecha_recepcion();
+        String getNombre_proveedor();
+
+    }
+
     // Obtener todas las recepciones
     @Query(value = "SELECT * FROM recepciones", nativeQuery = true)
     Collection<Recepcion> darRecepciones();
@@ -47,4 +56,20 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     @Transactional
     @Query(value = "DELETE FROM recepciones WHERE id = :id", nativeQuery = true)
     void borrarRecepcion(@Param("id") int id);
+
+    //Transacciones
+    @Query(value =" SELECT s.nombre AS sucursal, " +
+                "b.nombre AS bodega, " +
+                "r.id AS Numero_recepcion, " +
+                "r.fechaRecepcion AS Fecha_recepcion, " +
+                "prov.nombrePersonaC AS Nombre_proveedor" +
+                "FROM recepciones r" +
+                "INNER JOIN bodegas b ON b.id = r.id_bodega" +
+                "INNER JOIN sucursales s ON s.id = b.id_sucursal" +
+                "INNER JOIN proveedores prov ON prov.id=r.id_proveedor" +
+                "WHERE r.fechaRecepcion >= SYSDATE - 30 " +
+                "AND s.id = :sucursal_id AND b.id = :bodega_id" +
+                "FOR UPDATE ", nativeQuery=true)
+    Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> consultaIngresoProductoBodega_SERIALIZABLE(@Param("sucursal_id") int sucursal_id, @Param("bodega_id") int bodega_id);
+
 }

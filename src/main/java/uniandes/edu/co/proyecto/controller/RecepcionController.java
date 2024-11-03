@@ -10,12 +10,14 @@ import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Recepcion;
 import uniandes.edu.co.proyecto.repositorio.RecepcionRepository;
+import uniandes.edu.co.proyecto.servicios.RecepcionService;
 
 @RestController
 public class RecepcionController {
 
     @Autowired
     private RecepcionRepository recepcionRepository;
+    private RecepcionService recepcionService;
 
     // Obtener todas las recepciones
     @GetMapping("/recepciones")
@@ -78,6 +80,18 @@ public class RecepcionController {
             return new ResponseEntity<>("Recepción eliminada exitosamente", HttpStatus.OK);
         } catch (Exception e) {
             return new ResponseEntity<>("Error al eliminar la recepción", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    //---------------Transacciones----------------//
+
+    @GetMapping("/recepciones/consultaIngresoProductoBodega_SERIALIZABLE")
+    public ResponseEntity<String> consultaIngresoProductoBodega_SERIALIZABLE(@RequestParam int sucursal_id, @RequestParam int bodega_id) {
+        try {
+            recepcionService.consultaIngresoProductoBodega_SERIALIZABLE(sucursal_id, bodega_id);
+            return new ResponseEntity<>("Consulta de documento de ingreso de productos a bodega realizado exitosamente", HttpStatus.OK);
+        } catch (Exception e) {
+            return new ResponseEntity<>("Error al consultar el documento de ingreso de productos a bodega", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
