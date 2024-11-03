@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
+import javax.sound.midi.SysexMessage;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -14,6 +16,7 @@ import uniandes.edu.co.proyecto.modelo.InfoRecepcion;
 import uniandes.edu.co.proyecto.modelo.OrdenCompra;
 import uniandes.edu.co.proyecto.modelo.Recepcion;
 import uniandes.edu.co.proyecto.modelo.Producto;
+import uniandes.edu.co.proyecto.modelo.Proveedor;
 import uniandes.edu.co.proyecto.repositorio.BodegaRepository;
 import uniandes.edu.co.proyecto.repositorio.InfoRecepcionRepository;
 import uniandes.edu.co.proyecto.repositorio.OrdenCompraRepository;
@@ -82,6 +85,8 @@ public class BodegaService {
         System.out.println("oden: " + ordenCompraId);
         System.out.println("Productos: " + productos);
 
+        Proveedor proveedor = ordenCompra.getProveedor();
+
         for (int productoId : productos) {
             System.out.println("Producto: " + productoId);
             Producto producto = productoRepository.darProducto(productoId);
@@ -91,13 +96,16 @@ public class BodegaService {
                 throw new RuntimeException("El producto con ID " + productoId + " no existe.");
             }
 
-            Recepcion recepcion = recepcionRepository.darRecepcionHoy();
+            System.out.println("Proveedor: " + proveedor.getId()+ " Bodega: " + bodega_id + " Fecha: " + fechaString);
+
+            Recepcion recepcion = recepcionRepository.darRecepcionHoy(proveedor.getId(), bodega_id, fechaString);
             System.out.println("Se realizo orden darRecepcionHoy");
-
+            
             if (recepcion == null) {
-                throw new RuntimeException("La recepción para el producto con ID " + productoId + " no existe en la fecha dada.");
-            }
+                throw new RuntimeException("La recepción para el proveedor con ID " + proveedor.getId() + " no existe en la fecha dada.");
+            }   
 
+            System.out.println("Recepcion: " + recepcion.getId() + " Producto: " + productoId);
             InfoRecepcion infoRecepcion = infoRecepcionRepository.darInfoRecepcionPorId(recepcion.getId(), productoId);
             System.out.println("Se realizo orden infoRecepcion");
 
@@ -112,7 +120,8 @@ public class BodegaService {
         }
 
         // Cambia el estado de la orden de compra a "ENTREGADA" y guarda los cambios
-        ordenCompra.setEstado("ENTREGADA");
+        System.out.println("Se realizo orden cambiarEstado");
+        ordenCompraRepository.actualizarEstadoOrdenCompra(ordenCompraId, "ENTREGADA");
     }
 
 }

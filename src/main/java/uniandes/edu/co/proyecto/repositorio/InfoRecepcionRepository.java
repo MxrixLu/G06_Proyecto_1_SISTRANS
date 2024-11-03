@@ -19,13 +19,13 @@ public interface InfoRecepcionRepository extends JpaRepository<InfoRecepcion, In
     Collection<InfoRecepcion> darInfoRecepcion();
 
     // Obtener una entrada de recepción por su clave primaria compuesta
-    @Query(value = "SELECT * FROM info_recepcion WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    @Query(value = "SELECT * FROM info_recepcion WHERE recepcion_id = :recepcion_id AND producto_id = :producto_id ", nativeQuery = true)
     InfoRecepcion darInfoRecepcionPorId(@Param("recepcion_id") int recepcion_id, @Param("producto_id") int producto_id);
 
     // Insertar una nueva entrada de recepción
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO info_recepcion (id_Recepcion, producto_id, cantidad_recibida, costo_recibido) VALUES (:recepcion_id, :producto_id, :cantidad_recibida, :costo_recibido)", nativeQuery = true)
+    @Query(value = "INSERT INTO info_recepcion (recepcion_id, producto_id, cantidad_recibida, costo_recibido) VALUES (:recepcion_id, :producto_id, :cantidad_recibida, :costo_recibido)", nativeQuery = true)
     void insertarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, 
                                @Param("producto_id") Producto producto_id, 
                                @Param("cantidad_recibida") int cantidad_recibida, 
@@ -34,7 +34,7 @@ public interface InfoRecepcionRepository extends JpaRepository<InfoRecepcion, In
     // Actualizar una entrada de recepción existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE info_recepcion SET cantidad_recibida = :cantidad_recibida, costo_recibido = :costo_recibido WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    @Query(value = "UPDATE info_recepcion SET cantidad_recibida = :cantidad_recibida, costo_recibido = :costo_recibido WHERE recepcion_id = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
     void actualizarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, 
                                   @Param("producto_id") Producto producto_id, 
                                   @Param("cantidad_recibida") int cantidad_recibida, 
@@ -43,6 +43,6 @@ public interface InfoRecepcionRepository extends JpaRepository<InfoRecepcion, In
     // Borrar una entrada de recepción por su clave primaria compuesta
     @Modifying
     @Transactional
-    @Query(value = "DELETE FROM info_recepcion WHERE id_Recepcion = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
+    @Query(value = "DELETE FROM info_recepcion WHERE recepcion_id = :recepcion_id AND producto_id = :producto_id", nativeQuery = true)
     void borrarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, @Param("producto_id") Producto producto_id);
 }

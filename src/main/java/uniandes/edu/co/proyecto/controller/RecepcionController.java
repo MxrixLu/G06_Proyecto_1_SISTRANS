@@ -3,6 +3,7 @@ package uniandes.edu.co.proyecto.controller;
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
@@ -55,13 +56,14 @@ public class RecepcionController {
     }
 
     @GetMapping("/recepciones/hoy")
-    public ResponseEntity<Recepcion> darRecepcionHoy() {
-        // try {
-            Recepcion recepcion = recepcionRepository.darRecepcionHoy();
+    public ResponseEntity<Recepcion> darRecepcionHoy(@Param("proveedor_id") int proveedor_id, @Param("bodega_id") int bodega_id, @Param("fechaString") String fechaString) {
+        try {
+            Recepcion recepcion = recepcionRepository.darRecepcionHoy(proveedor_id, bodega_id, fechaString);
+            System.out.println(recepcion.getId());
             return new ResponseEntity<>(recepcion, HttpStatus.OK);
-        // } catch (Exception e) {
-        //     return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
-        // }
+        } catch (Exception e) {
+            return new ResponseEntity<>(null, HttpStatus.NOT_FOUND);
+        }
     }
     
     // Actualizar una recepción existente

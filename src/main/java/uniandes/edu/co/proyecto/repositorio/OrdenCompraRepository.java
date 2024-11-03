@@ -34,7 +34,7 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
     // Actualizar una orden de compra existente
     @Modifying
     @Transactional
-    @Query(value = "UPDATE ordenes_compra SET fecha_esperada_entrega = TO_DATE(:fechaEsperadaEntrega , 'YYYY-MM-DD'), precio_acordado = :precio_acordado , estado = :estado , fecha_creacion = TO_DATE(:fechaCreacion , 'YYYY-MM-DD'), sucursal_id = :sucursal_id, proveedor_id = :proveedor_id WHERE id = :id ", nativeQuery = true)
+    @Query(value = "UPDATE ordenes_compra SET fecha_esperada_entrega = TO_DATE(:fechaEsperadaEntrega , 'YYYY-MM-DD'), precio_acordado = :precio_acordado , estado = :estado , fecha_creacion = TO_DATE(:fechaCreacion , 'YYYY-MM-DD'), sucursal_id = :sucursal_id , proveedor_id = :proveedor_id WHERE id = :id ", nativeQuery = true)
     void actualizarOrdenCompra(@Param("id") int id,
                             @Param("fechaEsperadaEntrega") String fechaEsperadaEntrega,
                             @Param("precio_acordado") Double precio_acordado,
@@ -43,6 +43,11 @@ public interface OrdenCompraRepository extends JpaRepository<OrdenCompra, Intege
                             @Param("sucursal_id") int sucursal,
                             @Param("proveedor_id") int proveedor);
 
+    @Modifying
+    @Transactional
+    @Query(value = "UPDATE ordenes_compra SET estado = :estado WHERE id = :id", nativeQuery = true)
+    void actualizarEstadoOrdenCompra(@Param("id") int id, @Param("estado") String estado);
+    
     // Borrar una orden de compra por su ID
     @Modifying
     @Transactional

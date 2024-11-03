@@ -16,9 +16,9 @@ public class InfoRecepcion {
     private Double costo_recibido;
 
 
-    public InfoRecepcion(Recepcion id_Recepcion, Producto id_Producto, int cantidad_recibida, Double costo_recibido) {
+    public InfoRecepcion(Recepcion recepcion, Producto producto, int cantidad_recibida, Double costo_recibido) {
         super();
-        this.pk = new InfoRecepcionPK(id_Recepcion, id_Producto);
+        this.pk = new InfoRecepcionPK(recepcion, producto);
         this.cantidad_recibida  = cantidad_recibida;
         this.costo_recibido = costo_recibido;
     }

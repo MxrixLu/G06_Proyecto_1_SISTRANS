@@ -10,35 +10,35 @@ import jakarta.persistence.ManyToOne;
 public class InfoRecepcionPK implements Serializable {
 
     @ManyToOne
-    private Recepcion id_Recepcion; 
+    private Recepcion recepcion; 
 
     @ManyToOne
-    private Producto producto_id;
+    private Producto producto;
 
-    public InfoRecepcionPK(Recepcion id_Recepcion, Producto producto_id) {
+    public InfoRecepcionPK(Recepcion recepcion, Producto producto) {
         super();
-        this.id_Recepcion = id_Recepcion;
-        this.producto_id = producto_id;
+        this.recepcion = recepcion;
+        this.producto = producto;
     }
 
     public InfoRecepcionPK() {
         super();
     }
 
-    public Recepcion getIdRecepcion() {
-        return id_Recepcion;
+    public Recepcion getRecepcion() {
+        return recepcion;
     }
 
-    public void setIdRecepcion(Recepcion id_Recepcion) {
-        this.id_Recepcion = id_Recepcion;
+    public void setRecepcion(Recepcion recepcion) {
+        this.recepcion = recepcion;
     }
 
-    public Producto getIdProducto() {
-        return producto_id;
+    public Producto getProducto() {
+        return producto;
     }
 
-    public void setIdProducto(Producto producto_id) {
-        this.producto_id = producto_id;
+    public void setProducto(Producto producto) {
+        this.producto = producto;
     } 
 
     
