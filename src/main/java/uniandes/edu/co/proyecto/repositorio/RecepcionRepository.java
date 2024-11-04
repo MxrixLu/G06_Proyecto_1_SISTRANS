@@ -1,6 +1,7 @@
 package uniandes.edu.co.proyecto.repositorio;
 
 import java.util.Collection;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
@@ -18,6 +19,14 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
         String getFecha_recepcion();
         String getNombre_proveedor();
 
+    }
+
+    public interface respuestaConsultaIngresoProductoBodega_READ_COMMITTED {
+        String getSucursal();
+        String getBodega();
+        int getNumero_recepcion();
+        String getFecha_recepcion();
+        String getNombre_proveedor();
     }
 
     // Obtener todas las recepciones
@@ -59,15 +68,31 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     @Query(value =" SELECT s.nombre AS sucursal, " +
                 "b.nombre AS bodega, " +
                 "r.id AS Numero_recepcion, " +
-                "r.fechaRecepcion AS Fecha_recepcion, " +
-                "prov.nombrePersonaC AS Nombre_proveedor" +
-                "FROM recepciones r" +
-                "INNER JOIN bodegas b ON b.id = r.id_bodega" +
-                "INNER JOIN sucursales s ON s.id = b.id_sucursal" +
-                "INNER JOIN proveedores prov ON prov.id=r.id_proveedor" +
-                "WHERE r.fechaRecepcion >= SYSDATE - 30 " +
-                "AND s.id = :sucursal_id AND b.id = :bodega_id" +
+                "r.fecha_recepcion AS Fecha_recepcion, " +
+                "prov.nombre_personaC AS Nombre_proveedor " +
+                "FROM recepciones r " +
+                "INNER JOIN bodegas b ON b.id = r.bodega_id " +
+                "INNER JOIN sucursales s ON s.id = b.sucursal_id " +
+                "INNER JOIN proveedores prov ON prov.id=r.proveedor_id " +
+                "WHERE r.fecha_recepcion >= SYSDATE - 30 " +
+                "AND s.id = :sucursal_id AND b.id = :bodega_id " +
                 "FOR UPDATE ", nativeQuery=true)
     Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> consultaIngresoProductoBodega_SERIALIZABLE(@Param("sucursal_id") int sucursal_id, @Param("bodega_id") int bodega_id);
 
+    @Query(value = "SELECT s.nombre AS sucursal, " +
+                   "b.nombre AS bodega, " +
+                   "r.id AS Numero_recepcion, " +
+                   "r.fecha_recepcion AS Fecha_recepcion, " +
+                   "prov.nombre_personaC AS Nombre_proveedor " +
+                   "FROM recepciones r " +
+                   "INNER JOIN bodegas b ON b.id = r.bodega_id " +
+                   "INNER JOIN sucursales s ON s.id = b.sucursal_id " +
+                   "INNER JOIN proveedores prov ON prov.id = r.proveedor_id " +
+                   "WHERE r.fecha_recepcion >= SYSDATE - 30 " +
+                   "AND s.id = :sucursal_id " +
+                   "AND b.id = :bodega_id", nativeQuery = true)
+    Collection<respuestaConsultaIngresoProductoBodega_READ_COMMITTED> consultaIngresoProductoBodega_READ_COMMITTED(
+        @Param("sucursal_id") int sucursal_id,
+        @Param("bodega_id") int bodega_id
+    );
 }

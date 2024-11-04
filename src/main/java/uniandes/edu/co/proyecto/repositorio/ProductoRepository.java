@@ -13,7 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 import uniandes.edu.co.proyecto.modelo.Producto;
 import uniandes.edu.co.proyecto.modelo.ProductoPK;
 
-public interface ProductoRepository extends JpaRepository<Producto, ProductoPK> {
+public interface ProductoRepository extends JpaRepository<Producto, Integer> {
 
     public interface RespuestaListarProductosReorden {
         String getNombre_producto();

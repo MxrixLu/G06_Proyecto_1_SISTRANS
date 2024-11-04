@@ -7,7 +7,14 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.transaction.annotation.Transactional;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import uniandes.edu.co.proyecto.modelo.Recepcion;
 import uniandes.edu.co.proyecto.repositorio.RecepcionRepository;
@@ -19,6 +26,8 @@ public class RecepcionController {
 
     @Autowired
     private RecepcionRepository recepcionRepository;
+    
+    @Autowired
     private RecepcionService recepcionService;
 
     // Obtener todas las recepciones
@@ -99,12 +108,24 @@ public class RecepcionController {
     //---------------Transacciones----------------//
 
     @GetMapping("/recepciones/consultaIngresoProductoBodega_SERIALIZABLE")
-    public ResponseEntity<String> consultaIngresoProductoBodega_SERIALIZABLE(@RequestParam int sucursal_id, @RequestParam int bodega_id) {
-        try {
+    public ResponseEntity<String> consultaIngresoProductoBodega_SERIALIZABLE(@RequestParam int sucursal_id, @RequestParam int bodega_id) throws InterruptedException {
+        // try {
             recepcionService.consultaIngresoProductoBodega_SERIALIZABLE(sucursal_id, bodega_id);
             return new ResponseEntity<>("Consulta de documento de ingreso de productos a bodega realizado exitosamente", HttpStatus.OK);
+        // } catch (Exception e) {
+        //     return new ResponseEntity<>("Error al consultar el documento de ingreso de productos a bodega", HttpStatus.INTERNAL_SERVER_ERROR);
+        // }
+    }
+
+    // Consulta de documentos de ingreso de productos a bodega con nivel READ COMMITTED (RFC7)
+    @GetMapping("/recepciones/consultaIngresoProductoBodega_READ_COMMITTED")
+    public ResponseEntity<Collection<RecepcionRepository.respuestaConsultaIngresoProductoBodega_READ_COMMITTED>> consultaIngresoProductoBodega_READ_COMMITTED(@RequestParam int sucursal_id, @RequestParam int bodega_id) {
+        try {
+            Collection<RecepcionRepository.respuestaConsultaIngresoProductoBodega_READ_COMMITTED> respuesta = 
+                recepcionService.consultaIngresoProductoBodega_READ_COMMITTED(sucursal_id, bodega_id);
+            return new ResponseEntity<>(respuesta, HttpStatus.OK);
         } catch (Exception e) {
-            return new ResponseEntity<>("Error al consultar el documento de ingreso de productos a bodega", HttpStatus.INTERNAL_SERVER_ERROR);
+            return new ResponseEntity<>(null, HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
 }
