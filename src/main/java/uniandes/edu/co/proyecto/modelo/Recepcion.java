@@ -5,7 +5,6 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
- 
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -24,6 +23,9 @@ public class Recepcion {
 
     @ManyToOne
     private Bodega bodega;
+
+    @ManyToOne
+    private Sucursal sucursal;
 
     public Recepcion(int id, String fecha_recepcion, Proveedor proveedor, Bodega bodega) {
         this.id = id;
