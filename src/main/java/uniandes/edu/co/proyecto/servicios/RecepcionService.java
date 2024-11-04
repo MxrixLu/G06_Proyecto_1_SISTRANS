@@ -20,7 +20,7 @@ public class RecepcionService {
         this.recepcionRepository=recepcionRepository;
     } 
 
-   @Transactional(isolation = Isolation.SERIALIZABLE, readOnly = true)
+   @Transactional(isolation = Isolation.SERIALIZABLE, readOnly = false)
    public Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> consultaIngresoProductoBodega_SERIALIZABLE(int sucursal_id, int bodega_id) throws InterruptedException {
        Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> respuestaConsultaIgreso = recepcionRepository.consultaIngresoProductoBodega_SERIALIZABLE(sucursal_id,bodega_id); 
        System.out.println(respuestaConsultaIgreso);
