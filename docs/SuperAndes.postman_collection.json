@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "11597cc1-ce52-42fb-ada2-c8c431eb5094",
+		"_postman_id": "80d70324-5b40-4bb1-8da4-f9df3c2ceae5",
 		"name": "SuperAndes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "37892327"
+		"_exporter_id": "38331110"
 	},
 	"item": [
 		{
@@ -293,6 +293,37 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Registrar producto en bodega",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/bodegas/registroProductoBodega?orden_compra_id=1&bodega_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"bodegas",
+								"registroProductoBodega"
+							],
+							"query": [
+								{
+									"key": "orden_compra_id",
+									"value": "1"
+								},
+								{
+									"key": "bodega_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
@@ -530,7 +561,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/proyecto/productos/consulta",
+							"raw": "http://localhost:8080/proyecto/bodegas/consultaBodega?bodega_id=2&sucursal_id=2",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -538,8 +569,18 @@
 							"port": "8080",
 							"path": [
 								"proyecto",
-								"productos",
-								"consulta"
+								"bodegas",
+								"consultaBodega"
+							],
+							"query": [
+								{
+									"key": "bodega_id",
+									"value": "2"
+								},
+								{
+									"key": "sucursal_id",
+									"value": "2"
+								}
 							]
 						}
 					},
@@ -826,6 +867,108 @@
 								"1",
 								"edit",
 								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Recepcion",
+			"item": [
+				{
+					"name": "Recepcion Hoy",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/recepciones/hoy?bodega_id=1&proveedor_id=1&fechaString=2024-11-3",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"recepciones",
+								"hoy"
+							],
+							"query": [
+								{
+									"key": "bodega_id",
+									"value": "1"
+								},
+								{
+									"key": "proveedor_id",
+									"value": "1"
+								},
+								{
+									"key": "fechaString",
+									"value": "2024-11-3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta SERIALIZABLE",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/recepciones/consultaIngresoProductoBodega_SERIALIZABLE?sucursal_id=1&bodega_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"recepciones",
+								"consultaIngresoProductoBodega_SERIALIZABLE"
+							],
+							"query": [
+								{
+									"key": "sucursal_id",
+									"value": "1"
+								},
+								{
+									"key": "bodega_id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Consulta READ_COMMITED",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/proyecto/recepciones/consultaIngresoProductoBodega_READ_COMMITTED?bodega_id=1&sucursal_id=1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"proyecto",
+								"recepciones",
+								"consultaIngresoProductoBodega_READ_COMMITTED"
+							],
+							"query": [
+								{
+									"key": "bodega_id",
+									"value": "1"
+								},
+								{
+									"key": "sucursal_id",
+									"value": "1"
+								}
 							]
 						}
 					},
