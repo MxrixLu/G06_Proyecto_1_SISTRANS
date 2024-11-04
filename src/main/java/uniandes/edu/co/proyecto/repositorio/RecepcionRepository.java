@@ -75,8 +75,7 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
                 "INNER JOIN sucursales s ON s.id = b.sucursal_id " +
                 "INNER JOIN proveedores prov ON prov.id=r.proveedor_id " +
                 "WHERE r.fecha_recepcion >= SYSDATE - 30 " +
-                "AND s.id = :sucursal_id AND b.id = :bodega_id " +
-                "FOR UPDATE ", nativeQuery=true)
+                "AND s.id = :sucursal_id AND b.id = :bodega_id ", nativeQuery=true)
     Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> consultaIngresoProductoBodega_SERIALIZABLE(@Param("sucursal_id") int sucursal_id, @Param("bodega_id") int bodega_id);
 
     @Query(value = "SELECT s.nombre AS sucursal, " +
