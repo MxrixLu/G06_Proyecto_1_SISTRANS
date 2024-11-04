@@ -16,7 +16,6 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.*;
 
 import uniandes.edu.co.proyecto.modelo.Producto;
-import uniandes.edu.co.proyecto.modelo.ProductoPK;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaDarProductosPorCaracteristica;
 import uniandes.edu.co.proyecto.repositorio.ProductoRepository.RespuestaListarProductosReorden;
