@@ -44,8 +44,8 @@ public class InfoRecepcionController {
     public ResponseEntity<String> insertarInfoRecepcion(@RequestBody InfoRecepcion infoRecepcion) {
         try {
             infoRecepcionRepository.insertarInfoRecepcion(
-                infoRecepcion.getPk().getIdRecepcion(),
-                infoRecepcion.getPk().getIdProducto(),
+                infoRecepcion.getPk().getRecepcion(),
+                infoRecepcion.getPk().getProducto(),
                 infoRecepcion.getCantidadRecibida(),
                 infoRecepcion.getCostoRecibido()
             );

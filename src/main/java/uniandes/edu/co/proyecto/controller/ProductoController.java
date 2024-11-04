@@ -110,8 +110,7 @@ public class ProductoController {
     public ResponseEntity<String> insertarProducto(@RequestBody Producto producto) {
         try {
             System.err.println("Empieza insertar productos");
-            ProductoPK pk = producto.getPk();
-            String codigo_barras = pk.getCodigoBarras();
+            String codigo_barras = producto.getCodigoBarras();
             System.err.println(codigo_barras + "Este es el codigo de barras creado");
             productoRepository.insertarProducto(
                 codigo_barras,

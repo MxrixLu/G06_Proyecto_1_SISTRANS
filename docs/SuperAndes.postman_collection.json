@@ -1,9 +1,9 @@
 {
 	"info": {
-		"_postman_id": "80d70324-5b40-4bb1-8da4-f9df3c2ceae5",
+		"_postman_id": "11597cc1-ce52-42fb-ada2-c8c431eb5094",
 		"name": "SuperAndes",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "38331110"
+		"_exporter_id": "37892327"
 	},
 	"item": [
 		{
@@ -530,7 +530,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8080/proyecto/bodegas/consultaBodega?bodega_id=2&sucursal_id=2",
+							"raw": "http://localhost:8080/proyecto/productos/consulta",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -538,18 +538,8 @@
 							"port": "8080",
 							"path": [
 								"proyecto",
-								"bodegas",
-								"consultaBodega"
-							],
-							"query": [
-								{
-									"key": "bodega_id",
-									"value": "2"
-								},
-								{
-									"key": "sucursal_id",
-									"value": "2"
-								}
+								"productos",
+								"consulta"
 							]
 						}
 					},

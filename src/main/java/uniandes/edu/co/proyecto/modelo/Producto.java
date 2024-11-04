@@ -1,8 +1,11 @@
 package uniandes.edu.co.proyecto.modelo;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
- 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 
@@ -10,8 +13,11 @@ import jakarta.persistence.Table;
 @Table(name = "productos")
 public class Producto {
     
-    @EmbeddedId
-    private ProductoPK pk;
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private int id;
+
+    private String codigo_barras;
 
     private String nombre; 
     private Double costo_bodega; 
@@ -29,7 +35,8 @@ public class Producto {
     public Producto(int id, String codigo_barras, String nombre, Double costo_bodega, Double precio_venta, String presentacion,
             Double cantidad_presentacion, int unidad_medida, Double volumen_empaque, Double peso_empaque,
             String fecha_expiracion, Categoria categoria) {
-        this.pk = new ProductoPK(id, codigo_barras);
+        this.id = id;
+        this.codigo_barras = codigo_barras;
         this.nombre = nombre;
         this.costo_bodega = costo_bodega;
         this.precio_venta = precio_venta;
@@ -45,13 +52,22 @@ public class Producto {
     public Producto() 
     {;}
 
-    public ProductoPK getPk() {
-        return pk;
+    public int getId() {
+        return id;
     }
 
-    public void setPk(ProductoPK pk) {
-        this.pk = pk;
+    public void setId(int id) {
+        this.id = id;
     }
+
+    public String getCodigoBarras() {
+        return codigo_barras;
+    }
+
+    public void setCodigoBarras(String codigo_barras) {
+        this.codigo_barras = codigo_barras;
+    }
+    
 
     public String getNombre() {
         return nombre;

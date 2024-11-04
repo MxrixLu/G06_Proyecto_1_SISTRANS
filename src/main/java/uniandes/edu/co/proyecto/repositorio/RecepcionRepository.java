@@ -37,8 +37,8 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     @Query(value = "SELECT * FROM recepciones WHERE id = :id", nativeQuery = true)
     Recepcion darRecepcion(@Param("id") int id);
 
-    @Query(value = "SELECT * FROM recepciones", nativeQuery = true)
-    Recepcion darRecepcionHoy();
+    @Query(value = "SELECT * FROM recepciones WHERE proveedor_id = :proveedor_id AND bodega_id = :bodega_id AND fecha_recepcion = TO_DATE( :fecha_recepcion , 'YYYY-MM-DD')", nativeQuery = true)
+    Recepcion darRecepcionHoy(@Param("proveedor_id") int proveedor_id, @Param("bodega_id") int bodega_id, @Param("fecha_recepcion") String fecha_recepcion);
 
     // Insertar una nueva recepcion
     @Modifying
