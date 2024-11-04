@@ -450,7 +450,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{   \r\n    \"pk\": {\r\n        \"codigoBarras\": \"fASADf0f0f\"\r\n    },\r\n    \"nombre\": \"Papas fritas\",\r\n    \"costoBodega\": 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr\",\r\n    \"cantidadPresentacion\": 1000.00,\r\n    \"unidadMedida\": 0,\r\n    \"volumenEmpaque\": 150.00,\r\n    \"pesoEmpaque\": 15.00,\r\n    \"fechaExpiracion\": \"2021-02-01\",\r\n    \"categoria\": {\r\n        \"id\": 1,\r\n        \"codigo\": 1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
+							"raw": "{   \r\n    \"codigoBarras\": \"fASADf0f0f\"\r\n    ,\r\n    \"nombre\": \"Papas fritas\",\r\n    \"costoBodega\": 4200.00,\r\n    \"precioVenta\": 9000.00,\r\n    \"presentacion\": \"paquetón de 5 paquetes de 200 gr\",\r\n    \"cantidadPresentacion\": 1000.00,\r\n    \"unidadMedida\": 0,\r\n    \"volumenEmpaque\": 150.00,\r\n    \"pesoEmpaque\": 15.00,\r\n    \"fechaExpiracion\": \"2021-02-01\",\r\n    \"categoria\": {\r\n        \"id\": 1,\r\n        \"codigo\": 1,\r\n        \"nombre\": \"Perecedero\",\r\n        \"descripcion\": \"Tienen fecha de vencimiento como por ejemplo comestibles\",\r\n        \"caracteristicasAlmacenamiento\": \"Bien sellados evitando cualquier filtracion de aire que pueda dañar el producto antes de lo esperado\"\r\n    }\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
