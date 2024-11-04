@@ -68,27 +68,27 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     @Query(value =" SELECT s.nombre AS sucursal, " +
                 "b.nombre AS bodega, " +
                 "r.id AS Numero_recepcion, " +
-                "r.fechaRecepcion AS Fecha_recepcion, " +
-                "prov.nombrePersonaC AS Nombre_proveedor" +
-                "FROM recepciones r" +
-                "INNER JOIN bodegas b ON b.id = r.id_bodega" +
-                "INNER JOIN sucursales s ON s.id = b.id_sucursal" +
-                "INNER JOIN proveedores prov ON prov.id=r.id_proveedor" +
-                "WHERE r.fechaRecepcion >= SYSDATE - 30 " +
-                "AND s.id = :sucursal_id AND b.id = :bodega_id" +
+                "r.fecha_recepcion AS Fecha_recepcion, " +
+                "prov.nombre_personaC AS Nombre_proveedor " +
+                "FROM recepciones r " +
+                "INNER JOIN bodegas b ON b.id = r.bodega_id " +
+                "INNER JOIN sucursales s ON s.id = b.sucursal_id " +
+                "INNER JOIN proveedores prov ON prov.id=r.proveedor_id " +
+                "WHERE r.fecha_recepcion >= SYSDATE - 30 " +
+                "AND s.id = :sucursal_id AND b.id = :bodega_id " +
                 "FOR UPDATE ", nativeQuery=true)
     Collection<respuestaConsultaIngresoProductoBodega_SERIALIZABLE> consultaIngresoProductoBodega_SERIALIZABLE(@Param("sucursal_id") int sucursal_id, @Param("bodega_id") int bodega_id);
 
     @Query(value = "SELECT s.nombre AS sucursal, " +
                    "b.nombre AS bodega, " +
                    "r.id AS Numero_recepcion, " +
-                   "r.fechaRecepcion AS Fecha_recepcion, " +
-                   "prov.nombrePersonaC AS Nombre_proveedor " +
+                   "r.fecha_recepcion AS Fecha_recepcion, " +
+                   "prov.nombre_personaC AS Nombre_proveedor " +
                    "FROM recepciones r " +
                    "INNER JOIN bodegas b ON b.id = r.bodega_id " +
                    "INNER JOIN sucursales s ON s.id = b.sucursal_id " +
                    "INNER JOIN proveedores prov ON prov.id = r.proveedor_id " +
-                   "WHERE r.fechaRecepcion >= SYSDATE - 30 " +
+                   "WHERE r.fecha_recepcion >= SYSDATE - 30 " +
                    "AND s.id = :sucursal_id " +
                    "AND b.id = :bodega_id", nativeQuery = true)
     Collection<respuestaConsultaIngresoProductoBodega_READ_COMMITTED> consultaIngresoProductoBodega_READ_COMMITTED(
