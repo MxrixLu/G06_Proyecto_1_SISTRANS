@@ -26,8 +26,8 @@ public interface InfoRecepcionRepository extends JpaRepository<InfoRecepcion, In
     @Modifying
     @Transactional
     @Query(value = "INSERT INTO info_recepcion (recepcion_id, producto_id, cantidad_recibida, costo_recibido) VALUES (:recepcion_id, :producto_id, :cantidad_recibida, :costo_recibido)", nativeQuery = true)
-    void insertarInfoRecepcion(@Param("recepcion_id") Recepcion recepcion_id, 
-                               @Param("producto_id") Producto producto_id, 
+    void insertarInfoRecepcion(@Param("recepcion_id") int recepcion_id, 
+                               @Param("producto_id") int producto_id, 
                                @Param("cantidad_recibida") int cantidad_recibida, 
                                @Param("costo_recibido") Double costo_recibido);
 

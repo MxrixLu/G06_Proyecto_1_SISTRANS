@@ -95,6 +95,7 @@ public class BodegaService {
 
             System.out.println("Proveedor: " + proveedor.getId()+ " Bodega: " + bodega_id + " Fecha: " + fechaString);
 
+            recepcionRepository.insertarRecepcion(fechaString, proveedor.getId(), bodega_id);
             Recepcion recepcion = recepcionRepository.darRecepcionHoy(proveedor.getId(), bodega_id, fechaString);
             System.out.println("Se realizo orden darRecepcionHoy");
             
@@ -102,6 +103,7 @@ public class BodegaService {
                 throw new RuntimeException("La recepción para el proveedor con ID " + proveedor.getId() + " no existe en la fecha dada.");
             }   
 
+            infoRecepcionRepository.insertarInfoRecepcion(recepcion.getId(), producto.getId(), productos.size(), ordenCompra.getPrecioAcordado());
             System.out.println("Recepcion: " + recepcion.getId() + " Producto: " + productoId);
             InfoRecepcion infoRecepcion = infoRecepcionRepository.darInfoRecepcionPorId(recepcion.getId(), productoId);
             System.out.println("Se realizo orden infoRecepcion");

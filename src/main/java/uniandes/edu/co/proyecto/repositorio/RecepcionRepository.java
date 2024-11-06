@@ -43,8 +43,8 @@ public interface RecepcionRepository extends JpaRepository<Recepcion, Integer> {
     // Insertar una nueva recepcion
     @Modifying
     @Transactional
-    @Query(value = "INSERT INTO recepciones (id, fecha_recepcion, proveedor_id, bodega_id) VALUES (:id, :fecha_recepcion, :proveedor_id, :bodega_id )", nativeQuery = true)
-    void insertarRecepcion(@Param("id") int id, 
+    @Query(value = "INSERT INTO recepciones (id, fecha_recepcion, proveedor_id, bodega_id) VALUES (superandes_sequence.nextval, TO_DATE(:fecha_recepcion, 'yyyy-mm-dd'), :proveedor_id, :bodega_id )", nativeQuery = true)
+    void insertarRecepcion( 
                            @Param("fecha_recepcion") String fecha_recepcion, 
                            @Param("proveedor_id") int proveedor_id, 
                            @Param("bodega_id") int bodega_id);
